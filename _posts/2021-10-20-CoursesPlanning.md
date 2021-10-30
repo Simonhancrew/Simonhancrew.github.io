@@ -4,5 +4,19 @@ title: "后几年补的课程"
 date: 2021-10-20
 ---
 
-多半先看完6.8
+## 基础科目
+
+1. [6.S081](https://pdos.csail.mit.edu/6.828/2020/index.html) + [6.828](https://abelay.github.io/6828seminar/index.html):operating system
+2. [6.829](https://canvas.mit.edu/courses/11164)computer network
+3. [6.830](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/):database system
+4. [6.824](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-824-distributed-computer-systems-engineering-spring-2006/):distributed system
+
+## 应用分析
+
+1. [6.042]():Mathematics for Computer Science
+2. [6.004]():Computation Structures
+
+## Machine Learning
+
+1. [6.034]():Artificial Intelligence
 
