@@ -68,6 +68,8 @@ func MyDaily()
 
 尽量用单个单词，如果有多个的话，全部小写，下划线连接。
 
+不要直接using namespace xxx，使用using namespace std::vector，然后直接使用这个class
+
 ## 枚举命名
 
 内部成员名，形如const命名规则。外部使用大写字母开头的方式
@@ -85,8 +87,6 @@ func MyDaily()
 ## 预处理命令
 
 从行首开始，不做缩进。
-
-
 
 
 
