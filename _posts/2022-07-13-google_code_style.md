@@ -15,7 +15,7 @@ date: 2022-07-13
 
 ```cpp
 // 形如
-fake_server.cc
+fake_server.cpp
 ```
 
 ## 类名
@@ -36,6 +36,8 @@ typedef unordered_map<int,Node> NodeMap;
 
 普通变量全部小写，下划线连接。成员变量同理，并用下划线结尾。
 
+struct属于特例，struct内的成员变量不用下划线结尾。
+
 ```
 // 普通变量
 
@@ -43,8 +45,14 @@ string raw_buffer;
 
 // 成员变量
 
-string row_buffer_;
 
+class{
+  string row_buffer_;
+};
+
+struct {
+  int item;
+};
 ```
 
 ## 常量命名
@@ -88,8 +96,17 @@ func MyDaily()
 
 从行首开始，不做缩进。
 
+## 引用
 
+不需要修改的引用传递const &, 需要修改的引用传递指针，但是可以不用对对象存在性做判断。
 
+```
+void func(const string  &s) {
+  s.size();
+}
 
+void func(string *s) {
+  s->size();
+}
 
-
+```
