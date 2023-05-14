@@ -1,17 +1,1290 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-09-09T19:24:01+08:00</updated><id>/feed.xml</id><title type="html">Recipes</title><subtitle>just a record</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2021/09/09/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2021-09-09T18:57:01+08:00</published><updated>2021-09-09T18:57:01+08:00</updated><id>/jekyll/update/2021/09/09/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2021/09/09/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/simomhancrew/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/simomhancrew/" rel="alternate" type="text/html" /><updated>2023-05-14T20:27:03+08:00</updated><id>http://localhost:4000/simomhancrew/feed.xml</id><title type="html">Recipes</title><subtitle>Just Recipes
+</subtitle><author><name>simon</name></author><entry><title type="html">CS144-Note1</title><link href="http://localhost:4000/simomhancrew/lab/2023-05-14-CS144-day1.html" rel="alternate" type="text/html" title="CS144-Note1" /><published>2023-05-14T00:00:00+08:00</published><updated>2023-05-14T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/lab/CS144-day1</id><content type="html" xml:base="http://localhost:4000/simomhancrew/lab/2023-05-14-CS144-day1.html"><![CDATA[<h2 id="cs144-lab-note-1">CS144-Lab Note-1</h2>
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+<p>CS144 lab，about IO basic</p>
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+<h3 id="read-and-write">read and write</h3>
 
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+<p>read和write一次只能下发一个IO请求,并将数据读写到一个指定的缓冲区</p>
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">#define PER_IO (16)
+</span>
+<span class="kt">void</span> <span class="nf">do_readv</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">block_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">_buff</span><span class="p">[</span><span class="n">PER_IO</span><span class="p">];</span>
+    <span class="k">struct</span> <span class="n">iovec</span> <span class="n">_iovec</span><span class="p">[</span><span class="n">PER_IO</span><span class="p">];</span>
+    <span class="kt">size_t</span> <span class="n">_cnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">)</span> <span class="o">/</span> <span class="n">PER_IO</span><span class="p">;</span>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">PER_IO</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">posix_memalign</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">4096</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mh">0xff</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="n">_iovec</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iov_base</span> <span class="o">=</span> <span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">_iovec</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iov_len</span> <span class="o">=</span> <span class="n">block_size</span><span class="p">;</span>
+    <span class="p">}</span>
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">readv</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">_iovec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">PER_IO</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">do_writev</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">block_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">_buff</span><span class="p">[</span><span class="n">PER_IO</span><span class="p">];</span>
+    <span class="k">struct</span> <span class="n">iovec</span> <span class="n">_iovec</span><span class="p">[</span><span class="n">PER_IO</span><span class="p">];</span>
+    <span class="kt">size_t</span> <span class="n">_cnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">size</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">)</span> <span class="o">/</span> <span class="n">PER_IO</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">PER_IO</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">posix_memalign</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">4096</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mh">0xff</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="n">_iovec</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iov_base</span> <span class="o">=</span> <span class="n">_buff</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">_iovec</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">iov_len</span> <span class="o">=</span> <span class="n">block_size</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">writev</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">_iovec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">PER_IO</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="nf">do_read</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">block_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">_buff</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">_cnt</span> <span class="o">=</span> <span class="n">size</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">;</span>
+
+    <span class="n">posix_memalign</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_buff</span><span class="p">,</span> <span class="mi">4096</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">_buff</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+
+    <span class="kt">char</span><span class="o">*</span> <span class="n">_dest</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">_buff</span><span class="p">;</span>
+    <span class="kt">uint64_t</span> <span class="n">_pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">_dest</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="c1">// _pos += block_size;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">do_write</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">block_size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">_buff</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">_cnt</span> <span class="o">=</span> <span class="n">size</span> <span class="o">/</span> <span class="n">block_size</span><span class="p">;</span>
+
+    <span class="n">posix_memalign</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_buff</span><span class="p">,</span> <span class="mi">4096</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">_buff</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+
+    <span class="kt">uint64_t</span> <span class="n">_pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">_src</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">_buff</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">_src</span><span class="p">,</span> <span class="n">block_size</span><span class="p">);</span>
+        <span class="c1">// _pos += block_size;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">_scan</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">_name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="kt">size_t</span> <span class="n">_size</span> <span class="o">=</span> <span class="n">atol</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">_block_size</span> <span class="o">=</span> <span class="n">atol</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[%s][size:%zu][bs:%zu]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">_name</span><span class="p">,</span> <span class="n">_size</span><span class="p">,</span> <span class="n">_block_size</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">_fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="n">_name</span><span class="p">,</span> <span class="n">O_RDWR</span> <span class="o">|</span> <span class="n">O_DIRECT</span><span class="p">,</span> <span class="mo">0666</span><span class="p">);</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">_fd</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+
+
+    <span class="n">close</span><span class="p">(</span><span class="n">_fd</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>另外为什么有了malloc还要posix_memalign：</p>
+
+<ul>
+  <li>更严格的对齐， malloc返回一个指针（内存已经对齐），这样就基本可以和任何元类型一起使用（常见的是8 byte对齐），但当你需要其他的边界对齐的时候(4k对齐，操作磁盘之类的)</li>
+</ul>
+
+<p>还有一个问题是最近的体系结构中，cpu读一次缓存(cache line)一般是64 char。所以这种时候其实还得注意下一个结构体的大小，之前PHP中的hashtable从74-&gt;56，但是提升巨大，多半都是从这里来的</p>]]></content><author><name>simon</name></author><category term="lab" /><summary type="html"><![CDATA[CS144-Lab Note-1]]></summary></entry><entry><title type="html">CS144-Note0</title><link href="http://localhost:4000/simomhancrew/lab/2023-05-07-CS144-day0.html" rel="alternate" type="text/html" title="CS144-Note0" /><published>2023-05-07T00:00:00+08:00</published><updated>2023-05-07T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/lab/CS144-day0</id><content type="html" xml:base="http://localhost:4000/simomhancrew/lab/2023-05-07-CS144-day0.html"><![CDATA[<h2 id="cs144-lab-note-0">CS144-Lab Note-0</h2>
+
+<p>CS144 Code Reading Note， QAQ</p>
+
+<h3 id="0-socket地址">0. socket地址</h3>
+
+<p>通用地址<code class="language-plaintext highlighter-rouge">sockaddr</code>, sa_data里把ip和port都混在一起，<code class="language-plaintext highlighter-rouge">sockaddr_in</code>把port和ip分开存。
+sa_data一共是14个byte，sockaddr_in中包含sin_port(uint16_t:2 byte),in_addr(实际是一个int：4 byte)， 还有8个char做padding(unused)。sa_family一般是2字节(short int)</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">in_addr</span><span class="p">{</span>
+  <span class="n">In_addr_t</span> <span class="n">s_addr</span><span class="p">;</span> <span class="c1">// actually  int</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>另外还需要注意端序的问题，sin_port和sin_addr都必须是网络字节序（NBO），一般可视化的数字都是主机字节序(HBO), 所以不得不提一下<code class="language-plaintext highlighter-rouge">htons()</code>(host to net, 端口号由主机字节序转换为网络序)和<code class="language-plaintext highlighter-rouge">inet_addr()</code></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;netinet/in.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">fd</span><span class="p">;</span>
+  <span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">addrs</span><span class="p">;</span>
+
+  <span class="n">fd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span><span class="n">SOCK_STREAM</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="n">bzero</span><span class="p">(</span><span class="o">&amp;</span><span class="n">addrs</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">addrs</span><span class="p">));</span> 
+  <span class="n">addrs</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span> 
+  <span class="n">addrs</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="mi">443</span><span class="p">);</span>
+  <span class="n">addrs</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">"127.0.0.1"</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">inet_ntoa</span><span class="p">(</span><span class="n">addrs</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span><span class="p">));</span>
+  <span class="n">bind</span><span class="p">(</span><span class="n">fd</span><span class="p">,(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addrs</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="p">);</span> 
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>sockaddr常用于bind、connect、recvfrom、sendto等函数的参数，指明地址信息，是一种通用的套接字地址。</p>
+
+<p>我的理解是sockaddr_in是给人用的，sockaddr是类似于标准</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* POSIX.1g specifies this type name for the `sa_family' member.  */</span>
+<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">short</span> <span class="kt">int</span> <span class="n">sa_family_t</span><span class="p">;</span>
+
+<span class="cm">/* This macro is used to declare the initial common members
+   of the data types used for socket addresses, `struct sockaddr',
+   `struct sockaddr_in', `struct sockaddr_un', etc.  */</span>
+<span class="cp">#define	__SOCKADDR_COMMON(sa_prefix) \
+  sa_family_t sa_prefix##family
+</span>
+<span class="c1">// 16 byte</span>
+<span class="cm">/* Structure describing a generic socket address.  */</span>
+<span class="k">struct</span> <span class="n">sockaddr</span> <span class="p">{</span>
+  <span class="n">__SOCKADDR_COMMON</span> <span class="p">(</span><span class="n">sa_</span><span class="p">);</span>	<span class="cm">/* Common data: address family and length.  */</span>
+  <span class="kt">char</span> <span class="n">sa_data</span><span class="p">[</span><span class="mi">14</span><span class="p">];</span>		<span class="cm">/* Address data.  */</span>
+<span class="p">};</span>
+
+<span class="c1">// 128 byte</span>
+<span class="cm">/* Structure large enough to hold any socket address (with the historical
+   exception of AF_UNIX).  */</span>
+<span class="cp">#define __ss_aligntype	unsigned long int
+#define _SS_PADSIZE \ // = 128 - 2 - 4 
+</span>  <span class="p">(</span><span class="n">_SS_SIZE</span> <span class="o">-</span> <span class="n">__SOCKADDR_COMMON_SIZE</span> <span class="o">-</span> <span class="k">sizeof</span> <span class="p">(</span><span class="n">__ss_aligntype</span><span class="p">))</span>
+<span class="k">struct</span> <span class="n">sockaddr_storage</span> <span class="p">{</span>
+  <span class="n">__SOCKADDR_COMMON</span> <span class="p">(</span><span class="n">ss_</span><span class="p">);</span>	<span class="cm">/* Address family, etc.  */</span> <span class="c1">// 2 </span>
+  <span class="kt">char</span> <span class="n">__ss_padding</span><span class="p">[</span><span class="n">_SS_PADSIZE</span><span class="p">];</span> <span class="c1">// 126 </span>
+  <span class="n">__ss_aligntype</span> <span class="n">__ss_align</span><span class="p">;</span>	<span class="cm">/* Force desired alignment.  */</span> <span class="c1">//4</span>
+<span class="p">};</span>
+
+<span class="cm">/* Structure describing an Internet socket address.  */</span>
+<span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="p">{</span>
+  <span class="n">__SOCKADDR_COMMON</span> <span class="p">(</span><span class="n">sin_</span><span class="p">);</span>
+  <span class="n">in_port_t</span> <span class="n">sin_port</span><span class="p">;</span>			<span class="cm">/* Port number.  */</span>
+  <span class="k">struct</span> <span class="n">in_addr</span> <span class="n">sin_addr</span><span class="p">;</span>		<span class="cm">/* Internet address.  */</span>
+
+  <span class="cm">/* Pad to size of `struct sockaddr'.  */</span>
+  <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">sin_zero</span><span class="p">[</span><span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="p">)</span> <span class="o">-</span>
+        <span class="n">__SOCKADDR_COMMON_SIZE</span> <span class="o">-</span>
+        <span class="k">sizeof</span> <span class="p">(</span><span class="n">in_port_t</span><span class="p">)</span> <span class="o">-</span>
+        <span class="k">sizeof</span> <span class="p">(</span><span class="k">struct</span> <span class="n">in_addr</span><span class="p">)];</span>
+<span class="p">};</span>
+
+
+<span class="c1">// 28 char</span>
+<span class="k">struct</span> <span class="n">sockaddr_in6</span> <span class="p">{</span>
+    <span class="n">sa_family_t</span> <span class="n">sin6_family</span><span class="p">;</span>    <span class="cm">/* AF_INET6 */</span>
+    <span class="n">in_port_t</span> <span class="n">sin6_port</span><span class="p">;</span>        <span class="cm">/* Transport layer port # */</span>
+    <span class="kt">uint32_t</span> <span class="n">sin6_flowinfo</span><span class="p">;</span>     <span class="cm">/* IPv6 flow information */</span>
+    <span class="k">struct</span> <span class="n">in6_addr</span> <span class="n">sin6_addr</span><span class="p">;</span>  <span class="cm">/* IPv6 address */</span>
+    <span class="kt">uint32_t</span> <span class="n">sin6_scope_id</span><span class="p">;</span>     <span class="cm">/* IPv6 scope-id */</span>
+<span class="p">};</span>
+
+
+<span class="k">struct</span> <span class="n">in6_addr</span> <span class="p">{</span>
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="kt">uint8_t</span> <span class="n">u6_addr8</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+        <span class="kt">uint16_t</span> <span class="n">u6_addr16</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
+        <span class="kt">uint32_t</span> <span class="n">u6_addr32</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+    <span class="p">}</span> <span class="n">in6_u</span><span class="p">;</span> <span class="c1">// 16 </span>
+
+    <span class="cp">#define s6_addr                 in6_u.u6_addr8
+</span>    <span class="cp">#define s6_addr16               in6_u.u6_addr16
+</span>    <span class="cp">#define s6_addr32               in6_u.u6_addr32
+</span><span class="p">};</span>
+
+</code></pre></div></div>
+
+<h3 id="1-shutdown-and-close">1. shutdown and close</h3>
+
+<p>看boost的一个库里也这样做了， 先shutdown send， 然后再close，写的是elegant close tcp connection， 优雅在哪里。</p>
+
+<p>大多数情况下，tcp链接都是半关闭的，只有一个方向有传输, 完成操作之后再发一个FIN。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int close(int sockfd)
+</code></pre></div></div>
+<p>当前函数对socket执行close操作，-1失败。执行之后当前sockfd的引用计数–（socket可以被多个进程共享，fork之后引用计数++），变成0的时候就释放了(shared_ptr), 这个时候双向的流都关闭了。</p>
+
+<p>为了关闭两个方向的数据流，在数据接收方向，系统内核会将socket设置为不可读，任何读操作都会返回异常；在数据发送方向，系统内核尝试将发送缓冲区的数据发送给对端，并最后向对端发送一个FIN报文，接下来如果再对socket进行写操作会返回异常。</p>
+
+<p>如果对端没有检测到socket已关闭，仍然继续发送报文，则会收到一个RST报文。如果向这个已经收到RST的socket执行写操作，内核会发出一个SIGPIPE信号给进程，该信号的默认行为是终止进程。</p>
+
+<p>简单来讲，不优雅的关闭就是:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 你向对端发送了一个FIN，闭嘴了
+2. 对面向你发送了ACK，表示对FIN的确认
+3. 对端表示服务没结束， 我还要发，然后就发了
+4. 你的kernel知道这个socktd直接无了，向对面发送了RST，上层啥都不知道。
+
+tcp的四次挥手没有合理的结束
+</code></pre></div></div>
+
+<p>shutdown, 返回值和close同</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int shutdown(int sockfd, int howto)
+
+hotwo:
+  SHUT_RD(0)
+  SHUT_WR(1)
+  SHUT_RDWR(2)
+</code></pre></div></div>
+
+<p>针对不同的howto：</p>
+
+<ol>
+  <li>
+    <p>SHUT_RD(0)：READ当前fd被关闭，缓冲区数据丢，新的incomming丢(但是会对新来的包做ack)，对该socket进行读操作直接返回 EOF。某种意义上讲，对端不知道数据已经丢了，感觉有点意思。</p>
+  </li>
+  <li>
+    <p>SHUT_WR(1)：Write，此时其实就是半关闭状态了，这个影响是全局的，不管这个fd被fork了多少次，他们都不能写了。缓冲区的数据此时会被完全发送清空， 并且给对面发了一个FIN。再写这个FD是会报错的， 但是ack是不受影响的。总结的说就是这个都是针对应用层的shutdown， 不会影响tcp的可靠传输。</p>
+  </li>
+  <li>
+    <p>SHUT_RDWR(2): 双向关闭 = 1 + 2</p>
+  </li>
+</ol>
+
+<p>shutdown用来关闭应用层链接(所有，半关闭会发FIN)，close拿掉当前应用层的fd(当前进程)，然后去内核看看能不能释放，这也就代表他不一定发了fin。</p>
+
+<p>什么时候是发reset，什么时候发fin。可以看内核实现</p>
+
+<p>先看tcp_close</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">tcp_close</span><span class="p">(</span><span class="k">struct</span> <span class="n">sock</span> <span class="o">*</span><span class="n">sk</span><span class="p">,</span> <span class="kt">long</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">lock_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="n">__tcp_close</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">timeout</span><span class="p">);</span>
+	<span class="n">release_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="n">sock_put</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">EXPORT_SYMBOL</span><span class="p">(</span><span class="n">tcp_close</span><span class="p">);</span>
+</code></pre></div></div>
+<p>具体的__tcp_close实现</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">__tcp_close</span><span class="p">(</span><span class="k">struct</span> <span class="n">sock</span> <span class="o">*</span><span class="n">sk</span><span class="p">,</span> <span class="kt">long</span> <span class="n">timeout</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">struct</span> <span class="n">sk_buff</span> <span class="o">*</span><span class="n">skb</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">data_was_unread</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">state</span><span class="p">;</span>
+
+	<span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_shutdown</span> <span class="o">=</span> <span class="n">SHUTDOWN_MASK</span><span class="p">;</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">==</span> <span class="n">TCP_LISTEN</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">tcp_set_state</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_CLOSE</span><span class="p">);</span>
+
+		<span class="cm">/* Special case. */</span>
+		<span class="n">inet_csk_listen_stop</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+		<span class="k">goto</span> <span class="n">adjudge_to_death</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/*  We need to flush the recv. buffs.  We do this only on the
+	 *  descriptor close, not protocol-sourced closes, because the
+	 *  reader process may not have drained the data yet!
+	 */</span>
+	<span class="k">while</span> <span class="p">((</span><span class="n">skb</span> <span class="o">=</span> <span class="n">__skb_dequeue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_receive_queue</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">u32</span> <span class="n">len</span> <span class="o">=</span> <span class="n">TCP_SKB_CB</span><span class="p">(</span><span class="n">skb</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">end_seq</span> <span class="o">-</span> <span class="n">TCP_SKB_CB</span><span class="p">(</span><span class="n">skb</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">seq</span><span class="p">;</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">TCP_SKB_CB</span><span class="p">(</span><span class="n">skb</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tcp_flags</span> <span class="o">&amp;</span> <span class="n">TCPHDR_FIN</span><span class="p">)</span>
+			<span class="n">len</span><span class="o">--</span><span class="p">;</span>
+		<span class="n">data_was_unread</span> <span class="o">+=</span> <span class="n">len</span><span class="p">;</span>
+		<span class="n">__kfree_skb</span><span class="p">(</span><span class="n">skb</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">sk_mem_reclaim</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+	<span class="cm">/* If socket has been already reset (e.g. in tcp_reset()) - kill it. */</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">==</span> <span class="n">TCP_CLOSE</span><span class="p">)</span>
+		<span class="k">goto</span> <span class="n">adjudge_to_death</span><span class="p">;</span>
+
+	<span class="cm">/* As outlined in RFC 2525, section 2.17, we send a RST here because
+	 * data was lost. To witness the awful effects of the old behavior of
+	 * always doing a FIN, run an older 2.1.x kernel or 2.0.x, start a bulk
+	 * GET in an FTP client, suspend the process, wait for the client to
+	 * advertise a zero window, then kill -9 the FTP client, wheee...
+	 * Note: timeout is always zero in such a case.
+	 */</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">tcp_sk</span><span class="p">(</span><span class="n">sk</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">repair</span><span class="p">))</span> <span class="p">{</span>
+		<span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_prot</span><span class="o">-&gt;</span><span class="n">disconnect</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">data_was_unread</span><span class="p">)</span> <span class="p">{</span>
+		<span class="cm">/* Unread data was tossed, zap the connection. */</span>
+		<span class="n">NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">LINUX_MIB_TCPABORTONCLOSE</span><span class="p">);</span>
+		<span class="n">tcp_set_state</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_CLOSE</span><span class="p">);</span>
+		<span class="n">tcp_send_active_reset</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_allocation</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sock_flag</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">SOCK_LINGER</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_lingertime</span><span class="p">)</span> <span class="p">{</span>
+		<span class="cm">/* Check zero linger _after_ checking for unread data. */</span>
+		<span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_prot</span><span class="o">-&gt;</span><span class="n">disconnect</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+		<span class="n">NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">LINUX_MIB_TCPABORTONDATA</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">tcp_close_state</span><span class="p">(</span><span class="n">sk</span><span class="p">))</span> <span class="p">{</span>
+		<span class="cm">/* We FIN if the application ate all the data before
+		 * zapping the connection.
+		 */</span>
+
+		<span class="cm">/* RED-PEN. Formally speaking, we have broken TCP state
+		 * machine. State transitions:
+		 *
+		 * TCP_ESTABLISHED -&gt; TCP_FIN_WAIT1
+		 * TCP_SYN_RECV	-&gt; TCP_FIN_WAIT1 (forget it, it's impossible)
+		 * TCP_CLOSE_WAIT -&gt; TCP_LAST_ACK
+		 *
+		 * are legal only when FIN has been sent (i.e. in window),
+		 * rather than queued out of window. Purists blame.
+		 *
+		 * F.e. "RFC state" is ESTABLISHED,
+		 * if Linux state is FIN-WAIT-1, but FIN is still not sent.
+		 *
+		 * The visible declinations are that sometimes
+		 * we enter time-wait state, when it is not required really
+		 * (harmless), do not send active resets, when they are
+		 * required by specs (TCP_ESTABLISHED, TCP_CLOSE_WAIT, when
+		 * they look as CLOSING or LAST_ACK for Linux)
+		 * Probably, I missed some more holelets.
+		 * 						--ANK
+		 * XXX (TFO) - To start off we don't support SYN+ACK+FIN
+		 * in a single packet! (May consider it later but will
+		 * probably need API support or TCP_CORK SYN-ACK until
+		 * data is written and socket is closed.)
+		 */</span>
+		<span class="n">tcp_send_fin</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">sk_stream_wait_close</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">timeout</span><span class="p">);</span>
+
+<span class="nl">adjudge_to_death:</span>
+	<span class="n">state</span> <span class="o">=</span> <span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span><span class="p">;</span>
+	<span class="n">sock_hold</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="n">sock_orphan</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+	<span class="n">local_bh_disable</span><span class="p">();</span>
+	<span class="n">bh_lock_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="cm">/* remove backlog if any, without releasing ownership. */</span>
+	<span class="n">__release_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+	<span class="n">this_cpu_inc</span><span class="p">(</span><span class="n">tcp_orphan_count</span><span class="p">);</span>
+
+	<span class="cm">/* Have we already been destroyed by a softirq or backlog? */</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">state</span> <span class="o">!=</span> <span class="n">TCP_CLOSE</span> <span class="o">&amp;&amp;</span> <span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">==</span> <span class="n">TCP_CLOSE</span><span class="p">)</span>
+		<span class="k">goto</span> <span class="n">out</span><span class="p">;</span>
+
+	<span class="cm">/*	This is a (useful) BSD violating of the RFC. There is a
+	 *	problem with TCP as specified in that the other end could
+	 *	keep a socket open forever with no application left this end.
+	 *	We use a 1 minute timeout (about the same as BSD) then kill
+	 *	our end. If they send after that then tough - BUT: long enough
+	 *	that we won't make the old 4*rto = almost no time - whoops
+	 *	reset mistake.
+	 *
+	 *	Nope, it was not mistake. It is really desired behaviour
+	 *	f.e. on http servers, when such sockets are useless, but
+	 *	consume significant resources. Let's do it with special
+	 *	linger2	option.					--ANK
+	 */</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">==</span> <span class="n">TCP_FIN_WAIT2</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">struct</span> <span class="n">tcp_sock</span> <span class="o">*</span><span class="n">tp</span> <span class="o">=</span> <span class="n">tcp_sk</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">tp</span><span class="o">-&gt;</span><span class="n">linger2</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">tcp_set_state</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_CLOSE</span><span class="p">);</span>
+			<span class="n">tcp_send_active_reset</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">GFP_ATOMIC</span><span class="p">);</span>
+			<span class="n">__NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span>
+					<span class="n">LINUX_MIB_TCPABORTONLINGER</span><span class="p">);</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">tmo</span> <span class="o">=</span> <span class="n">tcp_fin_time</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="n">tmo</span> <span class="o">&gt;</span> <span class="n">TCP_TIMEWAIT_LEN</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">inet_csk_reset_keepalive_timer</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span>
+						<span class="n">tmo</span> <span class="o">-</span> <span class="n">TCP_TIMEWAIT_LEN</span><span class="p">);</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="n">tcp_time_wait</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_FIN_WAIT2</span><span class="p">,</span> <span class="n">tmo</span><span class="p">);</span>
+				<span class="k">goto</span> <span class="n">out</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">!=</span> <span class="n">TCP_CLOSE</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">sk_mem_reclaim</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">tcp_check_oom</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+			<span class="n">tcp_set_state</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_CLOSE</span><span class="p">);</span>
+			<span class="n">tcp_send_active_reset</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">GFP_ATOMIC</span><span class="p">);</span>
+			<span class="n">__NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span>
+					<span class="n">LINUX_MIB_TCPABORTONMEMORY</span><span class="p">);</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">check_net</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">)))</span> <span class="p">{</span>
+			<span class="cm">/* Not possible to send reset; just close */</span>
+			<span class="n">tcp_set_state</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">TCP_CLOSE</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_state</span> <span class="o">==</span> <span class="n">TCP_CLOSE</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">struct</span> <span class="n">request_sock</span> <span class="o">*</span><span class="n">req</span><span class="p">;</span>
+
+		<span class="n">req</span> <span class="o">=</span> <span class="n">rcu_dereference_protected</span><span class="p">(</span><span class="n">tcp_sk</span><span class="p">(</span><span class="n">sk</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">fastopen_rsk</span><span class="p">,</span>
+						<span class="n">lockdep_sock_is_held</span><span class="p">(</span><span class="n">sk</span><span class="p">));</span>
+		<span class="cm">/* We could get here with a non-NULL req if the socket is
+		 * aborted (e.g., closed with unread data) before 3WHS
+		 * finishes.
+		 */</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="p">)</span>
+			<span class="n">reqsk_fastopen_remove</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+		<span class="n">inet_csk_destroy_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="cm">/* Otherwise, socket is reprieved until protocol close. */</span>
+
+<span class="nl">out:</span>
+	<span class="n">bh_unlock_sock</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="n">local_bh_enable</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>不难发现，close的时候内核会尝试挥手，但如果接收缓冲区还有数据，就会发送一个active reset。这个时候整个connection就是不可靠的。</p>
+
+<p>然后tcp close的时候，也不会清空发送缓冲区，只是在tail置一个FIN flag，这些数据包应该还是会被交付的，前提与上述相同，connection是可靠的。</p>
+
+<p>可以看下两个关于tcp fin和tcp reset的函数：</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">tcp_send_fin</span><span class="p">(</span><span class="k">struct</span> <span class="n">sock</span> <span class="o">*</span><span class="n">sk</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">struct</span> <span class="n">sk_buff</span> <span class="o">*</span><span class="n">skb</span><span class="p">,</span> <span class="o">*</span><span class="n">tskb</span><span class="p">,</span> <span class="o">*</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tcp_write_queue_tail</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+	<span class="k">struct</span> <span class="n">tcp_sock</span> <span class="o">*</span><span class="n">tp</span> <span class="o">=</span> <span class="n">tcp_sk</span><span class="p">(</span><span class="n">sk</span><span class="p">);</span>
+
+	<span class="cm">/* Optimization, tack on the FIN if we have one skb in write queue and
+	 * this skb was not yet sent, or we are under memory pressure.
+	 * Note: in the latter case, FIN packet will be sent after a timeout,
+	 * as TCP stack thinks it has already been transmitted.
+	 */</span>
+	<span class="n">tskb</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">tskb</span> <span class="o">&amp;&amp;</span> <span class="n">tcp_under_memory_pressure</span><span class="p">(</span><span class="n">sk</span><span class="p">))</span>
+		<span class="n">tskb</span> <span class="o">=</span> <span class="n">skb_rb_last</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sk</span><span class="o">-&gt;</span><span class="n">tcp_rtx_queue</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">tskb</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">TCP_SKB_CB</span><span class="p">(</span><span class="n">tskb</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">tcp_flags</span> <span class="o">|=</span> <span class="n">TCPHDR_FIN</span><span class="p">;</span>
+		<span class="n">TCP_SKB_CB</span><span class="p">(</span><span class="n">tskb</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">end_seq</span><span class="o">++</span><span class="p">;</span>
+		<span class="n">tp</span><span class="o">-&gt;</span><span class="n">write_seq</span><span class="o">++</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">tail</span><span class="p">)</span> <span class="p">{</span>
+			<span class="cm">/* This means tskb was already sent.
+			 * Pretend we included the FIN on previous transmit.
+			 * We need to set tp-&gt;snd_nxt to the value it would have
+			 * if FIN had been sent. This is because retransmit path
+			 * does not change tp-&gt;snd_nxt.
+			 */</span>
+			<span class="n">WRITE_ONCE</span><span class="p">(</span><span class="n">tp</span><span class="o">-&gt;</span><span class="n">snd_nxt</span><span class="p">,</span> <span class="n">tp</span><span class="o">-&gt;</span><span class="n">snd_nxt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="n">skb</span> <span class="o">=</span> <span class="n">alloc_skb_fclone</span><span class="p">(</span><span class="n">MAX_TCP_HEADER</span><span class="p">,</span> <span class="n">sk</span><span class="o">-&gt;</span><span class="n">sk_allocation</span><span class="p">);</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="o">!</span><span class="n">skb</span><span class="p">))</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="n">INIT_LIST_HEAD</span><span class="p">(</span><span class="o">&amp;</span><span class="n">skb</span><span class="o">-&gt;</span><span class="n">tcp_tsorted_anchor</span><span class="p">);</span>
+		<span class="n">skb_reserve</span><span class="p">(</span><span class="n">skb</span><span class="p">,</span> <span class="n">MAX_TCP_HEADER</span><span class="p">);</span>
+		<span class="n">sk_forced_mem_schedule</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">skb</span><span class="o">-&gt;</span><span class="n">truesize</span><span class="p">);</span>
+		<span class="cm">/* FIN eats a sequence byte, write_seq advanced by tcp_queue_skb(). */</span>
+		<span class="n">tcp_init_nondata_skb</span><span class="p">(</span><span class="n">skb</span><span class="p">,</span> <span class="n">tp</span><span class="o">-&gt;</span><span class="n">write_seq</span><span class="p">,</span>
+				     <span class="n">TCPHDR_ACK</span> <span class="o">|</span> <span class="n">TCPHDR_FIN</span><span class="p">);</span>
+		<span class="n">tcp_queue_skb</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">skb</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">__tcp_push_pending_frames</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">tcp_current_mss</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">TCP_NAGLE_OFF</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+<p>关于tcp send reset函数</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* We get here when a process closes a file descriptor (either due to
+ * an explicit close() or as a byproduct of exit()'ing) and there
+ * was unread data in the receive queue.  This behavior is recommended
+ * by RFC 2525, section 2.17.  -DaveM
+ */</span>
+<span class="kt">void</span> <span class="nf">tcp_send_active_reset</span><span class="p">(</span><span class="k">struct</span> <span class="n">sock</span> <span class="o">*</span><span class="n">sk</span><span class="p">,</span> <span class="n">gfp_t</span> <span class="n">priority</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">struct</span> <span class="n">sk_buff</span> <span class="o">*</span><span class="n">skb</span><span class="p">;</span>
+
+	<span class="n">TCP_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">TCP_MIB_OUTRSTS</span><span class="p">);</span>
+
+	<span class="cm">/* NOTE: No TCP options attached and we never retransmit this. */</span>
+	<span class="n">skb</span> <span class="o">=</span> <span class="n">alloc_skb</span><span class="p">(</span><span class="n">MAX_TCP_HEADER</span><span class="p">,</span> <span class="n">priority</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">skb</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">LINUX_MIB_TCPABORTFAILED</span><span class="p">);</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/* Reserve space for headers and prepare control bits. */</span>
+	<span class="n">skb_reserve</span><span class="p">(</span><span class="n">skb</span><span class="p">,</span> <span class="n">MAX_TCP_HEADER</span><span class="p">);</span>
+	<span class="n">tcp_init_nondata_skb</span><span class="p">(</span><span class="n">skb</span><span class="p">,</span> <span class="n">tcp_acceptable_seq</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span>
+			     <span class="n">TCPHDR_ACK</span> <span class="o">|</span> <span class="n">TCPHDR_RST</span><span class="p">);</span>
+	<span class="n">tcp_mstamp_refresh</span><span class="p">(</span><span class="n">tcp_sk</span><span class="p">(</span><span class="n">sk</span><span class="p">));</span>
+	<span class="cm">/* Send it off. */</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">tcp_transmit_skb</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="n">skb</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">priority</span><span class="p">))</span>
+		<span class="n">NET_INC_STATS</span><span class="p">(</span><span class="n">sock_net</span><span class="p">(</span><span class="n">sk</span><span class="p">),</span> <span class="n">LINUX_MIB_TCPABORTFAILED</span><span class="p">);</span>
+
+	<span class="cm">/* skb of trace_tcp_send_reset() keeps the skb that caused RST,
+	 * skb here is different to the troublesome skb, so use NULL
+	 */</span>
+	<span class="n">trace_tcp_send_reset</span><span class="p">(</span><span class="n">sk</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>simon</name></author><category term="lab" /><summary type="html"><![CDATA[CS144-Lab Note-0]]></summary></entry><entry><title type="html">Ubuntu18.04下安装高版本gcc并处理版本控制</title><link href="http://localhost:4000/simomhancrew/2023-05-02-UbuntuPpa.html" rel="alternate" type="text/html" title="Ubuntu18.04下安装高版本gcc并处理版本控制" /><published>2023-05-02T00:00:00+08:00</published><updated>2023-05-02T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/UbuntuPpa</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2023-05-02-UbuntuPpa.html"><![CDATA[<h2 id="ubuntu1804">Ubuntu18.04</h2>
+
+<p>在这个发行版下默认的安装gcc版本是7.50的，但在做cs144的时候发现他的cmake里写死的gcc支持就在gcc-8以上了，如果不改cmake代码的话，就只能手动安装更高版本的gcc了。详细的gcc关于c++的特性支持可以看<a href="https://gcc.gnu.org/projects/cxx-status.html">cxx-status</a>.</p>
+
+<h3 id="ppapersonal-package-archive">PPA(Personal Package Archive)</h3>
+
+<p>PPA不在Ubuntu默认的软件仓库，每个Ubuntu都有自己的四个官方App Repo</p>
+
+<ul>
+  <li>Main - Canonical 支持的自由开源软件。</li>
+  <li>Universe - 社区维护的自由开源软件。</li>
+  <li>Restricted - 设备的专有驱动程序。</li>
+  <li>Multiverse - 受版权或法律问题限制的软件。</li>
+</ul>
+
+<p>比如<a href="http://archive.ubuntu.com/ubuntu/dists/">/ubuntu/dists</a>就可以看到所有发行过的ubuntu版本的所有的仓库。</p>
+
+<p>PPA其实只是一个类似做存储的网址，可以使用PPA源获取到不在官方源里的软件。</p>
+
+<p>这里还有一份详细的<a href="https://itsfoss.com/apt-command-guide/">Apt使用指南</a>, 可以做进一步的阅读。</p>
+
+<h3 id="使用ppa并换源">使用PPA并换源</h3>
+
+<p>这里以安装更高版本的gcc为例, 12.10以上的系统<code class="language-plaintext highlighter-rouge">add-apt-repository</code>是由<code class="language-plaintext highlighter-rouge">software-properties-common</code>提供的，所以需要提前安装， 12.04和以下的系统， 需要安装<code class="language-plaintext highlighter-rouge">python-software-properties</code>。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common 
+<span class="c"># sudo apt-get install python-software-properties</span>
+<span class="nb">sudo </span>add-apt-repository ppa:ubuntu-toolchain-r/test
+<span class="nb">sudo </span>apt update
+</code></pre></div></div>
+<p>如果要删除当前源, 进入<code class="language-plaintext highlighter-rouge">cd /etc/apt/sources.list.d</code>删除相应的PPA既可。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /etc/apt/sources.list.d/
+</code></pre></div></div>
+
+<p>另外很多PPA的连接稳定性很差，所以换源是十分必要的，比如，针对<code class="language-plaintext highlighter-rouge">ubuntu-toolchain-r-ubuntu-test-bionic.list</code>, 简单的把<code class="language-plaintext highlighter-rouge">http://ppa.launchpad.net</code>换成下面的样子就可以了。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb https://launchpad.proxy.ustclug.org/ubuntu-toolchain-r/test/ubuntu bionic main
+<span class="c"># deb-src https://launchpad.proxy.ustclug.org/ubuntu-toolchain-r/test/ubuntu bionic main</span>
+</code></pre></div></div>
+
+<h3 id="安装gcc-11并配置版本控制">安装GCC-11并配置版本控制</h3>
+
+<p>安装完gcc之后， 可以将其用update-alternatives管理起来,其实就是<a href="https://en.wikipedia.org/wiki/Symbolic_link">符号链接</a>的管理</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>gcc-11 g++-11
+<span class="nb">sudo </span>update-alternatives <span class="nt">--install</span> /usr/bin/gcc gcc /usr/bin/gcc-11 90 <span class="nt">--slave</span> /usr/bin/g++ g++ /usr/bin/g++-11
+<span class="nb">sudo </span>update-alternatives <span class="nt">--install</span> /usr/bin/gcc gcc /usr/bin/gcc-7 40 <span class="nt">--slave</span> /usr/bin/g++ g++ /usr/bin/g++-7
+</code></pre></div></div>
+
+<p>如果要配置gcc的默认版本的话</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>update-alternatives <span class="nt">--config</span> gcc
+</code></pre></div></div>
+
+<p>如果要移除某个版本的话</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># --remove &lt;name&gt; &lt;path&gt;</span>
+<span class="nb">sudo </span>update-alternatives <span class="nt">--remove</span> gcc /usr/bin/gcc-7
+</code></pre></div></div>
+
+<h3 id="ref">Ref</h3>
+
+<ol>
+  <li><a href="https://www.sysgeek.cn/ubuntu-install-gcc-compiler/#:~:text=%E5%9C%A8Ubuntu%2018.04%E4%B8%AD%E5%AE%89%E8%A3%85GCC%E7%BC%96%E8%AF%91%E5%99%A8%20%E9%BB%98%E8%AE%A4%E7%9A%84%20Ubuntu%20%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E5%90%8D%E4%B8%BA%20build-essential%20%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E9%9B%86%E5%90%88%EF%BC%8C%E5%AE%83%E5%8C%85%E5%90%AB%E4%BA%86%20GCC,%E6%82%A8%E5%8F%AA%E9%9C%80%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%9C%A8%20Ubuntu%2018.04%20%E4%B8%AD%E5%AE%89%E8%A3%85%20GCC%20%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%9A%201%20%E5%9C%A8%E3%80%8C%E7%BB%88%E7%AB%AF%E3%80%8D%E4%B8%AD%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E5%8C%85%E5%88%97%E8%A1%A8%EF%BC%9A">如何在 Ubuntu 18.04 LTS 系统中安装多版本 GCC 编译器</a></li>
+</ol>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[Ubuntu18.04]]></summary></entry><entry><title type="html">Lambda的capture变量的声明周期</title><link href="http://localhost:4000/simomhancrew/2023-03-10-LambdaCapture.html" rel="alternate" type="text/html" title="Lambda的capture变量的声明周期" /><published>2023-03-10T00:00:00+08:00</published><updated>2023-03-10T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/LambdaCapture</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2023-03-10-LambdaCapture.html"><![CDATA[<h3 id="lambda的生命周期">Lambda的生命周期</h3>
+
+<p>正常来讲， lambda的所capture的值如果是引用的话， 需要注意一下生命周期的问题。</p>
+
+<p>保证lambda不要获得比这些引用捕获的值长。</p>
+
+<p>在debug一次crash的时候， 发现了一个和lambda生命周期有关的bug</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[weak_ptr_, cb](int, vector&lt;string&gt;) {
+  if (cb)  {
+    cb(); // 这个cb可能会设置这个lambda为nullptr
+  }
+  weak_ptr_.lock();
+  ...
+}
+</code></pre></div></div>
+<p>这个lambda是被保存在一个对象的function中的， 在cb执行中，可能导致这个lambda的function被置为nullptr。 比较trick的是， 这个function被置为nullptr之后，*this没有意义了， 开始析构， 当前lambda所捕获的变量就会被销毁， 所以后续执行到的跟捕获有关的代码， 都是heap use after free的。</p>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[Lambda的生命周期]]></summary></entry><entry><title type="html">Oberserver</title><link href="http://localhost:4000/simomhancrew/2022-10-29-Observer.html" rel="alternate" type="text/html" title="Oberserver" /><published>2022-10-29T00:00:00+08:00</published><updated>2022-10-29T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/Observer</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-10-29-Observer.html"><![CDATA[<h2 id="观察者模式">观察者模式</h2>
+
+<p>观察者模式在我司SDK中也被大量使用，而且我发现其实大家是没有区分observer和vistor的差异
+把observer当vistor用。</p>
+
+<p>observer主要建立了一种通知依赖关系，当对象A的状态发生改变的时候，需要通知到B
+如果这样的依赖过于紧密，整体的构架就比较死板。比较难复用</p>
+
+<p>观察者模式的好处就是目标发送通知的时候，不用去指定一个具体的观察者，通知会自动传播
+观察者自己决定是不是需要订阅通知。目标对象对这个其实是一无所知的</p>
+
+<p>对于UI框架来说，这个可能见的更多,因此以进度条为例</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppendFile</span><span class="p">{</span>
+ <span class="nl">public:</span>
+  <span class="n">string</span> <span class="n">file_path_</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">ProgressBar</span><span class="o">&gt;</span> <span class="n">bar_</span><span class="p">;</span>
+  <span class="n">AppendFile</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">ProgressBar</span><span class="o">*</span> <span class="n">bar</span><span class="p">)</span><span class="o">:</span>
+  <span class="n">file_path_</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">bar_</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">bar</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">Append</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 写文件</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">truck</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">trunk</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">append</span><span class="p">(...);</span>
+      <span class="n">progress</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">trunk</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+      <span class="n">bar_</span><span class="o">-&gt;</span><span class="n">Set</span><span class="p">(</span><span class="n">progress</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">UI</span> <span class="p">{</span>
+<span class="nl">public:</span>
+  <span class="n">ProgressBar</span> <span class="n">bar_</span><span class="p">;</span>
+
+  <span class="kt">void</span> <span class="n">Save</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="p">...;</span>
+    <span class="n">AppendFile</span> <span class="n">file</span><span class="p">;</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">Append</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>如果Save有更多的操作逻辑， 就得一个个的实现。然后在save里疯狂加增加的逻辑。</p>
+
+<p>考虑使用observer</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 具体触发事件执行的抽象， obeserver</span>
+<span class="k">class</span> <span class="nc">IProgress</span><span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">DoProgress</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">)</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">virtual</span> <span class="o">~</span><span class="n">IProgress</span><span class="p">(){}</span>
+<span class="p">};</span>
+
+
+<span class="c1">// observerable的类</span>
+<span class="k">class</span> <span class="nc">FileSplitter</span>
+<span class="p">{</span>
+	<span class="n">string</span> <span class="n">m_filePath</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">m_fileNumber</span><span class="p">;</span>
+
+	<span class="n">List</span><span class="o">&lt;</span><span class="n">IProgress</span><span class="o">*&gt;</span>  <span class="n">m_iprogressList</span><span class="p">;</span> <span class="c1">// 抽象通知机制，支持多个观察者</span>
+	
+<span class="nl">public:</span>
+	<span class="n">FileSplitter</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">filePath</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fileNumber</span><span class="p">)</span> <span class="o">:</span>
+		<span class="n">m_filePath</span><span class="p">(</span><span class="n">filePath</span><span class="p">),</span> 
+		<span class="n">m_fileNumber</span><span class="p">(</span><span class="n">fileNumber</span><span class="p">){</span>
+
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">split</span><span class="p">(){</span>
+
+		<span class="c1">//1.读取大文件</span>
+
+		<span class="c1">//2.分批次向小文件中写入</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m_fileNumber</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+			<span class="c1">//...</span>
+
+			<span class="kt">float</span> <span class="n">progressValue</span> <span class="o">=</span> <span class="n">m_fileNumber</span><span class="p">;</span>
+			<span class="n">progressValue</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">progressValue</span><span class="p">;</span>
+			<span class="n">onProgress</span><span class="p">(</span><span class="n">progressValue</span><span class="p">);</span><span class="c1">//发送通知</span>
+		<span class="p">}</span>
+
+	<span class="p">}</span>
+
+
+	<span class="kt">void</span> <span class="n">addIProgress</span><span class="p">(</span><span class="n">IProgress</span><span class="o">*</span> <span class="n">iprogress</span><span class="p">){</span>
+		<span class="n">m_iprogressList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">iprogress</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">removeIProgress</span><span class="p">(</span><span class="n">IProgress</span><span class="o">*</span> <span class="n">iprogress</span><span class="p">){</span>
+		<span class="n">m_iprogressList</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">iprogress</span><span class="p">);</span>
+	<span class="p">}</span>
+
+
+<span class="nl">protected:</span>
+	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">onProgress</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">){</span>
+		
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">IProgress</span><span class="o">*&gt;::</span><span class="n">iterator</span> <span class="n">itor</span><span class="o">=</span><span class="n">m_iprogressList</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+		<span class="k">while</span> <span class="p">(</span><span class="n">itor</span> <span class="o">!=</span> <span class="n">m_iprogressList</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="p">)</span>
+			<span class="p">(</span><span class="o">*</span><span class="n">itor</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">DoProgress</span><span class="p">(</span><span class="n">value</span><span class="p">);</span> <span class="c1">//更新进度条</span>
+			<span class="n">itor</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="err">}</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>这种情况下，obeserver只需要去继承Iprogress，实现自己的观察执行逻辑，并在observable上
+设置observer就可以订阅多个观察者。其实我更喜欢用函数回调的方式去做观察者。直接注入
+callback就可以完成同样的能力，只需要定义出回调的std::function接口就行。</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MainForm</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Form</span><span class="p">,</span> <span class="k">public</span> <span class="n">IProgress</span>
+<span class="p">{</span>
+	<span class="n">TextBox</span><span class="o">*</span> <span class="n">txtFilePath</span><span class="p">;</span>
+	<span class="n">TextBox</span><span class="o">*</span> <span class="n">txtFileNumber</span><span class="p">;</span>
+
+	<span class="n">ProgressBar</span><span class="o">*</span> <span class="n">progressBar</span><span class="p">;</span>
+
+<span class="nl">public:</span>
+	<span class="kt">void</span> <span class="n">Button1_Click</span><span class="p">(){</span>
+
+		<span class="n">string</span> <span class="n">filePath</span> <span class="o">=</span> <span class="n">txtFilePath</span><span class="o">-&gt;</span><span class="n">getText</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">txtFileNumber</span><span class="o">-&gt;</span><span class="n">getText</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+
+		<span class="n">ConsoleNotifier</span> <span class="n">cn</span><span class="p">;</span>
+
+		<span class="n">FileSplitter</span> <span class="n">splitter</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+
+		<span class="n">splitter</span><span class="p">.</span><span class="n">addIProgress</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">//订阅通知</span>
+		<span class="n">splitter</span><span class="p">.</span><span class="n">addIProgress</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cn</span><span class="p">)</span><span class="err">；</span> <span class="c1">//订阅通知</span>
+
+		<span class="n">splitter</span><span class="p">.</span><span class="n">split</span><span class="p">();</span>
+
+		<span class="n">splitter</span><span class="p">.</span><span class="n">removeIProgress</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+	<span class="p">}</span>
+
+	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">DoProgress</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">){</span>
+		<span class="n">progressBar</span><span class="o">-&gt;</span><span class="n">setValue</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ConsoleNotifier</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IProgress</span> <span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="k">virtual</span> <span class="kt">void</span> <span class="n">DoProgress</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">){</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"."</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+
+
+</code></pre></div></div>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[观察者模式]]></summary></entry><entry><title type="html">工厂模式</title><link href="http://localhost:4000/simomhancrew/2022-10-28-Factory.html" rel="alternate" type="text/html" title="工厂模式" /><published>2022-10-28T00:00:00+08:00</published><updated>2022-10-28T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/Factory</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-10-28-Factory.html"><![CDATA[<h2 id="工场模式">工场模式</h2>
+
+<p>将使用者和具体类型之间的耦合隔离。面对一个经常可能变化的类型，过紧的耦合可能导致
+整体的关系脆弱。</p>
+
+<p>factory method将创建具体的类延迟到了子类，从而实现了扩展，解决了耦合的关系。缺点在于
+要求创建方法和参数相同</p>
+
+<p>比如说现在有一个划分器的需求，针对不同的类别需要不同的划分器.假设一个回调需要一个
+spliter，就可以如下实现</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ISplitter</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">split</span><span class="p">()</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">ISplitter</span><span class="p">(){}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BinarySplitter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TxtSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">PictureSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VideoSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">EventCallback</span><span class="p">{</span>
+  <span class="n">AbstractFd</span> <span class="n">fd_</span><span class="p">;</span>
+ <span class="nl">public:</span>
+  <span class="kt">void</span> <span class="n">OnConnectCallback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 这里就严重依赖到具体的类</span>
+    <span class="n">Isplitter</span><span class="o">*</span> <span class="n">split</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BinarySplitter</span><span class="p">();</span>
+    <span class="n">spliter</span><span class="o">-&gt;</span><span class="n">Split</span><span class="p">(</span><span class="n">fd_</span><span class="p">);</span>    
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>加入abstract fd不断的变得话，这里得代码就不太好写。此时考虑加入factorymethod</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">ISplitter</span> <span class="p">{</span>
+  <span class="k">virtual</span> <span class="n">ISplitter</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">ISplitter</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">SplitterFactory</span> <span class="p">{</span>
+  <span class="k">virtual</span> <span class="n">ISplitter</span><span class="o">*</span> <span class="n">CreateSplitter</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">virtual</span> <span class="o">~</span><span class="n">SplitterFactory</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>针对具体的类，可以继承ISplitter,完成concret Class</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BinarySplitter</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TxtSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">PictureSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VideoSplitter</span><span class="o">:</span> <span class="k">public</span> <span class="n">ISplitter</span><span class="p">{</span>
+    
+<span class="p">};</span>
+
+<span class="c1">// 具体工厂</span>
+<span class="k">class</span> <span class="nc">BinarySplitterFactory</span><span class="o">:</span> <span class="k">public</span> <span class="n">SplitterFactory</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="n">ISplitter</span><span class="o">*</span> <span class="n">CreateSplitter</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">BinarySplitter</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TxtSplitterFactory</span><span class="o">:</span> <span class="k">public</span> <span class="n">SplitterFactory</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="n">ISplitter</span><span class="o">*</span> <span class="n">CreateSplitter</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">TxtSplitter</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">PictureSplitterFactory</span><span class="o">:</span> <span class="k">public</span> <span class="n">SplitterFactory</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="n">ISplitter</span><span class="o">*</span> <span class="n">CreateSplitter</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">PictureSplitter</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VideoSplitterFactory</span><span class="o">:</span> <span class="k">public</span> <span class="n">SplitterFactory</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="n">ISplitter</span><span class="o">*</span> <span class="n">CreateSplitter</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">VideoSplitter</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+
+</code></pre></div></div>
+
+<p>然后剩下的实现：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">EventCallback</span><span class="p">{</span>
+  <span class="n">SplitterFactory</span> <span class="n">factory_</span><span class="p">;</span>
+  <span class="n">AbstractFd</span> <span class="n">fd_</span><span class="p">;</span>
+ <span class="nl">public:</span>
+  <span class="n">EventCallback</span><span class="p">(</span><span class="n">SplitterFactory</span><span class="o">*</span> <span class="n">factory</span><span class="p">)</span><span class="o">:</span> <span class="n">factory_</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="kt">void</span> <span class="n">OnEventCallback</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Isplitter</span><span class="o">*</span> <span class="n">splitter</span> <span class="o">=</span> <span class="n">factory</span><span class="o">-&gt;</span><span class="n">CreateSplitter</span><span class="p">();</span>
+    <span class="n">splitter</span><span class="o">-&gt;</span><span class="n">Split</span><span class="p">(</span><span class="n">fd_</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div></div>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[工场模式]]></summary></entry><entry><title type="html">策略者模式</title><link href="http://localhost:4000/simomhancrew/2022-10-19-stratage.html" rel="alternate" type="text/html" title="策略者模式" /><published>2022-10-19T00:00:00+08:00</published><updated>2022-10-19T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/stratage</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-10-19-stratage.html"><![CDATA[<h2 id="策略者模式">策略者模式</h2>
+
+<h3 id="起因">起因</h3>
+
+<p>针对不同的类别，算法多样。如果按照if-else分支写，没加一个类别，就要多一个分支。修改的成本会逐渐上升。</p>
+
+<p>根据设计模式，把分类拖到运行时，找到算法中的共同点，抽象成接口</p>
+
+<h3 id="代码">代码</h3>
+
+<p>比如税法的计算, 不同的地区有不同的税法。比如说传输，不同的传输有不同的传输策略。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enum class TransportType {
+  kTcp,
+  kUdp,
+  kAut,
+  kAutPlain,
+};
+
+class Sender{
+public:
+  SendBuffer(const char* data) {
+    if (type_ == TransportType::kTcp) {
+        // send strategy ...
+    } else if ...
+    ....
+  } 
+  TransportType type_;
+};
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Class BaseTransportStratagy{
+public:
+  virtual ~BaseTransportStratagy() {}
+  virtual void SendBuffer(const char* data) = 0;
+};
+
+class TcpTransport : public BaseTransportStratagy {
+public:
+  void SendBuffer(const char* data) override; 
+};
+
+class UdpTransport : public BaseTransportStratagy {
+public:
+  void SendBuffer(const char* data) override; 
+};
+
+
+class ConcretCarrier{
+public:
+  SendBuffer(const char*); // 可以用factory method创建出具体的transport去承担传输的任务，将变化拖到运行时
+  BaseTransportStratagy* transport_;
+};
+......
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enum TaxBase {
+	CN_Tax,
+	US_Tax,
+	DE_Tax,
+	FR_Tax       //更改
+};
+
+class SalesOrder{
+    TaxBase tax;
+public:
+    double CalculateTax(){
+        //...
+        
+        if (tax == CN_Tax){
+            //CN***********
+        }
+        else if (tax == US_Tax){
+            //US***********
+        }
+        else if (tax == DE_Tax){
+            //DE***********
+        }
+		else if (tax == FR_Tax){  //更改
+			//...
+		}
+
+        //....
+     }
+    
+};
+</code></pre></div></div>
+
+<p>税法的计算都比较统一，不如把他往上提.配合工厂模式的使用，做到一套代码计算，扩展只需要额外补充plugin</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+class TaxStrategy{
+public:
+    virtual double Calculate(const Context&amp; context)=0;
+    virtual ~TaxStrategy(){}
+};
+
+
+class CNTax : public TaxStrategy{
+public:
+    virtual double Calculate(const Context&amp; context){
+        //***********
+    }
+};
+
+class USTax : public TaxStrategy{
+public:
+    virtual double Calculate(const Context&amp; context){
+        //***********
+    }
+};
+
+class DETax : public TaxStrategy{
+public:
+    virtual double Calculate(const Context&amp; context){
+        //***********
+    }
+};
+
+
+
+//扩展
+//*********************************
+class FRTax : public TaxStrategy{
+public:
+	virtual double Calculate(const Context&amp; context){
+		//.........
+	}
+};
+
+
+class SalesOrder{
+private:
+    TaxStrategy* strategy;
+
+public:
+    SalesOrder(StrategyFactory* strategyFactory){
+        this-&gt;strategy = strategyFactory-&gt;NewStrategy();
+    }
+    ~SalesOrder(){
+        delete this-&gt;strategy;
+    }
+
+    public double CalculateTax(){
+        //...
+        Context context();
+        
+        double val = 
+            strategy-&gt;Calculate(context); //多态调用
+        //...
+    }
+    
+};
+</code></pre></div></div>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[策略者模式]]></summary></entry><entry><title type="html">Logger</title><link href="http://localhost:4000/simomhancrew/2022-10-14-Logger.html" rel="alternate" type="text/html" title="Logger" /><published>2022-10-14T00:00:00+08:00</published><updated>2022-10-14T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/Logger</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-10-14-Logger.html"><![CDATA[<h2 id="logger">Logger</h2>
+
+<p>想了一下log应该具有的能力，一个log库：</p>
+
+<ol>
+  <li>
+    <p>level选择，默认info</p>
+  </li>
+  <li>
+    <p>时间戳能精确到微妙</p>
+  </li>
+  <li>
+    <p>要有__file__, <strong>func</strong>, <strong>line</strong></p>
+  </li>
+  <li>
+    <p>thread id可选，方便定位问题</p>
+  </li>
+  <li>
+    <p>流式日志，不要附近心思保持参数一致，一行一个log</p>
+  </li>
+  <li>
+    <p>自带异步模式，定义成宏调用</p>
+  </li>
+  <li>
+    <p>crash自动trace，崩溃的时候自己记录一下调用堆栈，定位到故障点。</p>
+  </li>
+  <li>
+    <p>输出支持文件和stdout.输出到网络不太靠谱，可以稍后支持</p>
+  </li>
+</ol>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[Logger]]></summary></entry><entry><title type="html">模板方法</title><link href="http://localhost:4000/simomhancrew/2022-10-12-TemplateMethod.html" rel="alternate" type="text/html" title="模板方法" /><published>2022-10-12T00:00:00+08:00</published><updated>2022-10-12T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/TemplateMethod</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-10-12-TemplateMethod.html"><![CDATA[<h2 id="template-method">Template Method</h2>
+
+<p>在软件构建的过程中，整体的步骤流程是确定的A-&gt;B-&gt;C,假设其中A和B的流程完全明确，但是B的整体流程是需要自己实现的。</p>
+
+<p>定义一个操作中的算法的骨架 (稳定)，而将一些步骤延迟(变化)到子类中。 Template Method使得子类可以不改变(复用)一个算法的结构即可重定义(overrided写)该算法的某些特定步骤。</p>
+
+<p>一个简单的例子就是：</p>
+
+<p>针对库的开发, 步骤1，3，5固定，步骤2，4是变化的</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//程序库开发人员
+class Library{
+public:
+	//稳定 template method
+    void Run(){
+        
+        Step1();
+
+        if (Step2()) { //支持变化 ==&gt; 虚函数的多态调用
+            Step3(); 
+        }
+
+        for (int i = 0; i &lt; 4; i++){
+            Step4(); //支持变化 ==&gt; 虚函数的多态调用
+        }
+
+        Step5();
+
+    }
+	virtual ~Library(){ }
+
+protected:
+	
+	void Step1() { //稳定
+        //.....
+    }
+	void Step3() {//稳定
+        //.....
+    }
+	void Step5() { //稳定
+		//.....
+	}
+
+	virtual bool Step2() = 0;//变化
+    virtual void Step4() =0; //变化
+};
+</code></pre></div></div>
+<p>因此，可以在实现上继承这个lib</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//应用程序开发人员
+class Application : public Library {
+protected:
+	virtual bool Step2(){
+		//... 子类重写实现
+    }
+
+    virtual void Step4() {
+		//... 子类重写实现
+    }
+};
+
+int main()
+	{
+	    Library* pLib=new Application();
+	    lib-&gt;Run();
+
+		delete pLib;
+	}
+}
+</code></pre></div></div>
+
+<h3 id="c继承体系中的public-private-protected">c++继承体系中的public, private, protected</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>继承方式</th>
+      <th>父类的public成员</th>
+      <th>父类的protected成员</th>
+      <th>父类的private成员</th>
+      <th>关系描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>public</td>
+      <td>依然为public</td>
+      <td>依然为protected</td>
+      <td>不可见</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>protected</td>
+      <td>变为protected成员</td>
+      <td>变为protected成员</td>
+      <td>不可见</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>private</td>
+      <td>变为private成员</td>
+      <td>变成private成员</td>
+      <td>不可见</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>protected存在的理由就是继承类中访问基类的protected成员。</p>
+
+<p>引入保护成员的理由是：基类的成员本来就是派生类的成员，因此对于那些出于隐藏的目的不宜设为公有，但又确实需要在派生类的成员函数中经常访问的基类成员，将它们设置为保护成员，既能起到隐藏的目的，又避免了派生类成员函数要访问它们时只能间接访问所带来的麻烦。</p>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[Template Method]]></summary></entry><entry><title type="html">设计模式总结</title><link href="http://localhost:4000/simomhancrew/2022-09-22-DesignPattern.html" rel="alternate" type="text/html" title="设计模式总结" /><published>2022-09-22T00:00:00+08:00</published><updated>2022-09-22T00:00:00+08:00</updated><id>http://localhost:4000/simomhancrew/DesignPattern</id><content type="html" xml:base="http://localhost:4000/simomhancrew/2022-09-22-DesignPattern.html"><![CDATA[<h2 id="design-pattern-summary">Design Pattern Summary</h2>
+
+<p>设计模式学完的感受就是尽量不用设计模式，尤其是工程特别大的时候，设计模式的加入反而会使得整个代码框架变得特别难读。 设计模式的核心是写出能够复用的代码，能够抵御足够强的变化，且在新增特性的时候，在原代码上带来的影响是较小的。应该是写出新的部分，在原有的部分上能复用。</p>
+
+<h3 id="8大基本原则">8大基本原则</h3>
+
+<ol>
+  <li>依赖倒置</li>
+</ol>
+
+<ul>
+  <li>
+    <p>高层模块(稳定)不应该依赖于低层模块(变化)，二者都应该依赖于抽象(稳定)</p>
+  </li>
+  <li>
+    <p>抽象(稳定)不应该依赖于实现细节(变化) ，实现细节应该依赖于抽象(稳定)。</p>
+  </li>
+</ul>
+
+<ol>
+  <li>开放封闭原则</li>
+</ol>
+
+<ul>
+  <li>
+    <p>对扩展开放，对更改封闭</p>
+  </li>
+  <li>
+    <p>类模块应该是可扩展的，但是不可修改</p>
+  </li>
+</ul>
+
+<ol>
+  <li>单一职责原则</li>
+</ol>
+
+<ul>
+  <li>
+    <p>一个类应该仅有一个引起它变化的原因</p>
+  </li>
+  <li>
+    <p>变化的方向隐含着类的责任</p>
+  </li>
+</ul>
+
+<ol>
+  <li>Liskov替换原则</li>
+</ol>
+
+<ul>
+  <li>
+    <p>子类必须能够替换它们的基类(IS-A)</p>
+  </li>
+  <li>
+    <p>继承表达类型抽象</p>
+  </li>
+</ul>
+
+<ol>
+  <li>接口隔离原则</li>
+</ol>
+
+<ul>
+  <li>
+    <p>不应该强迫客户程序依赖它们不用的方法</p>
+  </li>
+  <li>
+    <p>接口应该小而完备</p>
+  </li>
+</ul>
+
+<ol>
+  <li>优先使用对象组合，而不是类继承</li>
+</ol>
+
+<ul>
+  <li>
+    <p>类继承通常为“白箱复用”，对象组合通常为“黑箱复用”</p>
+  </li>
+  <li>
+    <p>继承在某种程度上破坏了封装性，子类父类耦合度高，而对象组合则只要求被组合的对象具有良好定义的接口，耦合度低。</p>
+  </li>
+</ul>
+
+<ol>
+  <li>封装变化点</li>
+</ol>
+
+<ul>
+  <li>使用封装来创建对象之间的分界层，让设计者可以在分界层的一侧进行修改，而不会对另一侧产生不良的影响，从而实现层次间的松耦合</li>
+</ul>
+
+<ol>
+  <li>针对接口编程，而不是针对实现编程</li>
+</ol>
+
+<ul>
+  <li>
+    <p>不将变量类型声明为某个特定的具体类，而是声明为某个接口。</p>
+  </li>
+  <li>
+    <p>客户程序无需获知对象的具体类型，只需要知道对象所具有的接口。</p>
+  </li>
+  <li>
+    <p>减少系统中各部分的依赖关系，从而实现“高内聚、松耦合”的类型设计方案。</p>
+  </li>
+</ul>
+
+<h3 id="常见的设计模式">常见的设计模式</h3>
+
+<p>这里很多设计模式在C++中并不常见，按照我心目中的重要程度排序</p>]]></content><author><name>simon</name></author><summary type="html"><![CDATA[Design Pattern Summary]]></summary></entry></feed>
