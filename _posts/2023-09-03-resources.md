@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "收集向连接集合"
+title:  "收集向链接集合"
 category: touch-fish
 date:   2023-09-03
 ---
@@ -52,6 +52,21 @@ date:   2023-09-03
 
 + [PolarDB 数据库内核月报](http://mysql.taobao.org/monthly/)
 
++ [writing os with rust](https://os.phil-opp.com/zh-CN/?continueFlag=a8d527efd3a093cc6ea538764e0296fc)
+
++ [计算机组成之类的](https://bob.cs.sonoma.edu/IntroCompOrg-x64/bookli1.html#x2-2000)
+
++ [hpc-tutorials](https://hpc-tutorials.llnl.gov/)
+
++ [intro-hpc](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial)
+
++ [libevent探索](http://manistein.club/post/server/libevent/%E6%8E%A2%E7%B4%A2libevent%E5%86%85%E9%83%A8%E6%9C%BA%E5%88%B6/)
+
++ [libevent文档](https://libevent.org/libevent-book/)
+
++ [陈硕的tcpip](http://chenshuo.com/tcpip-study/)
+
++ [软件设计哲学](https://www.bookstack.cn/read/A-Philosophy-of-Software-Design-zh/README.md)
 
 ### 有意思的博客
 
@@ -115,11 +130,18 @@ date:   2023-09-03
 
 + [xargin](https://www..com/)
 
++ [manistein](http://manistein.club/)
+
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
 
 + [画图工具](https://excalidraw.com/)
+
++ [LCCN](https://lccn.lbao.site/biweekly-contest-91/1)
+
++ [Rating](https://zerotrac.github.io/leetcode_problem_rating/#/)
 
 ### Ref
 
