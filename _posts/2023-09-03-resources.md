@@ -132,6 +132,8 @@ date:   2023-09-03
 
 + [manistein](http://manistein.club/)
 
++ [Timur Doumler的blog](https://timur.audio/)
+  > timur, cppcon的组织者之一, 他的github是[这个](https://github.com/timuraudio)
 
 ### 在线工具
 
