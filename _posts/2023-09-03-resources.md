@@ -135,6 +135,9 @@ date:   2023-09-03
 + [Timur Doumler的blog](https://timur.audio/)
   > timur, cppcon的组织者之一, 他的github是[这个](https://github.com/timuraudio)
 
++ [old new things](https://devblogs.microsoft.com/oldnewthing/)
+  > Raymond Chen, 更新勤快的离谱
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
