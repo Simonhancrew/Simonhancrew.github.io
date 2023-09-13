@@ -148,6 +148,8 @@ date:   2023-09-03
 
 + [Rating](https://zerotrac.github.io/leetcode_problem_rating/#/)
 
++ [Learn X in Y minutes](https://learnxinyminutes.com)
+
 ### Ref
 
 1. [王很水的笔记](https://wanghenshui.github.io/recommend.html)
