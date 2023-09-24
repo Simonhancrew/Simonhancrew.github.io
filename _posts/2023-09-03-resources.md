@@ -68,6 +68,9 @@ date:   2023-09-03
 
 + [软件设计哲学](https://www.bookstack.cn/read/A-Philosophy-of-Software-Design-zh/README.md)
 
++ [春哥的nginx教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
+  > 听说是最好的中文nginx教程
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
@@ -103,6 +106,7 @@ date:   2023-09-03
 + [postgresql周报](https://grantzhou.github.io/)
 
 + [linux perf](https://www.brendangregg.com/blog/)
+  > Brendan Gregg的blog，顶尖大牛了
 
 + [啥都讨论的社区](https://lobste.rs/)
 
@@ -128,7 +132,7 @@ date:   2023-09-03
 
 + [美团技术团队的blog，质量很高](https://tech.meituan.com/)
 
-+ [xargin](https://www..com/)
++ [xargin](https://xargin.com/)
 
 + [manistein](http://manistein.club/)
 
@@ -137,6 +141,10 @@ date:   2023-09-03
 
 + [old new things](https://devblogs.microsoft.com/oldnewthing/)
   > Raymond Chen, 更新勤快的离谱
+
++ [openresty官方博客](https://blog.openresty.com.cn/cn/)
+
++ [codingnest](https://codingnest.com/)
 
 ### 在线工具
 
