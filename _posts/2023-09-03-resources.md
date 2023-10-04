@@ -71,6 +71,8 @@ date:   2023-09-03
 + [春哥的nginx教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
   > 听说是最好的中文nginx教程
 
++ [work with linux kernel](https://www.kernel.org/doc/html/v4.10/process/howto.html)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
