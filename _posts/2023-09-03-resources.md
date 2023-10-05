@@ -73,6 +73,8 @@ date:   2023-09-03
 
 + [work with linux kernel](https://www.kernel.org/doc/html/v4.10/process/howto.html)
 
++ [learning zig](https://zigcc.github.io/learning-zig/index.html)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
