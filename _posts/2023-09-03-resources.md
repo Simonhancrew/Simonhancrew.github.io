@@ -152,6 +152,8 @@ date:   2023-09-03
 
 + [Andrew Chang from Tencent](https://segmentfault.com/blog/amc)
 
++ [herbsutter](https://herbsutter.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
