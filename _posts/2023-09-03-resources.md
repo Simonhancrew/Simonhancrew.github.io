@@ -156,7 +156,12 @@ date:   2023-09-03
 
 + [plantegg](https://plantegg.github.io/)
   > 更新的比较勤，而且还在更
-    
+
++ [akrzemi1的博客](https://akrzemi1.wordpress.com/)
+
++ [cpptruths](http://cpptruths.blogspot.com/)
+  > 看不懂
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
