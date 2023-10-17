@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Compile Optimize"
-category: OS
+category: compile
 date:   2023-10-08
 ---
 
@@ -26,6 +26,19 @@ date:   2023-10-08
 
 8. [chrome componet build](https://github.com/chromium/chromium/blob/master/docs/component_build.md)
 
+9. [webkit build suggestions](https://trac.webkit.org/wiki/AnalyzingBuildPerformance)
+
+10. [clang-time-trace practice](https://www.snsystems.com/technology/tech-blog/clang-time-trace-feature)
+
+11. [excutable-size-analysis](https://snsystems.com/technology/tech-blog/analyzing-the-size-of-the-compiler-executable)
+    
+    这个是上一个作者的另一篇文章，我感觉挺有意思，和编译相关，包体积分析优化
+
+12. [flame-time-trace](https://aras-p.info/blog/2019/01/16/time-trace-timeline-flame-chart-profiler-for-Clang/)
+
+13. [time-report by clang](https://aras-p.info/blog/2019/01/12/Investigating-compile-times-and-Clang-ftime-report/)
+
+14. [clang build analysis](https://aras-p.info/blog/2019/09/28/Clang-Build-Analyzer/)
 
 目前看来就是尽量最小化include，尽量使用pimpl, 虽然现在的gg code style不再推荐这种方式了，但是我估计他们编译都上集群了，也不再乎这点东西，另外一些缺点其实注意命名和命名空间的话，其实比较少遇到。坑的文章在[这里](https://www.zhihu.com/question/63201378)
 
