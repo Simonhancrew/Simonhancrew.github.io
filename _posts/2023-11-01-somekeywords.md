@@ -17,6 +17,9 @@ date:   2023-11-01
 
 #### inline函数
 
+
+inline func主要修饰一个external linkage
+
 若一个非static的函数，在被多个编译单元重复定义，那么这个函数就必须是inline的，否则会报错。这样编译器就会认为当前的符号是一个弱符号，面对多个的时候之后保留一个定义
 
 
@@ -85,3 +88,22 @@ extern告诉编译器某个声明对于其他源文件中的代码是可见的�
 如果将其放入源文件，则必须在使用global_i的每个源文件中重复声明。
 
 最后，全局是有问题的，跨越源文件的全局更是如此。请小心使用extern。
+
+
+## linkage
+
+具有externallinkage的变量可以被其它源文件使用，整个程序内有效，并且全局只有一个
+
+具有internal linkage的变量只能被本translation unit所引用，如果有多个translation unit，则会有多个副本, 每个cpp文件中都会有一个
+
+1. 编译单元
+  
+    一个.cpp文件或者.c文件才称为一个translation unit，头文件(.h)不能称为一个translation unit，因为其最终会被加(plus)入到include它们的.cpp/.c文件中去，编译器编译的是.cpp/.c文件，而不是.h文件。
+
+2. 缺省的链接方式
+    
+      在缺省情况下，常量(const)具有static属性(internal linkage)，而非常量(non-const)具有extern属性(external linkage)
+
+      常量(const)因为具有static的internal linkage属性，其会导致每个使用它的cpp文件中都会包含一个const副本，这个副本是local的，可能会导致程序中有大量的常量副本。
+
+      变量具有extern的external linkage属性，如果在头文件中定义变量并且该头文件被多个cpp文件引用，将导致重复定义的编译错误；对于变量正确的做法应该是在cpp文件中定义，然后在使用它的cpp文件中使用extern来声明它，即不要将变量直接暴露在.h文件中，如果一定要在头文件中暴露变量，那么应使用extern来修饰它。
