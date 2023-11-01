@@ -92,7 +92,7 @@ extern告诉编译器某个声明对于其他源文件中的代码是可见的�
 
 ## linkage
 
-具有externallinkage的变量可以被其它源文件使用，整个程序内有效，并且全局只有一个
+具有external linkage的变量可以被其它源文件使用，整个程序内有效，并且全局只有一个
 
 具有internal linkage的变量只能被本translation unit所引用，如果有多个translation unit，则会有多个副本, 每个cpp文件中都会有一个
 
