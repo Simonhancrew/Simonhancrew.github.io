@@ -112,3 +112,12 @@ extern告诉编译器某个声明对于其他源文件中的代码是可见的�
       常量(const)因为具有static的internal linkage属性，其会导致每个使用它的cpp文件中都会包含一个const副本，这个副本是local的，可能会导致程序中有大量的常量副本。
 
       变量具有extern的external linkage属性，如果在头文件中定义变量并且该头文件被多个cpp文件引用，将导致重复定义的编译错误；对于变量正确的做法应该是在cpp文件中定义，然后在使用它的cpp文件中使用extern来声明它，即不要将变量直接暴露在.h文件中，如果一定要在头文件中暴露变量，那么应使用extern来修饰它。
+
+
+### 匿名namespace
+
+匿名namespace天然具有internal linkage的属性，因此在头文件中使用匿名namespace来定义常量是一个不错的选择，因为它不会导致重复定义的编译错误，也不会导致大量的常量副本。
+
+ps，虽然namespace默认是external linkage的，但匿名namespace默认情况下会给每一个cpp文件中的匿名namesapce生成一个唯一的name，这个在别的空间里没法拿到而已， 所以在gg code style里面也会大规模的推荐使用匿名namespace来代替static，可以少写很多static
+
+在匿名命名空间中声明的名称也将被编译器转换，与编译器为这个匿名命名空间生成的唯一内部名称(即这里的_UNIQUE_NAME_)绑定在一起。
