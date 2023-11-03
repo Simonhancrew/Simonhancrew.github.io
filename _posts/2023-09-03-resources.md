@@ -80,6 +80,12 @@ date:   2023-09-03
 
 + [make tutorial](https://makefiletutorial.com/#getting-started)
 
++ [modern-cmake](https://cliutils.gitlab.io/modern-cmake/)
+
++ [cmake mordern](https://cmake.org/getting-started/)
+
++ [gn quick start](https://gn.googlesource.com/gn/+/main/docs/quick_start.md)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
