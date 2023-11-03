@@ -78,6 +78,8 @@ date:   2023-09-03
 + [Algorithms for Modern Hardware](https://en.algorithmica.org/hpc/)
   > 这个作者写的东西其实都很棒了
 
++ [make tutorial](https://makefiletutorial.com/#getting-started)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
