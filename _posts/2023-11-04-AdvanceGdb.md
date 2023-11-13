@@ -26,3 +26,11 @@ more than breakpoint + frame + bt + as
 4. [复杂 C++ 项目堆栈保留以及 ebpf 性能分析](https://selfboot.cn/2023/10/17/c++_frame_pointer/)
 
 5. [advanced-gdb](https://interrupt.memfault.com/blog/advanced-gdb)
+
+6. [gdb小技巧汇总](https://www.cnblogs.com/liuhanxu/p/16026260.html)
+
+7. [GDB观察点watchpoints的介绍和演示](https://www.cnblogs.com/liuhanxu/p/16123981.html)
+
+8. [gdb调试多进程](https://www.cnblogs.com/liuhanxu/p/16158842.html)
+
+9. [不同场景下使用gdb调试段错误的几种方法](https://www.cnblogs.com/liuhanxu/p/17446765.html)
