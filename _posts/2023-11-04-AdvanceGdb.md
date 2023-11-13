@@ -9,6 +9,8 @@ more than breakpoint + frame + bt + as
 
 主要关注一下他人的调试经验，以及一些高级调试技巧，比如使用ebpf进行性能分析，使用gdb进行内存分析等等。
 
+另外xxdb调试，一个很关键的技巧，我个人觉得是要掌握data point和watch point的使用，这个可以参考[这里](https://www.cnblogs.com/liuhanxu/p/16123981.html), 另外ref的第5篇文章也有提到。
+
 另外经常使用lldb，需要参考lldb到gdb的[map](https://lldb.llvm.org/use/map.html)
 
 另外还有一个[apple官方的tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html)
