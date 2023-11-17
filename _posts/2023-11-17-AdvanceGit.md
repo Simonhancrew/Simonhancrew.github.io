@@ -46,3 +46,34 @@ git blame -L 10,20 <file>
 ```
 
 看一下最近一次的10-20行的改动
+
+### proxy
+
+```base
+git config --global http.proxy http://
+git config --global https.proxy https://
+
+# 关闭
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+另外ssh代理的话稍微复杂一点，需要编译.ssh里的config
+
+```bash
+Host github.com
+    User git
+    ProxyCommand nc -X connect -x local_ip:port %h %p
+```
+
+### 全局ignore
+
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+### 设置vim编辑commit信息
+
+```bash
+git config --global core.editor vim
+```
