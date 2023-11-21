@@ -86,6 +86,8 @@ date:   2023-09-03
 
 + [gn quick start](https://gn.googlesource.com/gn/+/main/docs/quick_start.md)
 
++ [linux一些基础问题](https://huataihuang.gitbooks.io/cloud-atlas/content/)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
@@ -180,6 +182,11 @@ date:   2023-09-03
   > twistoy.github.io, 退役老年选手王大
 
 + [yrom](https://yrom.net/)
+
++ [larry](https://medium.com/@larry850806)
+  > 我感觉他htop的那篇写的不错，也还都比较严谨
+
++ [linux world](https://tuxthink.blogspot.com/
 
 ### 在线工具
 
