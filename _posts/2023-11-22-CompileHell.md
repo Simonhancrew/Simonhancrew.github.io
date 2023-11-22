@@ -23,8 +23,14 @@ compile上的烂活，可能导致各类的问题
 
 但如果两个库稍有不同，且不同的地方被用到了，两个库就里相关的.o就会完全被导入，结果就是符号会冲突
 
+## 循环依赖
+
+顶级烂活，但是可以处理，但是处理起来很麻烦
+
 ## Ref
 
 1. [深入理解 C++ 链接符号决议：从符号重定义说起](https://selfboot.cn/2023/09/19/c++_symbol_resolution/)
 
 2. [Library order in static linking](https://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking)
+
+3. [link order](https://stackoverflow.com/questions/45135/why-does-the-order-in-which-libraries-are-linked-sometimes-cause-errors-in-gcc)
