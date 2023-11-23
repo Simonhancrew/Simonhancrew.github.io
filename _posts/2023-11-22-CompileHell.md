@@ -25,7 +25,7 @@ compile上的烂活，可能导致各类的问题
 
 ## 循环依赖
 
-顶级烂活，但是可以处理，但是处理起来很麻烦
+顶级烂活，但是可以处理，但是处理起来很麻烦，强连通，要链接几次。简单点的办法就是start group和end group
 
 ## Ref
 
@@ -34,3 +34,7 @@ compile上的烂活，可能导致各类的问题
 2. [Library order in static linking](https://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking)
 
 3. [link order](https://stackoverflow.com/questions/45135/why-does-the-order-in-which-libraries-are-linked-sometimes-cause-errors-in-gcc)
+
+4. [Why can’t I __declspec(dllexport) a function from a static library](https://devblogs.microsoft.com/oldnewthing/20140321-00/?p=1433)
+
+5. [Understanding the classical model for linking, groundwork: The algorithm](https://devblogs.microsoft.com/oldnewthing/20130107-00/?p=5633)
