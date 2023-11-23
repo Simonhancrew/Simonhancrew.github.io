@@ -38,3 +38,11 @@ compile上的烂活，可能导致各类的问题
 4. [Why can’t I __declspec(dllexport) a function from a static library](https://devblogs.microsoft.com/oldnewthing/20140321-00/?p=1433)
 
 5. [Understanding the classical model for linking, groundwork: The algorithm](https://devblogs.microsoft.com/oldnewthing/20130107-00/?p=5633)
+
+6. [How statically linked programs run on Linux](https://eli.thegreenplace.net/tag/linkers-and-loaders)
+
+7. [Load-time relocation of shared libraries](https://eli.thegreenplace.net/2011/08/25/load-time-relocation-of-shared-libraries)
+
+8. [Position Independent Code (PIC) in shared libraries](https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries)\
+
+9. [Position Independent Code (PIC) in shared libraries on x64](https://eli.thegreenplace.net/2011/11/11/position-independent-code-pic-in-shared-libraries-on-x64)
