@@ -191,6 +191,8 @@ date:   2023-09-03
 + [thegreenplace](https://eli.thegreenplace.net/)
   > 看编译的时候发现的
 
++ [morderncpp](https://www.modernescpp.com/index.php/blog/#top)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
