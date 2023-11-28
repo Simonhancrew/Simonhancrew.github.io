@@ -16,3 +16,4 @@ date:   2023-11-28
 
 4. [process addresses and entry point](https://eli.thegreenplace.net/2011/01/27/how-debuggers-work-part-2-breakpoints)
 
+5. [Shared_library](https://en.wikipedia.org/wiki/Shared_library)
