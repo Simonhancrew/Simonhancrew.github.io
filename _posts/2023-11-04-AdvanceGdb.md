@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Advance GDB"
-category: debugging
+category: debug
 date:   2023-11-04
 ---
 
@@ -34,3 +34,9 @@ more than breakpoint + frame + bt + as
 8. [gdb调试多进程](https://www.cnblogs.com/liuhanxu/p/16158842.html)
 
 9. [不同场景下使用gdb调试段错误的几种方法](https://www.cnblogs.com/liuhanxu/p/17446765.html)
+
+10. [C++ STL有用？如何调试？](https://mp.weixin.qq.com/s/UWG-5WZLCavFNuwpfz6NaA)
+
+11. [Apache arrow顶级项目调试](https://mp.weixin.qq.com/s/-XdastMGa3vVrN5nMiQkdw)
+
+12. [干爆源码系列之Step by step lldb/gdb调试多线程](https://mp.weixin.qq.com/s/3-4KDcJgQ2cgqW_KALGstg)
