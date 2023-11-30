@@ -193,6 +193,8 @@ date:   2023-09-03
 
 + [morderncpp](https://www.modernescpp.com/index.php/blog/#top)
 
++ [ninja作者的blog](https://neugierig.org/software/blog/archive.html)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
