@@ -186,7 +186,7 @@ date:   2023-09-03
 + [larry](https://medium.com/@larry850806)
   > 我感觉他htop的那篇写的不错，也还都比较严谨
 
-+ [linux world](https://tuxthink.blogspot.com/
++ [linux world](https://tuxthink.blogspot.com/)
 
 + [thegreenplace](https://eli.thegreenplace.net/)
   > 看编译的时候发现的

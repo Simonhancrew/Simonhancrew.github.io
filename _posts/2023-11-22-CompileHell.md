@@ -60,3 +60,8 @@ compile上的烂活，可能导致各类的问题
 
 13. [Understanding errors in classical linking: The delay-load catch-22
 ](https://devblogs.microsoft.com/oldnewthing/20130111-00/?p=5583)
+
+14. [Why does the Windows Portable Executable (PE) format have separate tables for import names and import addresses](https://devblogs.microsoft.com/oldnewthing/20231129-00/?p=109077)
+
+15. [Why does the Windows Portable Executable (PE) format have both an import section and input directory?
+](https://devblogs.microsoft.com/oldnewthing/20231201-17/?p=109090)

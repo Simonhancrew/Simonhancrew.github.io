@@ -7,7 +7,6 @@ date:   2023-11-28
 
 动态库相较静态库的内容会稍微多一点，因为涉及到vm和relocation
 
-
 1. [Load-time relocation of shared libraries](https://eli.thegreenplace.net/2011/08/25/load-time-relocation-of-shared-libraries)
 
 2. [x86 mem layout](https://eli.thegreenplace.net/2011/02/04/where-the-top-of-the-stack-is-on-x86/)
