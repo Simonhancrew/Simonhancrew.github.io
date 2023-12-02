@@ -74,6 +74,8 @@ int main() { return Bar1() + Bar2(); }
 
 ## static
 
+storage class specifier
+
 static的作用也分
 
 1. 函数内的局部变量，只有在第一次掉用的时候才初始化，但注意，这个变量的生命周期是整个程序的生命周期，而不是函数的生命周期，而且不一定是线程安全的(c++ 11 singleton对于多线程的支持，不要new)
@@ -94,12 +96,13 @@ extern告诉编译器某个声明对于其他源文件中的代码是可见的�
 
 最后，全局是有问题的，跨越源文件的全局更是如此。请小心使用extern。
 
-
 ## linkage
 
 具有external linkage的变量可以被其它源文件使用，整个程序内有效，并且全局只有一个
 
 具有internal linkage的变量只能被本translation unit所引用，如果有多个translation unit，则会有多个副本, 每个cpp文件中都会有一个
+
+一般来讲，全局的non-const变量会具有external linkage，但是加上static之后就会具有internal linkage
 
 1. 编译单元
   
@@ -121,3 +124,11 @@ extern告诉编译器某个声明对于其他源文件中的代码是可见的�
 ps，虽然namespace默认是external linkage的，但匿名namespace默认情况下会给每一个cpp文件中的匿名namesapce生成一个唯一的name，这个在别的空间里没法拿到而已， 所以在gg code style里面也会大规模的推荐使用匿名namespace来代替static，可以少写很多static
 
 在匿名命名空间中声明的名称也将被编译器转换，与编译器为这个匿名命名空间生成的唯一内部名称(即这里的_UNIQUE_NAME_)绑定在一起。
+
+## Ref
+
+1. [internal-linkage](https://www.learncpp.com/cpp-tutorial/internal-linkage/)
+
+2. [Scope, duration, and linkage summary](https://www.learncpp.com/cpp-tutorial/scope-duration-and-linkage-summary/)
+
+3. [External linkage and variable forward declarations](https://www.learncpp.com/cpp-tutorial/external-linkage-and-variable-forward-declarations/)
