@@ -5,6 +5,9 @@ category: compile
 date:   2023-10-08
 ---
 
+编译加速上的一些经验和分析方法，主要针对c++。
+
+实际上在了解完make和ninja之后，发现要加速单translation unit的编译，应该最小化他要做的事，例如include what u want，使用pimpl，使用forward declaration等等。
 
 ## 一些compile optimize的经验
 
@@ -31,8 +34,7 @@ date:   2023-10-08
 10. [clang-time-trace practice](https://www.snsystems.com/technology/tech-blog/clang-time-trace-feature)
 
 11. [excutable-size-analysis](https://snsystems.com/technology/tech-blog/analyzing-the-size-of-the-compiler-executable)
-    
-    这个是上一个作者的另一篇文章，我感觉挺有意思，和编译相关，包体积分析优化
+    > 这个是上一个作者的另一篇文章，我感觉挺有意思，和编译相关，包体积分析优化
 
 12. [flame-time-trace](https://aras-p.info/blog/2019/01/16/time-trace-timeline-flame-chart-profiler-for-Clang/)
 
@@ -49,4 +51,3 @@ date:   2023-10-08
 如果使用ninja的话，看编译依赖关系可以使用`ninja -t deps`, 具体看下[文档](https://ninja-build.org/manual.html#_extra_tools)就行
 
 gn看依赖关系的话，可以使用`gn desc`，具体看下[文档](https://gn.googlesource.com/gn/+/master/docs/reference.md#cmd_desc)
-
