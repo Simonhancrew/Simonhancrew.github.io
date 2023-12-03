@@ -18,8 +18,7 @@ date:   2023-11-02
 
 2. compile_commands.json的生成需要在vs的pwsh下进行，否则会出现编码问题
 
-
-### 一些使用gn的资料
+### Refs
 
 1. [chromium gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/48062805e19b4697c5fbd926dc649c78b6aaa138/docs/language.md)
 
@@ -30,3 +29,5 @@ date:   2023-11-02
 4. [introduce to gn](https://www.topcoder.com/thrive/articles/Introduction%20to%20Build%20Tools%20GN%20&%20Ninja)
 
 5. [using gn](https://docs.google.com/presentation/d/15Zwb53JcncHfEwHpnG_PoIbbzQ3GQi_cpujYwbpcbZo/htmlpresent)
+
+6. [ninja-manual](https://ninja-build.org/manual.html)
