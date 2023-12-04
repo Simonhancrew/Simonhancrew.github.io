@@ -207,6 +207,8 @@ date:   2023-09-03
 
 + [Learn X in Y minutes](https://learnxinyminutes.com)
 
++ [阮一峰的工具search](https://www.apigpts.dev/tools)
+
 ### Ref
 
 1. [王很水的笔记](https://wanghenshui.github.io/recommend.html)
