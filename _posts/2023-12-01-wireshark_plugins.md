@@ -20,3 +20,7 @@ date:   2023-12-01
 5. [Wireshark解析器Lua脚本](https://kiosk007.top/post/wireshark%E8%A7%A3%E6%9E%90%E5%99%A8lua%E8%84%9A%E6%9C%AC/)
 
 6. [learn lua](https://learnxinyminutes.com/docs/zh-cn/lua-cn/)
+
+7. [自己动手编写Wireshark Lua插件解析自定义协议](https://zhuanlan.zhihu.com/p/114669991)
+
+8. [Lua for Programmers Part 1: Language Essentials](https://ebens.me/post/lua-for-programmers-part-1/)
