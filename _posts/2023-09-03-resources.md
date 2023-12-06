@@ -195,6 +195,10 @@ date:   2023-09-03
 
 + [ninja作者的blog](https://neugierig.org/software/blog/archive.html)
 
++ [Piglei](https://www.piglei.com/)
+
++ [小明明的技术分享](https://www.dongwm.com/archives)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
