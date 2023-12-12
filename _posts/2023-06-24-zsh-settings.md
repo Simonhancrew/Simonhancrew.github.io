@@ -29,4 +29,8 @@ vim .zshrc
 # )
 ```
 
+## 遇到一些很傻逼的问题
 
+如果遇到一些比较傻逼的问题的话，首先先进.oh-my-zsh里去，把里面修改过的文件restore了，然后source一把zshrc
+
+还不行的话就需要开debug mode复现一下了，omz开debug比较简单，看这个[页面](https://github.com/ohmyzsh/ohmyzsh/wiki/Troubleshooting#other-problems)就可以了
