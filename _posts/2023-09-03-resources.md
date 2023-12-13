@@ -199,6 +199,8 @@ date:   2023-09-03
 
 + [小明明的技术分享](https://www.dongwm.com/archives)
 
++ [Many But Finite](https://manybutfinite.com/archives/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
