@@ -5,7 +5,7 @@ category: compile
 date:   2023-12-14
 ---
 
-全平台动态库导出的方法
+全平台动态库导出的方法，在[Ref1](#ref)里推荐的方法使用ld script。可以细看一下
 
 ## Ref
 
