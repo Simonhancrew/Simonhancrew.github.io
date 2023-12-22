@@ -58,3 +58,5 @@ version script 是传递给链接器的参数，用来指定动态库导出哪�
 5. [LTO overview](https://gcc.gnu.org/onlinedocs/gccint/LTO-Overview.html)
 
 6. [Executable and Linkable Format (ELF)](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f00/docs/elf.pdf)
+
+7. [How To Write Shared Libraries](https://www.akkadia.org/drepper/dsohowto.pdf)

@@ -23,4 +23,4 @@ date:   2023-12-01
 
 7. [自己动手编写Wireshark Lua插件解析自定义协议](https://zhuanlan.zhihu.com/p/114669991)
 
-8. [Lua for Programmers Part 1: Language Essentials](https://ebens.me/post/lua-for-programmers-part-1/)
+8. [Lua for Programmers Part 1: Language Essentials](https://ebens.me/posts/lua-for-programmers-part-1)
