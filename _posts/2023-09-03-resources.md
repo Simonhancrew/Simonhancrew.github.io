@@ -206,6 +206,8 @@ date:   2023-09-03
 
 + [IT Hare](http://ithare.com/)
 
++ [netflix的技术博客](https://netflixtechblog.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
