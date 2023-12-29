@@ -204,6 +204,8 @@ date:   2023-09-03
 + [Ulrich Drepper's blog](https://akkadia.org/drepper/)
     > what should every one know about memory的作者，顶级大佬
 
++ [IT Hare](http://ithare.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
