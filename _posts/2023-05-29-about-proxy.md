@@ -6,7 +6,17 @@ category: config
 layout: post
 ---
 
-### 1. Set Proxy
+### 1. Chrome Set Proxy
+
+chrome配合SwitchOmega这个插件就可以做到通配符自定义代理了
+
+普通情景模式选一个代理的地址填进去
+
+自动切换情景模式里规则列表选择AutoProxy，然后更新地址为`https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt`，如果这个地址不行的话就用`https://pagure.io/gfwlist/raw/master/f/gfwlist.txt`.
+
+这两个都被墙了就开proxy的情景模式拉一下，平时用自动情景模式就好了
+
+### 2. Git Set Proxy
 
 git本身支持的代理设置方式
 
