@@ -30,3 +30,5 @@ date:   2023-12-05
 
 5. [The Coroutine in C++ 20 协程初探](https://zhuanlan.zhihu.com/p/237952115)
 
+6. [跟我学c++中级篇——再谈C++20中的协程](https://mp.weixin.qq.com/s/ySdJFCDyt5CQLU4mhYpkTA)
+
