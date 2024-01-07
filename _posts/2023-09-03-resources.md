@@ -208,6 +208,9 @@ date:   2023-09-03
 
 + [netflix的技术博客](https://netflixtechblog.com/)
 
++ [cbloom rants](https://cbloomrants.blogspot.com/)
+    > 质量贼高，虽然我不知道他是谁
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
