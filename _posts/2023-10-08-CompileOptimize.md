@@ -42,6 +42,8 @@ date:   2023-10-08
 
 14. [clang build analysis](https://aras-p.info/blog/2019/09/28/Clang-Build-Analyzer/)
 
+15. [Optimizing the unoptimizable: a journey to faster C++ compile times](https://vitaut.net/posts/2024/faster-cpp-compile-times/)
+
 目前看来就是尽量最小化include，尽量使用pimpl, 虽然现在的gg code style不再推荐这种方式了，但是我估计他们编译都上集群了，也不再乎这点东西，另外一些缺点其实注意命名和命名空间的话，其实比较少遇到。坑的文章在[这里](https://www.zhihu.com/question/63201378)
 
 ## 如何分析编译耗时
