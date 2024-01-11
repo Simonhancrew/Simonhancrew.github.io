@@ -22,3 +22,4 @@ date:   2024-01-10
 
 6. [你应该了解的 memory barrier 背后细节](https://mp.weixin.qq.com/s?__biz=Mzg3MzY1MzE1Nw==&mid=2247483852&idx=1&sn=bf06e008b5dbfee3020b741a834ab142&chksm=ceddf706f9aa7e101f974467e3c2f0aeaa7d03627fd3d9ba30ff0ff1d1956c8d91918d3246a0&mpshare=1&scene=1&srcid=0109bEiCOGxP7P3jgY5a9Ru0&sharer_shareinfo=725f66ac55220fb54f7f0e65e9b621f4&sharer_shareinfo_first=5080bb3ad85b3432128ade13a58fc815&version=4.1.16.99385&platform=mac#rd)
 
+7. [CPU cache学习笔记](https://zhuanlan.zhihu.com/p/659708109)

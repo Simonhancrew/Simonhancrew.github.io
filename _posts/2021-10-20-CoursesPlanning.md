@@ -20,3 +20,7 @@ date: 2021-10-20
 
 1. [6.034]():Artificial Intelligence
 
+
+## REF
+
+1. [28天速通MIT 6.S081操作系统公开课 ](https://zhuanlan.zhihu.com/p/632281381)

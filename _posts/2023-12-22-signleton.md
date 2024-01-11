@@ -75,3 +75,5 @@ public :
 1. [The Singleton](https://www.modernescpp.com/index.php/creational-patterns-singleton/)
 
 2. [Thread-Safe Initialization of a Singleton](https://www.modernescpp.com/index.php/thread-safe-initialization-of-a-singleton/)
+
+3. [深入分析C++全局变量初始化](https://zhuanlan.zhihu.com/p/664349537)
