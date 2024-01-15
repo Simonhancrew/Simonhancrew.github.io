@@ -13,6 +13,12 @@ Drepper大佬在[这个commit](https://github.com/bminor/glibc/commit/279d494b1d
 
 但是apple能找到的部分，看起来还是没有改过...
 
+### 如何避免此类误用非线程安全的函数
+
+我建议使用clang-tidy，然后配合相关flag做检查。这样能够在使用clangd + 相关ide看代码的时候第一时间看到函数下的warning。
+
+同时，如果你好好配置了clang-tidy，不要忽视clang-tidy的提示。。。
+
 
 ### REF
 
@@ -27,3 +33,5 @@ Drepper大佬在[这个commit](https://github.com/bminor/glibc/commit/279d494b1d
 5. [Thread-local storage wiki](https://en.wikipedia.org/wiki/Thread-local_storage)
 
 6. [BSD-man](https://man.freebsd.org/cgi/man.cgi?query=inet_pton)
+
+7. [concurrency-mt-unsafe](https://clang.llvm.org/extra/clang-tidy/checks/concurrency/mt-unsafe.html)
