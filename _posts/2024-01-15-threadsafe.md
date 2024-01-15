@@ -25,3 +25,5 @@ Drepper大佬在[这个commit](https://github.com/bminor/glibc/commit/279d494b1d
 4. [线程局部存储tls的使用](https://tboox.org/cn/2016/09/28/thread-local/)
 
 5. [Thread-local storage wiki](https://en.wikipedia.org/wiki/Thread-local_storage)
+
+6. [BSD-man](https://man.freebsd.org/cgi/man.cgi?query=inet_pton)
