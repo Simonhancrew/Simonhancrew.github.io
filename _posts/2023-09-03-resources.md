@@ -88,6 +88,8 @@ date:   2023-09-03
 
 + [linux一些基础问题](https://huataihuang.gitbooks.io/cloud-atlas/content/)
 
++ [project base learning](https://github.com/practical-tutorials/project-based-learning)
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
