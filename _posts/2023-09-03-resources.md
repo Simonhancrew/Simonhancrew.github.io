@@ -73,7 +73,7 @@ date:   2023-09-03
 
 + [work with linux kernel](https://www.kernel.org/doc/html/v4.10/process/howto.html)
 
-+ [learning zig](https://zigcc.github.io/learning-zig/index.html)
++ [learning zig](https://zigcc.github.io/learning-zig/)
 
 + [Algorithms for Modern Hardware](https://en.algorithmica.org/hpc/)
   > 这个作者写的东西其实都很棒了
@@ -86,7 +86,7 @@ date:   2023-09-03
 
 + [gn quick start](https://gn.googlesource.com/gn/+/main/docs/quick_start.md)
 
-+ [linux一些基础问题](https://huataihuang.gitbooks.io/cloud-atlas/content/)
++ [linux一些基础问题](https://cloud-atlas.readthedocs.io/zh-cn/latest/)
 
 + [project base learning](https://github.com/practical-tutorials/project-based-learning)
 
