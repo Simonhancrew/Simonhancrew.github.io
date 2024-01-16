@@ -15,6 +15,46 @@ more than breakpoint + frame + bt + as
 
 另外还有一个[apple官方的tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html)
 
+### lldb稍微有作用点的方法
+
+#### watchpoint
+
+分两种
+
++ 内存断点 watchpoint set expression 地址
+
++ watchpoint set variable 变量名
+
+1. 设置内存断点
+
+```bash
+(lldb) watchpoint set expression <address>
+```
+
+2. 内存访问断点
+
+```bash
+watchpoint set expression -w read -- 内存地址
+
+(lldb) watchpoint set expression -w read -- 内存地址
+```
+
+3. 内存写入断点
+
+```bash
+watchpoint set expression -w write -- 内存地址
+
+(lldb) watchpoint set expression -w read -- 内存地址
+```
+
+4. 条件断点
+
+```bash
+watchpoint modify -c 表达式
+(lldb) watchpoint modify -c '*(int *)内存地址 == 20'
+```
+
+
 ### Ref
 
 1. [C++ 内存问题排查：创建 Zip 压缩包，解压后内容错乱](https://selfboot.cn/2023/10/19/c++_zip_memory_problem/)
