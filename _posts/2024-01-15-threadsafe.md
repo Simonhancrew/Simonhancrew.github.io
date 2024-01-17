@@ -13,6 +13,8 @@ Drepper大佬在[这个commit](https://github.com/bminor/glibc/commit/279d494b1d
 
 但是apple能找到的部分，看起来还是没有改过...
 
+c语言里有很多不想管理buffer的函数实现，返回char*, 内部就用一个static的buffer，然后返回这个buffer的地址。这样的话，就会导致线程不安全。(如果在栈上开就是悬垂)
+
 ### 如何避免此类误用非线程安全的函数
 
 我建议使用clang-tidy，然后配合相关flag做检查。这样能够在使用clangd + 相关ide看代码的时候第一时间看到函数下的warning。
