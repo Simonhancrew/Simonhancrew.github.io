@@ -55,3 +55,9 @@ clang-format其实不用过多介绍，会让你写的代码非常符合预设�
 clang-tidy可以根据自己的需要，预设一些规则(当然他也依赖compdb), 这个的好处是他会根据mordern c++给你写的代码一些warning和修改建议
 
 配合vscode和clangd插件，显得尤为好用。
+
+### 如何在vscode里配置clangd的fallback option
+
+`Clangd: Fallback Flags`中添加要的选项就可以了
+
+设置完之后可能要重启一下vscode
