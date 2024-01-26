@@ -15,11 +15,13 @@ date:   2023-10-16
 
 ## map and hashmap
 
-里面是一个红黑树，组织起来的就是list，插入和搜索其实都是partila search tree
+map里面是一个红黑树，组织起来的就是list，插入和搜索其实都是partila search tree
 
 当然不谈树旋转之类的操作，对内存层面来说，这些操作依然贵的一批。
 
 现代的cpu足够快了，我们要的是更快的内存，这个可以看cppcon2014的演讲，[ppt在这里](https://github.com/CppCon/CppCon2014/blob/master/Presentations/Efficiency%20with%20Algorithms%2C%20Performance%20with%20Data%20Structures/Efficiency%20with%20Algorithms%2C%20Performance%20with%20Data%20Structures%20-%20Chandler%20Carruth%20-%20CppCon%202014.pdf)
+
+hashmap里其实可以用数组做寻址，但是比比较不幸的是每个bucket的链接还是list。。。
 
 
 ## flat hash map and concrrent hash map
