@@ -80,9 +80,15 @@ static的作用也分
 
 1. 函数内的局部变量，只有在第一次掉用的时候才初始化，但注意，这个变量的生命周期是整个程序的生命周期，而不是函数的生命周期，而且不一定是线程安全的(c++ 11 singleton对于多线程的支持，不要new)
 
-2. class内的静态成员变量，所有的对象共享，但是必须在类外初始化(当然针对一些类型可以内联完成，内联的staic const就经常被拿做类内部的常量用)
+2. class内的静态成员变量，所有的对象共享，但是必须在类外初始化(当然针对一些类型可以内联完成，内联的staic const就经常被拿做类内部的常量用), 但是这个变量的生命周期是整个程序的生命周期，而不是类的生命周期。
 
 3. 在namespace里，static的作用是限制变量的作用域，只能在当前的编译单元中使用，再在外部用extern再倒入的时候，就会发生链接错误
+
+4. 当然上面说的几个，基本不是在cpp里定义static，就是在class内部，或者是在namespace内部，这里的static都是internal linkage的，也就是说在其他的编译单元中是不可见的，这里的static就是internal linkage的。但是你也可以傻逼，在头文件里定义static，这样就会导致每个cpp文件中都有一个static的副本，这个副本是local的，可能会导致程序中有大量的static副本。贼几把大
+
+然后类内部的static成员变量，要用的时候，记得在cpp里定义或者声明(const static定义了的那种，可以直接在类内部定义，但是在cpp里要取地址的话，还是要声明一下，比如你要用min/max之类的)
+
+有个[回答](https://stackoverflow.com/questions/3698043/in-header-files-what-is-the-difference-between-a-static-global-variable-and-a-s)比较好，可以看看.
 
 ## extern
 
