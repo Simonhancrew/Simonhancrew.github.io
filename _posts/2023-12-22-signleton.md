@@ -7,13 +7,31 @@ date:   2023-12-22
 
 c++11 singleton
 
-11支持的一个比较简单的写法， 这种由编译器保证的单例
+在C++11标准中，局部静态变量的初始化是线程安全的，这就意味着在多线程环境中可以保障局部静态变量只会被初始化一次，而不会引发竞态条件问题。
+
+因此11支持的一个比较简单的写法， 这种由编译器保证的单例
 
 ```c++
-static Singleton& get() {
+Singleton& get() {
   static Singleton instance;
   return instance;
 }
+// 或者
+class Singleton {
+public:
+  static Singleton &instance() {
+    static Singleton s;
+    return s;
+  }
+
+  // 删除复制构造函数和赋值操作符
+  Singleton(const Singleton &) = delete;
+  Singleton &operator=(const Singleton &) = delete;
+
+protected:
+  Singleton() {}
+  ~Singleton() {}
+};
 ```
 
 返回指针的话
