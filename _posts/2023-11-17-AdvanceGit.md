@@ -77,3 +77,9 @@ git config --global core.excludesfile ~/.gitignore_global
 ```bash
 git config --global core.editor vim
 ```
+
+### 带一下date的信息
+
+```bash
+git commit --date="yyyy-mm-ddTHH:MM:SS" -m "Commit message"
+```
