@@ -90,6 +90,9 @@ date:   2023-09-03
 
 + [project base learning](https://github.com/practical-tutorials/project-based-learning)
 
++ [craftinginterpreters](https://www.craftinginterpreters.com/contents.html)
+  > 一个写解释器的教程
+
 ### 有意思的博客
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
