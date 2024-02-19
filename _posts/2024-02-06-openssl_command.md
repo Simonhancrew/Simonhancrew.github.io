@@ -26,3 +26,7 @@ openssl s_client -connect host:port -tls1_3 -servername ""
 openssl x509 -in cert.crt -text -noout
 ```
 
+## REF 
+
+1. [rfc-8446](https://www.rfc-editor.org/rfc/rfc8446)
+2. [tls shake procedure](https://tls13.xargs.org/#client-handshake-keys-calc)
