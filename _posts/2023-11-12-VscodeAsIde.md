@@ -61,3 +61,12 @@ clang-tidy可以根据自己的需要，预设一些规则(当然他也依赖com
 `Clangd: Fallback Flags`中添加要的选项就可以了
 
 设置完之后可能要重启一下vscode
+
+### 关于find all reference
+
+在配置完compdb之后很有用的一个功能就是find all reference，这玩意在找所有函数在哪里使用的时候很方便。
+
+跳转虽然在compdb之后就能用了，但目前看在虚函数的部分处理的其实不是很好，我不知道这是啥问题
+
+虚函数如果有默认实现的话，他会默认跳虚函数的实现，这时候其实你可能要看子类的实现，这个时候从基类->find all reference然后找到所有的实现切过去就好
+
