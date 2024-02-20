@@ -47,6 +47,20 @@ git blame -L 10,20 <file>
 
 看一下最近一次的10-20行的改动
 
+### log
+
+```bash
+git log -n：显示最近的 n 个提交。例如，git log -5 将显示最近的 5 个提交。
+git log --since=2.weeks：显示最近两周内的提交。
+git log --author="author"：显示特定作者的提交。例如，git log --author="John" 将显示 John 的所有提交。
+git log --grep="message"：搜索提交信息中包含特定文本的提交。例如，git log --grep="bug fix" 将搜索提交信息中包含 "bug fix" 的提交。
+git log --stat：显示每个提交的文件修改统计信息
+git log --graph：以 ASCII 图形显示分支和合并历史。
+git log commit1..commit2：显示两个提交之间的差异。例如，git log HEAD..origin/master 将显示当前 HEAD 和 origin/master 之间的差异。(单commit也可以)
+git log -- file：显示特定文件的历史。例如，git log -- README.md 将显示 README.md 文件的修改历史。
+
+```
+
 ### proxy
 
 ```base
