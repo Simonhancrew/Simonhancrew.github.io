@@ -31,6 +31,20 @@ compile上的烂活，可能导致各类的问题
 
 顶级烂活，但是可以处理，但是处理起来很麻烦，强连通，要链接几次。简单点的办法就是start group和end group
 
+## debug + release库混用
+
+这个在win下存在比较骚的东西，但我之前比较少遇到(因为我之前也debug用release的库，或者release用debug的库)
+
+[container-flags](https://learn.microsoft.com/en-us/cpp/standard-library/checked-iterators?view=msvc-170)
+
+这里面讲了一个flag，在win下link的时候如果flag不匹配会报错。一般办错理由是
+
+```
+error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in *.lib
+```
+
+这个时候找到混用了的库就行。
+
 ## Ref
 
 1. [深入理解 C++ 链接符号决议：从符号重定义说起](https://selfboot.cn/2023/09/19/c++_symbol_resolution/)
