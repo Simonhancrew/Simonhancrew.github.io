@@ -80,3 +80,5 @@ watchpoint modify -c 表达式
 11. [Apache arrow顶级项目调试](https://mp.weixin.qq.com/s/-XdastMGa3vVrN5nMiQkdw)
 
 12. [干爆源码系列之Step by step lldb/gdb调试多线程](https://mp.weixin.qq.com/s/3-4KDcJgQ2cgqW_KALGstg)
+
+13. [How to debug C and C++ programs with rr](https://developers.redhat.com/blog/2021/05/03/instant-replay-debugging-c-and-c-programs-with-rr#conclusion)
