@@ -45,6 +45,12 @@ error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't 
 
 这个时候找到混用了的库就行。
 
+## 混用不同版本的库在不同的组件中
+
+[杂谈：一个 C++ Header-only 版本冲突的案例分析](https://zhuanlan.zhihu.com/p/684965383)
+
+主要看看上面这个，增加点记性，我发现我司的也很多这种问题，只不过现在没爆雷
+
 ## Ref
 
 1. [深入理解 C++ 链接符号决议：从符号重定义说起](https://selfboot.cn/2023/09/19/c++_symbol_resolution/)
