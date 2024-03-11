@@ -138,3 +138,5 @@ ps，虽然namespace默认是external linkage的，但匿名namespace默认情�
 2. [Scope, duration, and linkage summary](https://www.learncpp.com/cpp-tutorial/scope-duration-and-linkage-summary/)
 
 3. [External linkage and variable forward declarations](https://www.learncpp.com/cpp-tutorial/external-linkage-and-variable-forward-declarations/)
+
+4. [An In-depth Look at C++ Keyword: static](https://mp.weixin.qq.com/s?__biz=MzUxOTQ4NjIzNw==&mid=2247488215&idx=1&sn=4aa9df0a34e701f37ab0234f489f2db9&chksm=f9f9bca5ce8e35b3500fe7995b31ec5b5b925187760c6e3cd17a9008b96e85b1f7aefe6c0812&cur_album_id=2980489080029511688&scene=189#wechat_redirect)
