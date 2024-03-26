@@ -10,6 +10,7 @@ date: 2021-10-20
 2. [6.829](https://canvas.mit.edu/courses/11164)computer network
 3. [6.830](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/):database system
 4. [6.824](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-824-distributed-computer-systems-engineering-spring-2006/):distributed system
+5. [nju pa](https://jyywiki.cn/ICS/2021/index.html)
 
 ## 应用分析
 
@@ -20,7 +21,8 @@ date: 2021-10-20
 
 1. [6.034]():Artificial Intelligence
 
-
 ## REF
 
 1. [28天速通MIT 6.S081操作系统公开课 ](https://zhuanlan.zhihu.com/p/632281381)
+
+2. [Yanyan's Wiki](https://jyywiki.cn/)
