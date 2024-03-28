@@ -68,3 +68,4 @@ Wall Clock Time 是一段代码在某个线程上实际执行的时间，但由�
 
 1. [Measure time in Linux - time vs clock vs getrusage vs clock_gettime vs gettimeofday vs timespec_get](https://stackoverflow.com/questions/12392278/measure-time-in-linux-time-vs-clock-vs-getrusage-vs-clock-gettime-vs-gettimeof)
 2. [如何从Wall/CPU time理解多线程程序的并行效率](https://zhuanlan.zhihu.com/p/39891521)
+3. [C++20: Basic Chrono Terminology with Time Duration and Time Point](https://www.modernescpp.com/index.php/c20-basic-chrono-terminology-with-time-duration-and-time-point/)
