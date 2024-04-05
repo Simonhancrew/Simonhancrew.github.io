@@ -56,7 +56,7 @@ watchpoint modify -c 表达式
 
 ### coredump堆栈丢失和noexcept
 
-[一剑破万法：noexcept与C++异常导致的coredump](https://zhuanlan.zhihu.com/p/609434714), 这个可以看下，复杂的回调函数里面，如果有异常，会导致coredump，这个时候bt不一定很清晰，虽然代码可以看出来，但是工程大了的花，一行行看代码其实有点耗时
+[一剑破万法：noexcept与C++异常导致的coredump](https://zhuanlan.zhihu.com/p/609434714), 这个可以看下，复杂的回调函数里面，如果有异常，会导致coredump，这个时候bt不一定很清晰，虽然代码可以看出来，但是工程大了的花，一行行看代码其实有点耗时. 因为在函数没有声明noexcept的时候，异常会继续向调用函数抛出，直到遇到noexcept的函数，或者一直抛给main函数，然后触发coredump。
 
 这个时候可以用noexcept，标注这个回调函数(lambda也可以用这个标注)。这样在coredump里，调用栈会稍微清晰一点。
 
