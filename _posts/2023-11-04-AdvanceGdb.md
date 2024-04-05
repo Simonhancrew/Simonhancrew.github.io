@@ -54,6 +54,14 @@ watchpoint modify -c 表达式
 (lldb) watchpoint modify -c '*(int *)内存地址 == 20'
 ```
 
+### coredump堆栈丢失和noexcept
+
+[一剑破万法：noexcept与C++异常导致的coredump](https://zhuanlan.zhihu.com/p/609434714), 这个可以看下，复杂的回调函数里面，如果有异常，会导致coredump，这个时候bt不一定很清晰，虽然代码可以看出来，但是工程大了的花，一行行看代码其实有点耗时
+
+这个时候可以用noexcept，标注这个回调函数(lambda也可以用这个标注)。这样在coredump里，调用栈会稍微清晰一点。
+
+原理：当你声明一个函数为 noexcept 时，你正在向编译器保证该函数不会抛出任何异常。如果在 noexcept 函数中发生了异常，程序会立即调用 std::terminate() 来进行异常的快速失败处理，通常这会导致程序的退出。
+
 
 ### Ref
 
