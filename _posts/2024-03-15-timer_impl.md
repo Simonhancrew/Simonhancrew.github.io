@@ -14,3 +14,5 @@ date:   2024-03-15
 ## REF
 
 1. [workflow的timer](https://zhuanlan.zhihu.com/p/665046758)
+2. [brpc timer](https://brpc.apache.org/zh/docs/rpc-in-depth/timer-keeping/)
+
