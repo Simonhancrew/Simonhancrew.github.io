@@ -7,7 +7,7 @@ date:   2024-04-09
 
 shared_ptr内部主要有两个点，第一个是contrl block，第二个是内部储存的类空间
 
-ctrl block是在堆上创建的，内部会有一个atomic变量来做引用计数的增减, 因此，shared_ptr的copy其实是线程安全的
+ctrl block是在堆上创建的，内部会有一个atomic变量来做引用计数的增减, 因此，shared_ptr的copy其实是线程安全的，这也意味着修改指向内容的操作不是线程安全的。
 
 这里谈到第二个点，为什么推荐使用make_shared，原因之一是RAII问题，new构造 + shared_ptr构造可能不在同一时期，中间抛一场的话可能导致内存泄漏
 
