@@ -9,7 +9,7 @@ shared_ptr内部主要有两个点，第一个是contrl block，第二个是内�
 
 ctrl block是在堆上创建的，内部会有一个atomic变量来做引用计数的增减, 因此，shared_ptr的copy其实是线程安全的，这也意味着修改指向内容的操作不是线程安全的。
 
-这里谈到第二个点，为什么推荐使用make_shared，原因之一是RAII问题，new构造 + shared_ptr构造可能不在同一时期，中间抛一场的话可能导致内存泄漏
+这里谈到第二个点，为什么推荐使用make_shared，原因之一是RAII问题，new构造 + shared_ptr构造可能不在同一时期，中间抛异常的话可能导致内存泄漏
 
 ```cpp
 vector<shared_ptr<A>> rec;
@@ -59,9 +59,10 @@ _LIBCPP_HIDE_FROM_ABI static shared_ptr<_Tp> __create_with_control_block(
 ### 一些要注意的点
 
 1. 尽量用make_shared
-2. shared_ptr可以自定义deleter，而且比unique_ptr好的点是可以直接写成lambda
+2. shared_ptr可以自定义deleter，而且比unique_ptr好的点是可以直接写成lambda, 但是这样就不能用make_shared了
 3. 不用拿裸指针创建多个shared_ptr   
 4. 类返回this->shared_ptr的话，记得enale_shared_from_this + shared_from_this, 因为他本质也是个指针，跟3一样
+5. shared_ptr的copy是线程安全的，但是修改指向内容的操作不是线程安全的
 
 
 ### REF
