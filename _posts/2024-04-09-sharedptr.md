@@ -18,6 +18,44 @@ rec.emplace_back(new A);
 
 第二个原因就是llvm的实现下，new一个shared ptr看起来会new两次，分别ctrl + T, 但是make shared看起来会直接要一片大内存，本质上其实只new了一次
 
+```cpp
+template <class _Tp, class... _Args, __enable_if_t<!is_array<_Tp>::value, int> = 0>
+_LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp> make_shared(_Args&&... __args) {
+return std::allocate_shared<_Tp>(allocator<_Tp>(), std::forward<_Args>(__args)...);
+}
+```
+
+具体看的话`__allocation_guard<_ControlBlockAllocator> __guard(__a, 1);`先构造了一片内存，随后placement new
+
+```cpp
+//
+// std::allocate_shared and std::make_shared
+//
+template <class _Tp, class _Alloc, class... _Args, __enable_if_t<!is_array<_Tp>::value, int> = 0>
+_LIBCPP_HIDE_FROM_ABI shared_ptr<_Tp> allocate_shared(const _Alloc& __a, _Args&&... __args) {
+  using _ControlBlock          = __shared_ptr_emplace<_Tp, _Alloc>;
+  using _ControlBlockAllocator = typename __allocator_traits_rebind<_Alloc, _ControlBlock>::type;
+  __allocation_guard<_ControlBlockAllocator> __guard(__a, 1);
+  ::new ((void*)std::addressof(__guard.__get())) _ControlBlock(__a, std::forward<_Args>(__args)...);
+  auto __control_block = __guard.__release_ptr();
+  return shared_ptr<_Tp>::__create_with_control_block(*(*__control_block).__get_elem(), std::addressof(*__control_block));
+}
+```
+
+内部`__create_with_control_block`没有什么内存分配
+
+```cpp
+template <class _Yp, class _CntrlBlk>
+_LIBCPP_HIDE_FROM_ABI static shared_ptr<_Tp> __create_with_control_block(
+    _Yp* __p, _CntrlBlk* __cntrl) _NOEXCEPT {
+  shared_ptr<_Tp> __r;
+  __r.__ptr_ = __p;
+  __r.__cntrl_ = __cntrl;
+  __r.__enable_weak_this(__r.__ptr_, __r.__ptr_);
+  return __r;
+}
+```
+
 ### 一些要注意的点
 
 1. 尽量用make_shared
@@ -28,5 +66,5 @@ rec.emplace_back(new A);
 
 ### REF
 
-1. [shared_ptr线程安全](https://www.zhihu.com/question/56836059)
+1. [shared_ptr线程安全](https://zhuanlan.zhihu.com/p/416289479)
 
