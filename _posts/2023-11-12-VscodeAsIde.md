@@ -75,3 +75,7 @@ clang-tidy可以根据自己的需要，预设一些规则(当然他也依赖com
 这个在clangd argument里可以自己+一下"--header-insertion=never"
 
 这个看需求了，主要我有时候发现他会+一些很奇怪的头文件，而且是平台相关的，所以在跨平台的时候可能编译不过，就有点烦
+
+### 设置compdb的路径
+
+`--compile-commands-dir=${workspaceFolder}/build`
