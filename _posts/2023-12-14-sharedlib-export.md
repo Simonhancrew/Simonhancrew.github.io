@@ -41,18 +41,23 @@ version script 是传递给链接器的参数，用来指定动态库导出哪�
 
 ## darwin下动态库符号导出方式
 
+大体跟linux下的导出方式差不多，只是有一些细节上的区别
+
+```bash
+-exported_symbols_list
+```
 
 ## windows下动态库符号导出方式
 
 1. dllexport, 这种方式需要在函数声明之前显示的标注
 
-```
+```cpp
 extern "C" _declspec(dllexport) int add(int a, int b);
 ```
 
 2. .def 文件，这种方式需要在编译的时候指定
 
-```
+```shell
 "/DEF:export.def"
 ```
 
