@@ -44,6 +44,27 @@ version script 是传递给链接器的参数，用来指定动态库导出哪�
 
 ## windows下动态库符号导出方式
 
+1. dllexport, 这种方式需要在函数声明之前显示的标注
+
+```
+extern "C" _declspec(dllexport) int add(int a, int b);
+```
+
+2. .def 文件，这种方式需要在编译的时候指定
+
+```
+"/DEF:export.def"
+```
+
+里面的内容大概是
+
+```
+LIBRARY   lib_name
+EXPORTS
+  function1   @1
+  function2   @2
+```
+
 
 ## Ref
 
