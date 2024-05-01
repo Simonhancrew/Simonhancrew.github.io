@@ -1,5 +1,5 @@
 ---
-title: 收集向链接集合"
+title: 收集向链接集合
 date: 2023-09-03 14:10:00 +0800
 categories: [Blogging, touch-fish]
 tags: [writing]

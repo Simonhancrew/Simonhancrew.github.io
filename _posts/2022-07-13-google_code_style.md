@@ -1,5 +1,5 @@
 ---
-title: Google Code Style C++"
+title: Google Code Style C++
 date: 2022-07-13 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

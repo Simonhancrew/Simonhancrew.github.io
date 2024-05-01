@@ -1,5 +1,5 @@
 ---
-title: Ubuntu18.04下安装高版本gcc并处理版本控制"
+title: Ubuntu18.04下安装高版本gcc并处理版本控制
 date: 2023-05-02 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

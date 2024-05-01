@@ -1,5 +1,5 @@
 ---
-title: Knuth-Shuffle的概率推导"
+title: Knuth-Shuffle的概率推导
 date: 2021-09-28 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

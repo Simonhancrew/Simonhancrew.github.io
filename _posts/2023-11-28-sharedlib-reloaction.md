@@ -1,5 +1,5 @@
 ---
-title: 动态库相关问题"
+title: 动态库相关问题
 date: 2023-11-28 14:10:00 +0800
 categories: [Blogging, compile]
 tags: [writing]

@@ -1,5 +1,5 @@
 ---
-title: Linear Algebra Rethink"
+title: Linear Algebra Rethink
 date: 2021-12-17 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

@@ -1,5 +1,5 @@
 ---
-title: Gosper's Hack"
+title: Gosper's Hack
 date: 2024-01-04 14:10:00 +0800
 categories: [Blogging, CP]
 tags: [writing]

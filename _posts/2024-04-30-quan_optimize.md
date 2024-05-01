@@ -1,5 +1,5 @@
 ---
-title: system optimize"
+title: system optimize
 date: 2024-04-30 14:10:00 +0800
 categories: [Blogging, system-design]
 tags: [writing]

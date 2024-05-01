@@ -1,5 +1,5 @@
 ---
-title: Advance Git"
+title: Advance Git
 date: 2023-11-17 14:10:00 +0800
 categories: [Blogging, tools]
 tags: [writing]

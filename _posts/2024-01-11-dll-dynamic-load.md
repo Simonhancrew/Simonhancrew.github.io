@@ -1,5 +1,5 @@
 ---
-title: dynamic load dll"
+title: dynamic load dll
 date: 2024-01-11 14:10:00 +0800
 categories: [Blogging, compile]
 tags: [writing]

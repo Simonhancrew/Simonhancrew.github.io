@@ -1,5 +1,5 @@
 ---
-title: self assign"
+title: self assign
 date: 2024-01-14 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

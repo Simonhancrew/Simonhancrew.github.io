@@ -1,5 +1,5 @@
 ---
-title: wireshark抓包插件"
+title: wireshark抓包插件
 date: 2023-12-01 14:10:00 +0800
 categories: [Blogging, tools]
 tags: [writing]

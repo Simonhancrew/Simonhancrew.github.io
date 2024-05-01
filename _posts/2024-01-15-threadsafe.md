@@ -1,5 +1,5 @@
 ---
-title: 线程安全"
+title: 线程安全
 date: 2024-01-15 14:10:00 +0800
 categories: [Blogging, os]
 tags: [writing]

@@ -1,5 +1,5 @@
 ---
-title: c++11 singleton"
+title: c++11 singleton
 date: 2023-12-22 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

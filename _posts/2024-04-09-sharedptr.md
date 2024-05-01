@@ -1,5 +1,5 @@
 ---
-title: shared ptr"
+title: shared ptr
 date: 2024-04-09 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

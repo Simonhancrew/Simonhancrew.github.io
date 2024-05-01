@@ -1,5 +1,5 @@
 ---
-title: 编译烂活合集"
+title: 编译烂活合集
 date: 2023-11-22 14:10:00 +0800
 categories: [Blogging, compile]
 tags: [writing]

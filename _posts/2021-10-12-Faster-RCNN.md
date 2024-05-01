@@ -1,5 +1,5 @@
 ---
-title: Faster RCNN"
+title: Faster RCNN
 date: 2021-10-12 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

@@ -1,5 +1,5 @@
 ---
-title: memory barrier"
+title: memory barrier
 date: 2024-01-10 14:10:00 +0800
 categories: [Blogging, os, memory]
 tags: [writing]

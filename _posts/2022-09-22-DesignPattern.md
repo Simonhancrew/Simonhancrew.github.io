@@ -1,5 +1,5 @@
 ---
-title: 设计模式总结"
+title: 设计模式总结
 date: 2022-09-22 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

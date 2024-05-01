@@ -1,5 +1,5 @@
 ---
-title: Compile Optimize"
+title: Compile Optimize
 date: 2023-10-08 14:10:00 +0800
 categories: [Blogging, compile]
 tags: [writing]

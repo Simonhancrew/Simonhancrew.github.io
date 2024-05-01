@@ -1,5 +1,5 @@
 ---
-title: 功能训练方面的书记推荐记录"
+title: 功能训练方面的书记推荐记录
 date: 2024-04-10 14:10:00 +0800
 categories: [Blogging, body_building]
 tags: [writing]

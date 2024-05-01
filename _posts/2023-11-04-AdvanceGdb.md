@@ -1,5 +1,5 @@
 ---
-title: Advance GDB"
+title: Advance GDB
 date: 2023-11-04 14:10:00 +0800
 categories: [Blogging, debug]
 tags: [writing]

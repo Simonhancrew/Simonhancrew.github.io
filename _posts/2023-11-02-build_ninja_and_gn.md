@@ -1,5 +1,5 @@
 ---
-title: build ninja and gn"
+title: build ninja and gn
 date: 2023-11-02 14:10:00 +0800
 categories: [Blogging, compile]
 tags: [writing]

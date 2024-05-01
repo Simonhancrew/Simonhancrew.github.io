@@ -1,5 +1,5 @@
 ---
-title: 模板方法"
+title: 模板方法
 date: 2022-10-12 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

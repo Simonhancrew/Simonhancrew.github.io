@@ -1,5 +1,5 @@
 ---
-title: constexpr发展史"
+title: constexpr发展史
 date: 2024-02-11 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

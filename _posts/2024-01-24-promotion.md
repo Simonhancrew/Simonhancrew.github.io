@@ -1,5 +1,5 @@
 ---
-title: promotion"
+title: promotion
 date: 2024-01-24 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

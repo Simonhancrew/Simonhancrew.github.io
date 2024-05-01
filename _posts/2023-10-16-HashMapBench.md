@@ -1,5 +1,5 @@
 ---
-title: HashMap Bench"
+title: HashMap Bench
 date: 2023-10-16 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

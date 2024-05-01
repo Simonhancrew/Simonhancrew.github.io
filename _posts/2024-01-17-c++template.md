@@ -1,5 +1,5 @@
 ---
-title: c++ template"
+title: c++ template
 date: 2024-01-17 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

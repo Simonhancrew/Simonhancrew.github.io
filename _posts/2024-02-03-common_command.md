@@ -1,5 +1,5 @@
 ---
-title: quick commands"
+title: quick commands
 date: 2024-02-03 14:10:00 +0800
 categories: [Blogging, tools]
 tags: [writing]

@@ -1,5 +1,5 @@
 ---
-title: inline + extern + static"
+title: inline + extern + static
 date: 2023-11-01 14:10:00 +0800
 categories: [Blogging, c++]
 tags: [writing]

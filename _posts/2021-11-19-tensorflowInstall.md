@@ -1,5 +1,5 @@
 ---
-title: tensorflow-gpu的安装"
+title: tensorflow-gpu的安装
 date: 2021-11-19 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]

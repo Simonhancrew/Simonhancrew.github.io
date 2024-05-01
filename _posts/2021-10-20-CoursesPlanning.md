@@ -1,5 +1,5 @@
 ---
-title: 后几年补的课程"
+title: 后几年补的课程
 date: 2021-10-20 14:10:00 +0800
 categories: [Blogging]
 tags: [writing]
