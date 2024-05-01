@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "收集向链接集合"
-category: touch-fish
-date:   2023-09-03
+title: 收集向链接集合"
+date: 2023-09-03 14:10:00 +0800
+categories: [Blogging, touch-fish]
+tags: [writing]
 ---
 ### 阅读 & coding
 

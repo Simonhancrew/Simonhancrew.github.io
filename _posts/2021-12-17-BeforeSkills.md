@@ -1,7 +1,8 @@
 ---
-layout: post 
-title: "数据预处理和模型训练的技巧总结"
-date: 2021-12-17
+title: 数据预处理和模型训练的技巧总结"
+date: 2021-12-17 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 总结一下和网络实现无关的部分，主要针对CV部分。

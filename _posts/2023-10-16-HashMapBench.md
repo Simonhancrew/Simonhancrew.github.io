@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "HashMap Bench"
-category: c++
-date:   2023-10-16
+title: HashMap Bench"
+date: 2023-10-16 14:10:00 +0800
+categories: [Blogging, c++]
+tags: [writing]
 ---
 
 标准库里的map和unordered_map，从某种程度上说，性能其实不是很行

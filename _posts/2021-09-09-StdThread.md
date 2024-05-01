@@ -1,7 +1,8 @@
 ---
-layout: post
-title:  "Cpp-STL-Thread"
-date:   2021-09-09
+title: Cpp-STL-Thread"
+date: 2021-09-09 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 ## C++ thread

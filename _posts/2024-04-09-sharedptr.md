@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "shared ptr"
-category: c++
-date:   2024-04-09
+title: shared ptr"
+date: 2024-04-09 14:10:00 +0800
+categories: [Blogging, c++]
+tags: [writing]
 ---
 
 shared_ptr内部主要有两个点，第一个是contrl block，第二个是内部储存的类空间

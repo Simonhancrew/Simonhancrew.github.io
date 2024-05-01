@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "openssl command"
-category: tools
-date:   2024-02-06
+title: openssl command"
+date: 2024-02-06 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 openssl在命令行层面有一些很方便的命令，比如s_client和x509。这里记录一些常用的命令。

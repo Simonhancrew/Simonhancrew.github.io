@@ -1,7 +1,8 @@
 ---
-layout: post
-title: "Faster RCNN"
-date: 2021-10-12
+title: Faster RCNN"
+date: 2021-10-12 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 abs里面很明确的之处了Region Proposals是瓶颈，于是他们在这次的文章中使用一个RPNet来做区域的建议，和CNN共享了完整的图像卷积特征，这里共享卷积特征的机制，RPN告诉网络去哪里找目标（通俗的讲就是注意力机制）。然后这个检测速度又快了不少，5fps把，具体是什么GPU没看。

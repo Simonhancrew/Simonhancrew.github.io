@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "promotion"
-category: c++
-date:   2024-01-24
+title: promotion"
+date: 2024-01-24 14:10:00 +0800
+categories: [Blogging, c++]
+tags: [writing]
 ---
 
 c++里的一些类型promotion，先随便看看一元`+`操作符的使用技巧

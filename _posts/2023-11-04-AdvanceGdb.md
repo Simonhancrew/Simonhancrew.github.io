@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Advance GDB"
-category: debug
-date:   2023-11-04
+title: Advance GDB"
+date: 2023-11-04 14:10:00 +0800
+categories: [Blogging, debug]
+tags: [writing]
 ---
 
 more than breakpoint + frame + bt + as

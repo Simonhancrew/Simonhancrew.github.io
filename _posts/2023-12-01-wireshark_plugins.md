@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "wireshark抓包插件"
-category: tools
-date:   2023-12-01
+title: wireshark抓包插件"
+date: 2023-12-01 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 做网络协议分析，可能有很多自定义的格式，在需要debug的时候，可能需要看看具体的内容，这个时候就需要自己做解包了

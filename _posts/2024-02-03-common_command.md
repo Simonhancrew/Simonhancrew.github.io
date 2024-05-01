@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "quick commands"
-category: tools
-date:   2024-02-03
+title: quick commands"
+date: 2024-02-03 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 记录一些常用的命令

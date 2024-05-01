@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Advance Git"
-category: tools
-date:   2023-11-17
+title: Advance Git"
+date: 2023-11-17 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 记一下git的一下操作

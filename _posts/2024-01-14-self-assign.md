@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "self assign"
-category: c++
-date:   2024-01-14
+title: self assign"
+date: 2024-01-14 14:10:00 +0800
+categories: [Blogging, c++]
+tags: [writing]
 ---
 
 大多数时候自赋值的检查是没有必要的，尤其是没有使用什么裸指针类型之类的。如果你自己的类里面全部是高级的类型，没有必要自己重载operator=

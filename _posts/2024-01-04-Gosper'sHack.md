@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Gosper's Hack"
-category: CP
-date:   2024-01-04
+title: Gosper's Hack"
+date: 2024-01-04 14:10:00 +0800
+categories: [Blogging, CP]
+tags: [writing]
 ---
 
 二进制枚举技巧，快速找到下一个想要位的集合

@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Compile Optimize"
-category: compile
-date:   2023-10-08
+title: Compile Optimize"
+date: 2023-10-08 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 编译加速上的一些经验和分析方法，主要针对c++。

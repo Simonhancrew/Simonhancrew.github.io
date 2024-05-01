@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "计时问题"
-category: cpp
-date:   2024-03-24
+title: 计时问题"
+date: 2024-03-24 14:10:00 +0800
+categories: [Blogging, cpp]
+tags: [writing]
 ---
 
 集中看下，c++代码下，有哪些可行的计时方法

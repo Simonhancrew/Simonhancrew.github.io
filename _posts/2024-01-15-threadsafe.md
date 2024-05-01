@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "线程安全"
-category: os
-date:   2024-01-15
+title: 线程安全"
+date: 2024-01-15 14:10:00 +0800
+categories: [Blogging, os]
+tags: [writing]
 ---
 
 线程到底会share哪些资源？

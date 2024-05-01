@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "如何将vscode打造成c++ ide"
-category: tools
-date:   2023-11-12
+title: 如何将vscode打造成c++ ide"
+date: 2023-11-12 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 推荐安装llvm的工具链，这样就能使用clangd作为LSP，实际跳转非常准确，而且速度也很快。

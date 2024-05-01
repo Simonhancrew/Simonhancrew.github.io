@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "定时器实现"
-category: os
-date:   2024-03-15
+title: 定时器实现"
+date: 2024-03-15 14:10:00 +0800
+categories: [Blogging, os]
+tags: [writing]
 ---
 
 了解一下通用的定时器实现, 大多数的通用库是实现其实都不是高精度的timer。我大概看了些，基本的实现都是timer fd + 一个红黑树存储（或者堆/跳表）

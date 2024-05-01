@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "dynamic load dll"
-category: compile
-date:   2024-01-11
+title: dynamic load dll"
+date: 2024-01-11 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 动态库热加载指的是在程序运行时，动态地加载动态库，从而达到不停止程序的情况下，更新程序的功能。

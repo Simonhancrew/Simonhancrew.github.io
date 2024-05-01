@@ -1,9 +1,8 @@
 ---
 title: zsh settings
-author: simon
-date: 2023-06-24
-category: config
-layout: post
+date: 2023-06-24 14:10:00 +0800
+categories: [Blogging, config]
+tags: [writing]
 ---
 
 ## terminal settings

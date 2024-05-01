@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "awesome cpp"
-category: cpp
-date:   2024-03-22
+title: awesome cpp"
+date: 2024-03-22 14:10:00 +0800
+categories: [Blogging, cpp]
+tags: [writing]
 ---
 
 ## Game

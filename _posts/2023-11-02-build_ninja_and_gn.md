@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "build ninja and gn"
-category: compile
-date:   2023-11-02
+title: build ninja and gn"
+date: 2023-11-02 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 1. 安装vs

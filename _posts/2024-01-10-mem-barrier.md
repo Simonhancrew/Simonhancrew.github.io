@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "memory barrier"
-category: os, memory
-date:   2024-01-10
+title: memory barrier"
+date: 2024-01-10 14:10:00 +0800
+categories: [Blogging, os, memory]
+tags: [writing]
 ---
 
 主要资料是mem barrier，在ref-1。 如果完整看过perfbook的话，不用再看了，paul真的是神人，RCU的作者，修了linux内核1000多个多线程bug的猛男

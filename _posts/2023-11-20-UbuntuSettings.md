@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "Ubuntu Settings"
-category: tools
-date:   2023-11-20
+title: Ubuntu Settings"
+date: 2023-11-20 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 ubuntu开箱即用设置

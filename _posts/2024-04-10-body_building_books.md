@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "功能训练方面的书记推荐记录"
-category: body_building
-date:   2024-04-10
+title: 功能训练方面的书记推荐记录"
+date: 2024-04-10 14:10:00 +0800
+categories: [Blogging, body_building]
+tags: [writing]
 ---
 
 记录一下功能训练方面的书籍，以后有时间可以看看

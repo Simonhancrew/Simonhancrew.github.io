@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "ostringstream的性能问题"
-category: cpp
-date:   2024-03-26
+title: ostringstream的性能问题"
+date: 2024-03-26 14:10:00 +0800
+categories: [Blogging, cpp]
+tags: [writing]
 ---
 
 其实最悲伤的一点是，我在之前的代码里大量用到了ostringstream，当时没有意识到这玩意其实在多线程下可能是有副作用的。

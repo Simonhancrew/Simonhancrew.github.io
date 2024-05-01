@@ -1,9 +1,8 @@
 ---
 title: decorator
-author: simon
-date: 2023-09-01
-category: tools
-layout: post
+date: 2023-09-01 14:10:00 +0800
+categories: [Blogging, tools]
+tags: [writing]
 ---
 
 ## decorator

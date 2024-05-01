@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "coroutine"
-category: coding
-date:   2023-12-05
+title: coroutine"
+date: 2023-12-05 14:10:00 +0800
+categories: [Blogging, coding]
+tags: [writing]
 ---
 
 理解一下coroutine，协程，异步，同步，async, await

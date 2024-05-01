@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "system optimize"
-category: system-design
-date:   2024-04-30
+title: system optimize"
+date: 2024-04-30 14:10:00 +0800
+categories: [Blogging, system-design]
+tags: [writing]
 ---
 
 计算、存储、网络、硬件，主要是在这四个维度

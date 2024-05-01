@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "动态库相关问题"
-category: compile
-date:   2023-11-28
+title: 动态库相关问题"
+date: 2023-11-28 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 动态库相较静态库的内容会稍微多一点，因为涉及到vm和relocation

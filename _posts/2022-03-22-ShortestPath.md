@@ -1,7 +1,8 @@
 ---
-layout: post
-title: "单源最短路问题总结"
-date: 2022-03-22
+title: 单源最短路问题总结"
+date: 2022-03-22 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 ## 单源最短路

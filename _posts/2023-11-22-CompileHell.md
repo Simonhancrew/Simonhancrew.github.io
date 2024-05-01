@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "编译烂活合集"
-category: compile
-date:   2023-11-22
+title: 编译烂活合集"
+date: 2023-11-22 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 compile上的烂活，可能导致各类的问题

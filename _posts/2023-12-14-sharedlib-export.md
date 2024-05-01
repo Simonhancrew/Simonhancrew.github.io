@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "动态库符号导出"
-category: compile
-date:   2023-12-14
+title: 动态库符号导出"
+date: 2023-12-14 14:10:00 +0800
+categories: [Blogging, compile]
+tags: [writing]
 ---
 
 全平台动态库导出的方法，在[Ref1](#ref)里推荐的方法使用ld script。可以细看一下

@@ -1,7 +1,8 @@
 ---
-layout: post
-title: "Linear Algebra Rethink"
-date: 2021-12-17
+title: Linear Algebra Rethink"
+date: 2021-12-17 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 3Blue1Brown的视频—[线性代数的本质](https://www.bilibili.com/video/BV1ys411472E?spm_id_from=333.999.0.0)。数学需要的不是天赋，而是一定的自由想象。

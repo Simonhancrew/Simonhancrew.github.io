@@ -1,9 +1,8 @@
 ---
 title: Proxy Settings For SSH Git
-author: simon
-date: 2023-05-29
-category: config
-layout: post
+date: 2023-05-29 14:10:00 +0800
+categories: [Blogging, config]
+tags: [writing]
 ---
 
 ### 1. Chrome Set Proxy

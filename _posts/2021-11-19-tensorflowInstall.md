@@ -1,7 +1,8 @@
 ---
-layout: post
-title: "tensorflow-gpu的安装"
-date: 2021-11-19
+title: tensorflow-gpu的安装"
+date: 2021-11-19 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 最近发现tf的安装用anaconda简单了很多,和之前torch一样，不必提前装上cudatoolkit。本地的conda已经换源了。

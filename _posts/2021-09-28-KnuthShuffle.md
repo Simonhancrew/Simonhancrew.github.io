@@ -1,7 +1,8 @@
 ---
-layout: post
-title: "Knuth-Shuffle的概率推导"
-date: 2021-09-28
+title: Knuth-Shuffle的概率推导"
+date: 2021-09-28 14:10:00 +0800
+categories: [Blogging]
+tags: [writing]
 ---
 
 正常DFS然后random pick的话，经历一个全排列，是一个O(n!)的解法，基本不可能使用。

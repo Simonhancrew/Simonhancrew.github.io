@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "c++ template"
-category: c++
-date:   2024-01-17
+title: c++ template"
+date: 2024-01-17 14:10:00 +0800
+categories: [Blogging, c++]
+tags: [writing]
 ---
 
 主要说下模板的声明和实现分离
