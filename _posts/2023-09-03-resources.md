@@ -216,6 +216,8 @@ tags: [writing]
 + [cbloom rants](https://cbloomrants.blogspot.com/)
     > 质量贼高，虽然我不知道他是谁
 
++ [Caturra's blog](https://www.bluepuni.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
