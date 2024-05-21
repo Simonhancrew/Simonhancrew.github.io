@@ -53,3 +53,11 @@ tags: [writing]
 如果使用ninja的话，看编译依赖关系可以使用`ninja -t deps`, 具体看下[文档](https://ninja-build.org/manual.html#_extra_tools)就行
 
 gn看依赖关系的话，可以使用`gn desc`，具体看下[文档](https://gn.googlesource.com/gn/+/master/docs/reference.md#cmd_desc)
+
+
+## 编译optimize level
+
+[clang optimize level](https://clang.llvm.org/docs/CommandGuide/clang.html#code-generation-options)
+
+开不同的optimize level会让最终得到的binary size有不同
+
