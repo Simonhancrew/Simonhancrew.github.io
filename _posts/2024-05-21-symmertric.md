@@ -11,6 +11,17 @@ tags: [writing]
 
 看一段[c++代码](https://github.com/Simonhancrew/recipes/blob/master/crypto/sample/aes_crypto.cpp)
 
+简单的说几个参数
+
+1. IV: Initialization Vector, 一般是加密过程初始化产生的随机向量。加密和解密过程需要同一组IV
+2. key, 密钥，加解密共一个，一般是随机生成的，如果不是协商出来 + 随机的话，基本不安全
+3. aad, Additional Authenticated Data, 附加认证数据，用于认证加密数据的完整性，加解密是同一个add
+4. tag, 用于认证加密数据的完整性，一般是encrypto生成的，要在decrypto的时候提供
+
+剩下的就是必要参数了，比如明文和密文。
+
+因此，如果你自定义了一个加密/解密的流，其实你就定义了一个协议。
+  
 ## REF
 
 ### 1. [EVP Symmetric Encryption and Decryption](https://wiki.openssl.org/index.php/EVP_Symmetric_Encryption_and_Decryption)
