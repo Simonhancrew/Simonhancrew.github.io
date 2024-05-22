@@ -15,7 +15,7 @@ tags: [writing]
 
 1. IV: Initialization Vector, 一般是加密过程初始化产生的随机向量。加密和解密过程需要同一组IV
 2. key, 密钥，加解密共一个，一般是随机生成的，如果不是协商出来 + 随机的话，基本不安全
-3. aad, Additional Authenticated Data, 附加认证数据，用于认证加密数据的完整性，加解密是同一个add
+3. aad, Additional Authenticated Data, 附加认证数据，一般明文，只要保证完整就可以了
 4. tag, 用于认证加密数据的完整性，一般是encrypto生成的，要在decrypto的时候提供
 
 剩下的就是必要参数了，比如明文和密文。
@@ -92,6 +92,8 @@ Advanced Encryption Standard(高级加密标准)，DES之后的继任者，是�
 
 假设以CBC为例子的话，在每一个明文块被加密之前，会让明文和密文做xor。IV作为初始化向量，会跟第一个明文块做xor(因为之前没有任何被加密的明文)，后续的每一个明文块和它前一个明文块所加密出的密文块相异或。这样能保证密文块的不重
 
+参考一下怎么生成[Using Salts, Nonces, and Initialization Vectors](https://www.oreilly.com/library/view/secure-programming-cookbook/0596003943/ch04s09.html)
+
 #### 2.3.5 填充方式
 
 因为密钥往往只能对确定长度的数据进行处理加密，数据的长度是不确定的，因此需要填充，一般是对最后一个块做额外的处理，常用的模式就是PKCS5Padding、PKCS7Padding、NoPadding，这个可以通过openssl的接口, `EVP_CIPHER_CTX_set_padding`来设置
@@ -105,6 +107,18 @@ AAD，一般不是应用层会关注的数据，一般是包含在协议里的�
 ### 3.1 什么是CTR加密模式
 
 还是分块，但是每次只要知道nonce + counter(一个从0到n的编号) + key就可以了。这个加密模式可以并行执行，但没办法做消息完整性验证。所以得带一个mac（Message Authentication Code）
+
+然后看一乐把
+
+| AES模式 | 是否需要tag |
+| ------- | ----------- |
+| ECB     | 不需要      |
+| CBC     | 不需要      |
+| CFB     | 不需要      |
+| OFB     | 不需要      |
+| CTR     | 不需要      |
+| GCM     | 需要        |
+| CCM     | 需要        |
 
 ### 3.2 什么是GCM
 
