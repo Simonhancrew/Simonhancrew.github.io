@@ -9,7 +9,7 @@ tags: [writing]
 
 ## 1. AES
 
-看一段[c++代码](https://github.com/Simonhancrew/recipes/blob/master/crypto/sample/aes_crypto.cpp)
+看一段[demo](https://github.com/Simonhancrew/recipes/blob/master/crypto/sample/aes_crypto.cpp)
 
 简单的说几个参数
 
@@ -21,7 +21,11 @@ tags: [writing]
 剩下的就是必要参数了，比如明文和密文。
 
 因此，如果你自定义了一个加密/解密的流，其实你就定义了一个协议。
-  
+
+另外尽量不要使用`AES_*`的参数，能用`EVP_*`的话就尽量使用后者，因为在内部实现中，会有很多高级指令对运算操作加速
+
+## 2. iv + key的生成
+
 ## REF
 
 ### 1. [EVP Symmetric Encryption and Decryption](https://wiki.openssl.org/index.php/EVP_Symmetric_Encryption_and_Decryption)
@@ -35,3 +39,4 @@ tags: [writing]
 ### 5. [OpenSSL using EVP vs. algorithm API for symmetric crypto](https://stackoverflow.com/questions/10366950/openssl-using-evp-vs-algorithm-api-for-symmetric-crypto)
 
 ### 6. [OpenSSL EVP API](https://wiki.openssl.org/index.php/EVP)
+
