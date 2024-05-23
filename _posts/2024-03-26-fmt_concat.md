@@ -1,5 +1,5 @@
 ---
-title: ostringstream的性能问题
+title: string/ostringstream/vector的性能问题
 date: 2024-03-26 14:10:00 +0800
 categories: [Blogging, cpp]
 tags: [writing]
@@ -71,6 +71,12 @@ locale::~locale() throw()
     }
   }
 ```
+
+## string的一些问题
+
+1. string的resize会call一次memset做初始化，如果你用这个做buffer，大概会多15%的cpu消耗
+2. string的data()跟vector的data()有一点点区别，vector的data()如果在vector是empty的时候有可能会返回nullptr
+    > 多提一嘴，memcpy在遇到nullptr的时候会直接crash，所以在memcpy之前要做一次判断，哪怕size是0也要判断
 
 ### REF
 
