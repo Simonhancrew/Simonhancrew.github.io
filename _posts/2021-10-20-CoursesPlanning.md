@@ -33,6 +33,8 @@ tags: [writing]
 
 参考的文章是[CF提升的讨论](https://codeforces.com/blog/entry/66715?#comment-507869) + [0x3f的知乎解答](https://www.zhihu.com/question/353734418/answer/2353160035)
 
+[灵神的题解summary](https://github.com/EndlessCheng/codeforces-go/blob/master/leetcode/SOLUTIONS.md)
+
 ## REF
 
 1. [28天速通MIT 6.S081操作系统公开课 ](https://zhuanlan.zhihu.com/p/632281381)
