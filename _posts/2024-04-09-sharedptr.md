@@ -56,16 +56,85 @@ _LIBCPP_HIDE_FROM_ABI static shared_ptr<_Tp> __create_with_control_block(
 }
 ```
 
+这就可以有一个比较有意思的点, 下面的基类A没有virtual析构函数，但是也能正常析构，这是因为ctrl block里会拿到子类型，然后析构的时候会调用子类型的析构函数
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+class A {
+public:
+  ~A() { cout << "destroy A\n"; }
+};
+
+class B : public A {
+public:
+  ~B() { cout << "destroy B\n"; }
+};
+
+int main() {
+  std::shared_ptr<A> ptr = std::make_shared<B>();
+  ptr.reset();
+}
+```
+
+也可以玩点花活, 搞个function做类型擦除的deleter。
+
+```cpp
+#include <functional>
+#include <iostream>
+
+
+using namespace std;
+
+class A {
+public:
+  ~A() { cout << "destroy A\n"; }
+};
+
+class B : public A {
+public:
+  ~B() { cout << "destroy B\n"; }
+};
+
+template <typename T> class my_ptr {
+public:
+  template <typename P> my_ptr(P *p) {
+    data_ = p;
+    deleter_ = [p]() { delete p; };
+  }
+
+  ~my_ptr() {
+    if (data_ != nullptr) {
+      deleter_();
+    }
+  }
+
+  void reset() {
+    data_ = nullptr;
+    deleter_();
+  }
+
+private:
+  std::function<void()> deleter_;
+  T *data_;
+};
+
+int main() {
+  my_ptr<A> ptr(new B);
+  ptr.reset();
+}
+```
+
 ### 一些要注意的点
 
 1. 尽量用make_shared
 2. shared_ptr可以自定义deleter，而且比unique_ptr好的点是可以直接写成lambda, 但是这样就不能用make_shared了
-3. 不用拿裸指针创建多个shared_ptr   
+3. 不用拿裸指针创建多个shared_ptr
 4. 类返回this->shared_ptr的话，记得enale_shared_from_this + shared_from_this, 因为他本质也是个指针，跟3一样
 5. shared_ptr的copy是线程安全的，但是修改指向内容的操作不是线程安全的
-
 
 ### REF
 
 1. [shared_ptr线程安全](https://zhuanlan.zhihu.com/p/416289479)
-
