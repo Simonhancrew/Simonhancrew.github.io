@@ -85,3 +85,7 @@ error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't 
 
 15. [Why does the Windows Portable Executable (PE) format have both an import section and input directory?
 ](https://devblogs.microsoft.com/oldnewthing/20231201-17/?p=109090)
+
+16. [CSAPP第七章笔记：链接过程](https://www.bluepuni.com/archives/csapp-chapter7/)
+
+17. [ELF符号：复杂又麻烦的技术细节](https://www.bluepuni.com/archives/elf-symbols/)
