@@ -1,7 +1,7 @@
 ---
 title: 现代c++并发编程1-线程创建
 date: 2021-09-09 14:10:00 +0800
-categories: [Blogging]
+categories: [Blogging, c++, thread]
 tags: [writing]
 ---
 
