@@ -309,3 +309,7 @@ int main() {
 注意这里是按照copy传递给lambda的，如果是一个引用，那么就会出现同一个shared_future而导致竞争条件。
 
 在c++20中，还存在`<semaphore>`和`<latch> + <barrier>`这种玩意，看起来感觉有点像内存屏障了，跟cv + mutex虽然都能做线程同步，但是不准备放在一起写
+
+## REF
+
+1. [同步操作](https://github.com/Mq-b/ModernCpp-ConcurrentProgramming-Tutorial/blob/main/md/04%E5%90%8C%E6%AD%A5%E6%93%8D%E4%BD%9C.md)
