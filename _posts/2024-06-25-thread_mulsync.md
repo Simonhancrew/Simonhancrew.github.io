@@ -1,6 +1,6 @@
 ---
 title: 现代c++并发编程4-多发同步
-date: 2024-06-26 14:10:00 +0800
+date: 2024-06-25 14:10:00 +0800
 categories: [Blogging, c++, thread, latch, barrier, semaphore]
 tags: [writing]
 ---
