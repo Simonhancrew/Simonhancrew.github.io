@@ -1,7 +1,7 @@
 ---
 title: linux的page cache
-date: 2024-07--01 12:44:00 +0800
-categories: [Blogging, linuxm, page cache]
+date: 2024-07-03 12:44:00 +0800
+categories: [Blogging, linux, page cache, os]
 tags: [writing]
 ---
 
@@ -93,7 +93,7 @@ data at the missed-write location is loaded to cache, followed by a write-hit op
 当然你也可以通过flags调整他，设置`O_DIRECT`，就是no-allocate
 
 ```c
-char buf[512] = ”...”;
+char buf[512] = "...";
 int fd = open(”myfile”, O_DIRECT);
 write(fd, buf, 512);
 ```
