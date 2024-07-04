@@ -62,7 +62,7 @@ int c = read(fd, buf, 512);
 By default, kernel marks written pages dirty and flushes after a delay:
 
 ```c
-write(fd, ”hello world”, 11);
+write(fd, "hello world", 11);
 ```
 
 1. Kernel writes "hello world" to page for cached disk
@@ -74,8 +74,8 @@ write(fd, ”hello world”, 11);
 比如设置`O_SYNC`，就是write through
 
 ```c
-int fd = open(”myfile”, O_SYNC);
-write(fd, ”hello world”, 11);
+int fd = open("myfile", O_SYNC);
+write(fd, "hello world", 11);
 ```
 
 这个时候，同样操作`hello world`到文件的流程其实不等了，同步直接刷到磁盘(也更新了page cache)，当然这样性能其实就比较低了
@@ -94,7 +94,7 @@ data at the missed-write location is loaded to cache, followed by a write-hit op
 
 ```c
 char buf[512] = "...";
-int fd = open(”myfile”, O_DIRECT);
+int fd = open("myfile", O_DIRECT);
 write(fd, buf, 512);
 ```
 
