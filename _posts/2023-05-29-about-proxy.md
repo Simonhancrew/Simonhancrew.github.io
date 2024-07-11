@@ -28,7 +28,7 @@ git config --global https.proxy https://127.0.0.1:7890
 
 ```bash
 # wsl里面需要用HOST_IP替换localhost
-HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
+HOST_IP=$(ip route show | grep -i default | awk '{ print $3}')
 WSL_IP=$(hostname -I | awk '{print $1}')
 PROXY_PORT=7890
 
@@ -107,3 +107,7 @@ Host ssh.github.com
   TCPKeepAlive yes
   ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p
 ```
+
+### REF 
+
+1. [Accessing network applications with WSL](https://learn.microsoft.com/en-us/windows/wsl/networking#accessing-windows-networking-apps-from-linux-host-ip)
