@@ -221,6 +221,8 @@ tags: [writing]
 + [selfboot](https://selfboot.cn/archives/)
   > <https://github.com/selfboot>
 
++ [RzBu11d023r's blog](https://blog.csdn.net/u010180372?type=blog)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
