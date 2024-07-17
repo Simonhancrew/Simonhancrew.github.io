@@ -182,7 +182,7 @@ tags: [writing]
 
 + [sandordargo也挺高产](https://www.sandordargo.com/archives/)
 
-+ [twistoy](https://twistoy.com/)
++ [twistoy](https://twistoy.cn/)
   
   > twistoy.github.io, 退役老年选手王大
 
