@@ -1,7 +1,7 @@
 ---
 title: leveldb代码走读-no-destructor
 date: 2024-07-25 11:54:00 +0800
-categories: [Blogging, leveldb, no-destructor]
+categories: [Blogging, leveldb, no-destructor, code reading]
 tags: [writing]
 ---
 
