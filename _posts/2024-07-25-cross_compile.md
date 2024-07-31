@@ -7,7 +7,7 @@ tags: [writing]
 
 简单看下cross compile要做哪些东西，从一个gn的例子开始。
 
-```txt
+```python
 config("compiler_cpu_abi") {
   cflags = []
   cflags_c = []
@@ -15,7 +15,7 @@ config("compiler_cpu_abi") {
   ldflags = []
   defines = []
 
-  if ((is_android || is_linux || is_hmos) && !(is_mac || is_ios)) {
+  if (is_linux) {
     # CPU architecture. We may or may not be doing a cross compile now, so for
     # simplicity we always explicitly set the architecture.
     if (current_cpu == "x64") {
@@ -89,15 +89,107 @@ config("compiler_cpu_abi") {
 }
 ```
 
-著平台的解释一下这个cpu-abi
+## linux下的交叉编译
 
-## linux
+首先指定架构
 
-## win
+### x64
 
-## darwin
+```python
+if (current_cpu == "x64") {
+  cflags += ["-m64", "-march=x86-64"]
+  ldflags += ["-m64"]
+}
+```
 
-## android
++ -m64: 指定生成 64 位代码
++ -march=x86-64: 指定目标架构为 x86-64
+
+### x32
+
+```python
+else if (current_cpu == "x86") {
+  cflags += ["-m32", "-msse2", "-mfpmath=sse", "-mmmx"]
+  ldflags += ["-m32"]
+}
+```
+
++ -m32: 指定生成 32 位代码
++ -msse2, -mfpmath=sse, -mmmx: 启用特定的 x86 指令集扩展
+
+### arm
+
+```python
+else if (current_cpu == "arm") {
+  if (is_clang && !is_android && !is_hmos) {
+    cflags += ["--target=arm-linux-gnueabihf", "-mthumb"]
+    ldflags += ["--target=arm-linux-gnueabihf"]
+  }
+  // ... (其他 ARM 特定设置)
+}
+```
+
++ --target=arm-linux-gnueabihf: 指定目标为 ARM Linux，使用硬浮点 ABI
++ -mthumb: 使用 Thumb 指令集
++ 根据不同的操作系统（如 Android）设置不同的浮点 ABI
+
+### arm64 
+
+```python
+else if (current_cpu == "arm64") {
+  if (is_clang && !is_android) {
+    cflags += ["--target=aarch64-linux-gnu"]
+    ldflags += ["--target=aarch64-linux-gnu"]
+  }
+}
+```
+
+### 指定sys_root + cpp header路径
+
+```python
+if (is_linux && target_cpu != host_cpu &&
+    !(target_cpu == "x86" && host_cpu == "x64")) {
+  sysroot = getenv("SYSROOT")
+  cpp_headers = getenv("CPP_HEADERS")
+  // ... (设置 sysroot 和 C++ 头文件路径)
+}
+```
+
++ 当目标 CPU 与主机 CPU 不同时，设置交叉编译的 sysroot 和头文件路径
++ 使用 --sysroot 选项指定交叉编译的根文件系统路径
+
+## cmake如何写
+
+```cmake
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_VERSION 1)
+set(CMAKE_SYSTEM_PROCESSOR aarch64)
+
+set(SYSROOT_PATH  /path/to/sysroot)
+set(CMAKE_SYSROOT "${SYSROOT_PATH}")
+message(STATUS  "Using sysroot path as ${SYSROOT_PATH}")
+
+set(CMAKE_STAGING_PREFIX /path/to/staging/)
+set(CMAKE_INSTALL_PREFIX /usr/local)
+
+set(TOOLCHAIN_PATH /path/to/toolchain)
+set(TOOLCHAIN_HOST ${TOOLCHAIN_PATH}/bin/aarch64-linux-gnu)
+
+set(TOOLCHAIN_CC "${TOOLCHAIN_HOST}-gcc")
+set(TOOLCHAIN_CXX "${TOOLCHAIN_HOST}-g++")
+
+set(CMAKE_C_COMPILER ${TOOLCHAIN_CC})
+set(CMAKE_CXX_COMPILER ${TOOLCHAIN_CXX})
+
+add_link_options("LINKER:-rpath-link,/path/to/sysroot/lib/aarch64-linux-gnu:/home/admin/tx2-rootfs/usr/lib/aarch64-linux-gnu")
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+```
+
+
 
 ## REF
 
