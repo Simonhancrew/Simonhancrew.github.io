@@ -19,8 +19,6 @@ more than breakpoint + frame + bt + as
 
 #### watchpoint
 
-分两种
-
 + 内存断点 watchpoint set expression 地址
 
 + watchpoint set variable 变量名

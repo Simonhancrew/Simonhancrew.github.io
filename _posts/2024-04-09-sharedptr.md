@@ -56,7 +56,128 @@ _LIBCPP_HIDE_FROM_ABI static shared_ptr<_Tp> __create_with_control_block(
 }
 ```
 
-这就可以有一个比较有意思的点, 下面的基类A没有virtual析构函数，但是也能正常析构，这是因为ctrl block里会拿到子类型，然后析构的时候会调用子类型的析构函数
+`shared_ptr`的构造函数，看下msvc的, 要区分array type和scalar type
+
+```cpp
+template <class _Ux,
+    enable_if_t<conjunction_v<conditional_t<is_array_v<_Ty>, _Can_array_delete<_Ux>, _Can_scalar_delete<_Ux>>,
+                    _SP_convertible<_Ux, _Ty>>,
+        int> = 0>
+explicit shared_ptr(_Ux* _Px) { // construct shared_ptr object that owns _Px
+    if constexpr (is_array_v<_Ty>) {
+        _Setpd(_Px, default_delete<_Ux[]>{});
+    } else {
+        _Temporary_owner<_Ux> _Owner(_Px);
+        _Set_ptr_rep_and_enable_shared(_Owner._Ptr, new _Ref_count<_Ux>(_Owner._Ptr));
+        _Owner._Ptr = nullptr;
+    }
+}
+```
+
+这个`_Ref_count`实际上就是一个ctrl block, _Atomic_counter_t虽然是unsigned long，但是实际是用`_InterlockedIncrement`来操作数的，也是原子操作。
+
+```cpp
+class __declspec(novtable) _Ref_count_base { // common code for reference counting
+private:
+#ifdef _M_CEE_PURE
+    // permanent workaround to avoid mentioning _purecall in msvcurt.lib, ptrustu.lib, or other support libs
+    virtual void _Destroy() noexcept {
+        _CSTD abort();
+    }
+
+    virtual void _Delete_this() noexcept {
+        _CSTD abort();
+    }
+#else // ^^^ defined(_M_CEE_PURE) / !defined(_M_CEE_PURE) vvv
+    virtual void _Destroy() noexcept     = 0; // destroy managed resource
+    virtual void _Delete_this() noexcept = 0; // destroy self
+#endif // ^^^ !defined(_M_CEE_PURE) ^^^
+
+    _Atomic_counter_t _Uses  = 1;
+    _Atomic_counter_t _Weaks = 1;
+
+protected:
+    constexpr _Ref_count_base() noexcept = default; // non-atomic initializations
+
+public:
+    _Ref_count_base(const _Ref_count_base&)            = delete;
+    _Ref_count_base& operator=(const _Ref_count_base&) = delete;
+
+    virtual ~_Ref_count_base() noexcept {} // TRANSITION, should be non-virtual
+
+    bool _Incref_nz() noexcept { // increment use count if not zero, return true if successful
+        auto& _Volatile_uses = reinterpret_cast<volatile long&>(_Uses);
+#ifdef _M_CEE_PURE
+        long _Count = *_Atomic_address_as<const long>(&_Volatile_uses);
+#else
+        long _Count = __iso_volatile_load32(reinterpret_cast<volatile int*>(&_Volatile_uses));
+#endif
+        while (_Count != 0) {
+            const long _Old_value = _INTRIN_RELAXED(_InterlockedCompareExchange)(&_Volatile_uses, _Count + 1, _Count);
+            if (_Old_value == _Count) {
+                return true;
+            }
+
+            _Count = _Old_value;
+        }
+
+        return false;
+    }
+
+    void _Incref() noexcept { // increment use count
+        _MT_INCR(_Uses);
+    }
+
+    void _Incwref() noexcept { // increment weak reference count
+        _MT_INCR(_Weaks);
+    }
+
+    void _Decref() noexcept { // decrement use count
+        if (_MT_DECR(_Uses) == 0) {
+            _Destroy();
+            _Decwref();
+        }
+    }
+
+    void _Decwref() noexcept { // decrement weak reference count
+        if (_MT_DECR(_Weaks) == 0) {
+            _Delete_this();
+        }
+    }
+
+    long _Use_count() const noexcept {
+        return static_cast<long>(_Uses);
+    }
+
+    virtual void* _Get_deleter(const type_info&) const noexcept {
+        return nullptr;
+    }
+};
+```
+
+`_Set_ptr_rep_and_enable_shared`可以看到有针对enable_shared_from_this的处理
+
+```cpp
+template <class _Ux>
+void _Set_ptr_rep_and_enable_shared(_Ux* const _Px, _Ref_count_base* const _Rx) noexcept { // take ownership of _Px
+    this->_Ptr = _Px;
+    this->_Rep = _Rx;
+    if constexpr (conjunction_v<negation<is_array<_Ty>>, negation<is_volatile<_Ux>>, _Can_enable_shared<_Ux>>) {
+        if (_Px && _Px->_Wptr.expired()) {
+            _Px->_Wptr = shared_ptr<remove_cv_t<_Ux>>(*this, const_cast<remove_cv_t<_Ux>*>(_Px));
+        }
+    }
+}
+
+void _Set_ptr_rep_and_enable_shared(nullptr_t, _Ref_count_base* const _Rx) noexcept { // take ownership of nullptr
+    this->_Ptr = nullptr;
+    this->_Rep = _Rx;
+}
+```
+
+`_Can_enable_shared`就是一个简单的判断有没有继承enable_shared_from_this
+
+可以看到ctrl block和shared ptr其实是分开做模板的， 这就可以有一个比较有意思的点, 下面的基类A没有virtual析构函数，但是也能正常析构，这是因为ctrl block里会拿到子类型，然后析构的时候会调用子类型的析构函数
 
 ```cpp
 #include <iostream>
