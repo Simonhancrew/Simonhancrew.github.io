@@ -349,3 +349,20 @@ mmap 是由 SunOS 人员引入 Unix 的，目的是在进程之间共享库对�
     + TLB 被击落
 
 后面可以详细看下
+
+## REF
+
+1. <https://linux-kernel-labs.github.io/refs/heads/master/labs/memory_mapping.html>
+2. <https://grafana.com/blog/2020/06/10/new-in-prometheus-v2.19.0-memory-mapping-of-full-chunks-of-the-head-block-reduces-memory-usage-by-as-much-as-40/>
+3. <https://github.com/prometheus/prometheus>
+4. <http://books.gigatux.nl/mirror/kerneldevelopment/0672327201/ch14lev1sec2.html>
+5. <http://web.cs.ucla.edu/classes/honors/UPLOADS/kousha/thesis.pdf>
+6. <http://www.bitsavers.org/pdf/sun/sunos/4.0/800-1731-07r50_Release_4.0_Change_Notes_for_the_Sun_Workstation_198701.pdf>
+7. <https://db.cs.cmu.edu/papers/2022/cidr2022-p13-crotty.pdf>
+8. <https://www.singlestore.com/blog/linux-off-cpu-investigation/>
+9. <https://www.kernel.org/doc/html/v4.18/core-api/cachetlb.html>
+10. <https://www.kernel.org/doc/gorman/html/understand/understand007.html>
+11. <https://www.usenix.org/system/files/atc20-papagiannis.pdf>
+12. <https://courses.cs.washington.edu/courses/cse551/15sp/notes/talk-rcu.pdf>
+13. <https://www.kernel.org/doc/html/v4.18/core-api/cachetlb.html>
+14. <https://valyala.medium.com/mmap-in-go-considered-harmful-d92a25cb161d>
