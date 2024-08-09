@@ -223,6 +223,8 @@ tags: [writing]
 
 + [RzBu11d023r's blog](https://blog.csdn.net/u010180372?type=blog)
 
++ [bajamircea](https://bajamircea.github.io/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
