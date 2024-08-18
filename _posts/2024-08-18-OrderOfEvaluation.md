@@ -49,3 +49,7 @@ int main() {
 这个问题在于tree[rt]可能提前计算，但是在右侧的update中包含对tree的push back操作，如果造成了tree的扩容，那么此时的tree[rt]其实是悬垂的。
 
 目前在gcc13.2能成功复现，加上`--fsanitize=address`可以复现报错信息，但是clang13.0.1就无法复现了
+
+## REF
+
+1. [order of evaluation](https://en.cppreference.com/w/cpp/language/eval_order#Rules)
