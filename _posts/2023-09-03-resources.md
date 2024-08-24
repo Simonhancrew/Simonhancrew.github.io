@@ -225,6 +225,8 @@ tags: [writing]
 
 + [bajamircea](https://bajamircea.github.io/)
 
++ [Julia Evans's blog](https://jvns.ca/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
