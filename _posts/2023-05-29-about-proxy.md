@@ -96,7 +96,7 @@ Connection closed by UNKNOWN port 65535
 fatal: Could not read from remote repository.
 ```
 
-还没来得及研究原因，但我把`.ssh/config`里的和ssh.github.com的设置写成如下的就能过了:
+我把`.ssh/config`里的和ssh.github.com的设置写成如下的就能过了:
 
 ```bash
 Host ssh.github.com
@@ -108,6 +108,8 @@ Host ssh.github.com
   ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p
 ```
 
-### REF 
+原因可能是[Using SSH over the HTTPS port](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)
+
+### REF
 
 1. [Accessing network applications with WSL](https://learn.microsoft.com/en-us/windows/wsl/networking#accessing-windows-networking-apps-from-linux-host-ip)
