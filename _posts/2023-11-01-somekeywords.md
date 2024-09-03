@@ -86,7 +86,7 @@ static的作用也分
 
 4. 当然上面说的几个，基本不是在cpp里定义static，就是在class内部，或者是在namespace内部，这里的static都是internal linkage的，也就是说在其他的编译单元中是不可见的，这里的static就是internal linkage的。但是你也可以傻逼，在头文件里定义static，这样就会导致每个cpp文件中都有一个static的副本，这个副本是local的，可能会导致程序中有大量的static副本。贼几把大
 
-然后类内部的static成员变量，要用的时候，记得在cpp里定义或者声明(const static定义了的那种，可以直接在类内部定义，但是在cpp里要取地址的话，还是要声明一下，比如你要用min/max之类的)
+然后类内部的static成员变量，要用的时候，记得在cpp里定义或者声明(const static定义了的那种，可以直接在类内部定义，但是在cpp里要取地址的话，还是要声明一下，比如你要用min/max之类的), 这种属于ODR use的范畴，只要不要求地址的，其实大概率都可以额编译+链接过。如果工程不打，编译优化级别开的够高，这里也可能被优化掉，在[An In-depth Look at C++ Keyword: static](https://mp.weixin.qq.com/s?__biz=MzUxOTQ4NjIzNw==&mid=2247488215&idx=1&sn=4aa9df0a34e701f37ab0234f489f2db9&chksm=f9f9bca5ce8e35b3500fe7995b31ec5b5b925187760c6e3cd17a9008b96e85b1f7aefe6c0812&cur_album_id=2980489080029511688&scene=189#wechat_redirect)里有详细的描写
 
 有个[回答](https://stackoverflow.com/questions/3698043/in-header-files-what-is-the-difference-between-a-static-global-variable-and-a-s)比较好，可以看看.
 
