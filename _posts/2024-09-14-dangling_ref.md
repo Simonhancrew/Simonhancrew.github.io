@@ -1,5 +1,5 @@
 ---
-title: dangling red
+title: dangling reference
 date: 2024-09-14 17:01:10 +0800
 categories: [Blogging, debug]
 tags: [writing]
