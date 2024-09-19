@@ -114,3 +114,4 @@ C++不允许一个对象的大小为0，不同对象的地址不能具有相同�
 1. [Debugging a futex crash](https://rustylife.github.io/2023/08/15/futex-crash.html)
 2. [位域](https://zhxilin.github.io/post/tech_stack/1_programming_language/modern_cpp/language_base/bit_field/)
 3. [Memory alignment](https://docs.kernel.org/arch/arm/mem_alignment.html)
+4. [内存对齐问题](https://blog.codingnow.com/2021/08/unalignment_memory_access.html)
