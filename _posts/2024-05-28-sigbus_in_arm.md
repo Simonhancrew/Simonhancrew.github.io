@@ -109,9 +109,14 @@ C++不允许一个对象的大小为0，不同对象的地址不能具有相同�
 
 空基类被继承后，如果派生类有自己的数据成员，那么空基类这1个字节不会添加到派生类中
 
+### 4 如果针对未对齐的内存做转义
+
+一般来讲，在-O2下，不用vectorize的情况下，直接用memcpy是比较安全的方式，arm下也能work，但是可能性能会损失，如果-O3，且出现了问题(编译器的bug)，记得在编译选项里加上`-fno-builtin-memcpy`。
+
 ### REF 
 
 1. [Debugging a futex crash](https://rustylife.github.io/2023/08/15/futex-crash.html)
 2. [位域](https://zhxilin.github.io/post/tech_stack/1_programming_language/modern_cpp/language_base/bit_field/)
 3. [Memory alignment](https://docs.kernel.org/arch/arm/mem_alignment.html)
 4. [内存对齐问题](https://blog.codingnow.com/2021/08/unalignment_memory_access.html)
+5. [Take advantage of ARM unaligned memory access while writing clean C code](https://stackoverflow.com/questions/32062894/take-advantage-of-arm-unaligned-memory-access-while-writing-clean-c-code)
