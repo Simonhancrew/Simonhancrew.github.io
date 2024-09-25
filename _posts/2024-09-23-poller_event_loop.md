@@ -187,6 +187,7 @@ void EPollPoller::update(int operation, Channel* channel)
 eventloop是最核心的事件循环体，它持有poller，负责调用poller的poll方法，然后处理返回的active channels。
 
 这里主要有两大类方法
+
   1. loop, 占有线程并且做事件循环
   2. 需要主动调用的方法，注册一下方法到poller里，比如timer跟sync/async做函数调用
 
@@ -226,3 +227,179 @@ void runInLoop(Functor cb);
 /// Safe to call from other threads.
 void queueInLoop(Functor cb);
 ```
+
+首先看eventloop的构造
+
+```cpp
+EventLoop::EventLoop()
+  : looping_(false),
+    quit_(false),
+    eventHandling_(false),
+    callingPendingFunctors_(false),
+    iteration_(0),
+    threadId_(CurrentThread::tid()),
+    poller_(Poller::newDefaultPoller(this)),
+    timerQueue_(new TimerQueue(this)),
+    wakeupFd_(createEventfd()),
+    wakeupChannel_(new Channel(this, wakeupFd_)),
+    currentActiveChannel_(NULL)
+{
+  LOG_DEBUG << "EventLoop created " << this << " in thread " << threadId_;
+  if (t_loopInThisThread)
+  {
+    LOG_FATAL << "Another EventLoop " << t_loopInThisThread
+              << " exists in this thread " << threadId_;
+  }
+  else
+  {
+    t_loopInThisThread = this;
+  }
+  wakeupChannel_->setReadCallback(
+      std::bind(&EventLoop::handleRead, this));
+  // we are always reading the wakeupfd
+  wakeupChannel_->enableReading();
+}
+```
+
+其中，CurrentThread::tid()会缓存当前的线程id。
+
+具体的
+
+```cpp
+// internal
+extern __thread int t_cachedTid;
+extern __thread char t_tidString[32];
+extern __thread int t_tidStringLength;
+extern __thread const char* t_threadName;
+void cacheTid();
+
+inline int tid()
+{
+  if (__builtin_expect(t_cachedTid == 0, 0))
+  {
+    cacheTid();
+  }
+  return t_cachedTid;
+}
+
+void CurrentThread::cacheTid()
+{
+  if (t_cachedTid == 0)
+  {
+    t_cachedTid = detail::gettid();
+    t_tidStringLength = snprintf(t_tidString, sizeof t_tidString, "%5d ", t_cachedTid);
+  }
+}
+
+pid_t gettid()
+{
+  return static_cast<pid_t>(::syscall(SYS_gettid));
+}
+```
+
+默认创造出来的poller是epoller
+
+```cpp
+Poller* Poller::newDefaultPoller(EventLoop* loop)
+{
+  if (::getenv("MUDUO_USE_POLL"))
+  {
+    return new PollPoller(loop);
+  }
+  else
+  {
+    return new EPollPoller(loop);
+  }
+}
+```
+
+其中`wakeupChannel_`是用来打断epoll loop的（是一个读的eventfd），具体看一下loop的实现
+
+```cpp
+void EventLoop::loop()
+{
+  assert(!looping_);
+  assertInLoopThread();
+  looping_ = true;
+  quit_ = false;  // FIXME: what if someone calls quit() before loop() ?
+  LOG_TRACE << "EventLoop " << this << " start looping";
+
+  while (!quit_)
+  {
+    activeChannels_.clear();
+    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_);
+    ++iteration_;
+    if (Logger::logLevel() <= Logger::TRACE)
+    {
+      printActiveChannels();
+    }
+    // TODO sort channel by priority
+    eventHandling_ = true;
+    for (Channel* channel : activeChannels_)
+    {
+      currentActiveChannel_ = channel;
+      currentActiveChannel_->handleEvent(pollReturnTime_);
+    }
+    currentActiveChannel_ = NULL;
+    eventHandling_ = false;
+    doPendingFunctors();
+  }
+
+  LOG_TRACE << "EventLoop " << this << " stop looping";
+  looping_ = false;
+}
+
+void EventLoop::doPendingFunctors()
+{
+  std::vector<Functor> functors;
+  callingPendingFunctors_ = true;
+
+  {
+  MutexLockGuard lock(mutex_);
+  functors.swap(pendingFunctors_);
+  }
+
+  for (const Functor& functor : functors)
+  {
+    functor();
+  }
+  callingPendingFunctors_ = false;
+}
+```
+
+判断是不是同线程call进来的, 这个`threadId_`是在构造的时候绑定到当前loop的
+
+```cpp
+bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }
+```
+
+加入此时有一个queueInLoop的函数调用，会被放到pendingFunctors里，然后在loop里面调用
+
+```cpp
+void EventLoop::queueInLoop(Functor cb)
+{
+  {
+  MutexLockGuard lock(mutex_);
+  pendingFunctors_.push_back(std::move(cb));
+  }
+
+  if (!isInLoopThread() || callingPendingFunctors_)
+  {
+    wakeup();
+  }
+}
+
+void EventLoop::wakeup()
+{
+  uint64_t one = 1;
+  ssize_t n = sockets::write(wakeupFd_, &one, sizeof one);
+  if (n != sizeof one)
+  {
+    LOG_ERROR << "EventLoop::wakeup() writes " << n << " bytes instead of 8";
+  }
+}
+```
+
+这里的调用会先推到pendingFunctors_里，不在同线程或者当前已经在处理pendingfunctor的时候需要在唤醒一次loop
+
+另外runInLoop和queInLoop的区别就是如果当前是同线程runInLoop，会立即执行，否则的话就是放到pendingFunctors里再去执行
