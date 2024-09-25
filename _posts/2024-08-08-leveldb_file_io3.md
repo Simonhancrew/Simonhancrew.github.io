@@ -160,3 +160,8 @@ static Status SyncFd(int fd, const std::string& fd_path) {
 mainfest 文件记录数据库文件的元数据，包括版本信息、合并操作、数据库状态等关键信息。
 
 文件系统在创建新文件或修改文件目录项时，这些变更可能并不立即写入磁盘。在更新`manifest`文件前确保所在目录的数据已被同步到磁盘，防止系统崩溃时，`manifest`文件引用的文件尚未真正写入磁盘。
+
+
+### REF
+
+1. [leveldb源码阅读系列](https://zhuanlan.zhihu.com/p/80684560)

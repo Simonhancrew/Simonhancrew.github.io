@@ -513,3 +513,5 @@ Relocation section '.rel.dyn' at offset 0x3c0 contains 2 entries:
 5. [Shared_library](https://en.wikipedia.org/wiki/Shared_library)
 
 6. [Position Independent Code (PIC) in shared libraries](https://eli.thegreenplace.net/2011/11/03/position-independent-code-pic-in-shared-libraries/)
+
+7. [C/C++动态链接及地址无关代码(PIC)](https://zhuanlan.zhihu.com/p/589437215)
