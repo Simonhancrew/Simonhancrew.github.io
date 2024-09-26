@@ -4,7 +4,8 @@ date: 2023-09-03 14:10:00 +0800
 categories: [Blogging, touch-fish]
 tags: [writing]
 ---
-### 阅读 & coding
+
+### c++ details
 
 + [CppCoreGuidelines](https://isocpp.github.io/CppCoreGuidelines/)
 
@@ -19,14 +20,65 @@ tags: [writing]
 + [cpp resource collector](https://github.com/MattPD/cpplinks)
   > 这个很有意思
 
++ [c++draft](https://eel.is/c++draft/)
+
++ [C++性能优化的一些资料](https://github.com/fenbf/AwesomePerfCpp)
+
+### tutorial
+
++ [craftinginterpreters](http://craftinginterpreters.com/contents.html)
+
++ [hpc-tutorials](https://hpc-tutorials.llnl.gov/)
+
++ [writing os with rust](https://os.phil-opp.com/zh-CN/?continueFlag=a8d527efd3a093cc6ea538764e0296fc)
+
++ [make tutorial](https://makefiletutorial.com/#getting-started)
+
++ [craftinginterpreters](https://www.craftinginterpreters.com/contents.html)
+  > 一个写解释器的教程
+
++ [project base learning](https://github.com/practical-tutorials/project-based-learning)
+
+### intro doc
+
++ [计算机组成之类的](https://bob.cs.sonoma.edu/IntroCompOrg-x64/bookli1.html#x2-2000)
+
++ [intro-hpc](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial)
+
++ [libevent探索](http://manistein.club/post/server/libevent/%E6%8E%A2%E7%B4%A2libevent%E5%86%85%E9%83%A8%E6%9C%BA%E5%88%B6/)
+
++ [libevent文档](https://libevent.org/libevent-book/)
+
++ [陈硕的tcpip](http://chenshuo.com/tcpip-study/)
+
++ [软件设计哲学](https://www.bookstack.cn/read/A-Philosophy-of-Software-Design-zh/README.md)
+
++ [春哥的nginx教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
+  > 听说是最好的中文nginx教程
+
++ [learning zig](https://zigcc.github.io/learning-zig/)
+
++ [work with linux kernel](https://www.kernel.org/doc/html/v4.10/process/howto.html)
+
++ [Algorithms for Modern Hardware](https://en.algorithmica.org/hpc/)
+  > 这个作者写的东西其实都很棒了
+
++ [modern-cmake](https://cliutils.gitlab.io/modern-cmake/)
+
++ [cmake mordern](https://cmake.org/getting-started/)
+
++ [gn quick start](https://gn.googlesource.com/gn/+/main/docs/quick_start.md)
+
++ [linux一些基础问题](https://cloud-atlas.readthedocs.io/zh-cn/latest/)
+
++ [linux-insides](https://0xax.gitbooks.io/linux-insides/content/)
+
+### db and Distributed Systems
+
 + [rocksdb official blog](https://rocksdb.org/blog/)
   > [rocksdb blog-cn](https://wanghenshui.github.io/rocksdb-doc-cn/)
 
-+ [c++draft](https://eel.is/c++draft/)
-
 + [leveldb](https://dirtysalt.github.io/html/leveldb.html)
-
-+ [craftinginterpreters](http://craftinginterpreters.com/contents.html)
 
 + [分布式系统的资料](https://github.com/ty4z2008/Qix/blob/master/ds.md)
 
@@ -44,56 +96,11 @@ tags: [writing]
 
 + [sqlite源码分析](https://huili.github.io/)
 
-+ [cppbenchmarks](https://cppbenchmarks.wordpress.com/)
-
-+ [C++性能优化的一些资料](https://github.com/fenbf/AwesomePerfCpp)
-
 + [cs525的阅读资料](https://docs.google.com/document/d/1gWQ_Uk60zIH6PvP1P4NYzz4TvrKWGCnltySBxwkradM/edit#heading=h.k6znr7t8urvp)
 
 + [PolarDB 数据库内核月报](http://mysql.taobao.org/monthly/)
 
-+ [writing os with rust](https://os.phil-opp.com/zh-CN/?continueFlag=a8d527efd3a093cc6ea538764e0296fc)
-
-+ [计算机组成之类的](https://bob.cs.sonoma.edu/IntroCompOrg-x64/bookli1.html#x2-2000)
-
-+ [hpc-tutorials](https://hpc-tutorials.llnl.gov/)
-
-+ [intro-hpc](https://hpc.llnl.gov/documentation/tutorials/introduction-parallel-computing-tutorial)
-
-+ [libevent探索](http://manistein.club/post/server/libevent/%E6%8E%A2%E7%B4%A2libevent%E5%86%85%E9%83%A8%E6%9C%BA%E5%88%B6/)
-
-+ [libevent文档](https://libevent.org/libevent-book/)
-
-+ [陈硕的tcpip](http://chenshuo.com/tcpip-study/)
-
-+ [软件设计哲学](https://www.bookstack.cn/read/A-Philosophy-of-Software-Design-zh/README.md)
-
-+ [春哥的nginx教程](http://openresty.org/download/agentzh-nginx-tutorials-zhcn.html)
-  > 听说是最好的中文nginx教程
-
-+ [work with linux kernel](https://www.kernel.org/doc/html/v4.10/process/howto.html)
-
-+ [learning zig](https://zigcc.github.io/learning-zig/)
-
-+ [Algorithms for Modern Hardware](https://en.algorithmica.org/hpc/)
-  > 这个作者写的东西其实都很棒了
-
-+ [make tutorial](https://makefiletutorial.com/#getting-started)
-
-+ [modern-cmake](https://cliutils.gitlab.io/modern-cmake/)
-
-+ [cmake mordern](https://cmake.org/getting-started/)
-
-+ [gn quick start](https://gn.googlesource.com/gn/+/main/docs/quick_start.md)
-
-+ [linux一些基础问题](https://cloud-atlas.readthedocs.io/zh-cn/latest/)
-
-+ [project base learning](https://github.com/practical-tutorials/project-based-learning)
-
-+ [craftinginterpreters](https://www.craftinginterpreters.com/contents.html)
-  > 一个写解释器的教程
-
-### 有意思的博客
+### blogs
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
 
@@ -242,6 +249,8 @@ tags: [writing]
 + [Learn X in Y minutes](https://learnxinyminutes.com)
 
 + [阮一峰的工具search](https://www.apigpts.dev/tools)
+
++ [cppbenchmarks](https://cppbenchmarks.wordpress.com/)
 
 ### Ref
 
