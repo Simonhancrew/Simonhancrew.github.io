@@ -10,4 +10,5 @@ order: 5
 + [reddit programming](https://www.reddit.com/r/programming/)
 + [CppCon](https://www.youtube.com/user/CppCon/videos)
 + [FacebookDevelopers](https://www.youtube.com/user/FacebookDevelopers/videos)
-+ [LWN.net Weekly Edition Archives](https://lwn.net/Archives//)
++ [LWN.net Weekly Edition Archives](https://lwn.net/Archives/)
++ [resources](https://simonhancrew.github.io/posts/2023-09-03-resources/)
