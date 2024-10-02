@@ -12,3 +12,4 @@ order: 5
 + [FacebookDevelopers](https://www.youtube.com/user/FacebookDevelopers/videos)
 + [LWN.net Weekly Edition Archives](https://lwn.net/Archives/)
 + [resources](https://simonhancrew.github.io/posts/2023-09-03-resources/)
++ [科技爱好者周刊](https://github.com/ruanyf/weekly)
