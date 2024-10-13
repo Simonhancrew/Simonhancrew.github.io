@@ -100,6 +100,8 @@ tags: [writing]
 
 + [PolarDB 数据库内核月报](http://mysql.taobao.org/monthly/)
 
++ [postgresql周报](https://grantzhou.github.io/)
+
 ### blogs
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
@@ -131,8 +133,6 @@ tags: [writing]
 + [虎哥](https://bohutang.me/)
 
 + [fuzhe](https://fuzhe1989.github.io/)
-
-+ [postgresql周报](https://grantzhou.github.io/)
 
 + [linux perf](https://www.brendangregg.com/blog/)
   > Brendan Gregg的blog，顶尖大牛了
