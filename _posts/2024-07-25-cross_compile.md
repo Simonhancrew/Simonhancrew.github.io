@@ -133,7 +133,7 @@ else if (current_cpu == "arm") {
 + -mthumb: 使用 Thumb 指令集
 + 根据不同的操作系统（如 Android）设置不同的浮点 ABI
 
-### arm64 
+### arm64
 
 ```python
 else if (current_cpu == "arm64") {
@@ -189,7 +189,28 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 ```
 
+### 总结
 
+一般来讲，clang的跨平台编译不用太过操心，你只需要设置好target。
+
+在linux下，还需要设置好sysroot，如果你还要自己指定cpp header路路径，你需要继续设置-isystem选项。
+
+针对gcc的cross compile，你可能还需要用不同的cc和cxx来指定编译器，同时还需要设置好sysroot。
+
+sysroot的官方介绍中
+
+```ascii
+--sysroot=dir
+Use dir as the logical root directory for headers and libraries. For example, if the compiler normally searches for headers in /usr/include and libraries in /usr/lib, it instead searches dir/usr/include and dir/usr/lib.
+
+If you use both this option and the -isysroot option, then the --sysroot option applies to libraries, but the -isysroot option applies to header files.
+
+The GNU linker (beginning with version 2.16) has the necessary support for this option. If your linker does not support this option, the header file aspect of --sysroot still works, but the library aspect does not.
+```
+
+所以理论上你要交叉编译的话，sysroot里只要有/usr/include和/usr/lib就可以了。
+
+但是也不一定，我见过比较怪的工具链，aarch下只有lib + lib64 + include, 没有usr/, 这种情况下你就需要自己指定cpp header路径了
 
 ## REF
 
