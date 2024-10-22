@@ -252,6 +252,9 @@ tags: [writing]
 
 + [cppbenchmarks](https://cppbenchmarks.wordpress.com/)
 
++ [cppinsights](https://cppinsights.io/)
+  > 能看到c++代码的编译器展开
+
 ### Ref
 
 1. [王很水的笔记](https://wanghenshui.github.io/recommend.html)
