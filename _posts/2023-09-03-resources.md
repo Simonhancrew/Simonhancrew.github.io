@@ -102,6 +102,8 @@ tags: [writing]
 
 + [postgresql周报](https://grantzhou.github.io/)
 
++ [数据库相关](http://databasearchitects.blogspot.com/)
+
 ### blogs
 
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
@@ -138,8 +140,6 @@ tags: [writing]
   > Brendan Gregg的blog，顶尖大牛了
 
 + [啥都讨论的社区](https://lobste.rs/)
-
-+ [数据库相关](http://databasearchitects.blogspot.com/)
 
 + [smalldatum,数据库](http://smalldatum.blogspot.com/)
 
@@ -235,6 +235,8 @@ tags: [writing]
 + [Julia Evans's blog](https://jvns.ca/)
 
 + [ArthurChiao's Blog](https://arthurchiao.art/)
+
++ [卡瓦邦噶！](https://www.kawabangga.com/all-posts)
 
 ### 在线工具
 
