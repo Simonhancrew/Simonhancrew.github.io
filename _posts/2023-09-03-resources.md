@@ -39,6 +39,9 @@ tags: [writing]
 
 + [project base learning](https://github.com/practical-tutorials/project-based-learning)
 
++ [rCore-Tutorial-Book 第三版](https://rcore-os.cn/rCore-Tutorial-Book-v3/)
+  > rCore的教程, github地址是[这个](https://github.com/rcore-os/rCore-Tutorial-Book-v3)
+
 ### intro doc
 
 + [计算机组成之类的](https://bob.cs.sonoma.edu/IntroCompOrg-x64/bookli1.html#x2-2000)
