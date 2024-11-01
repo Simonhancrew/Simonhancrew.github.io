@@ -76,6 +76,8 @@ tags: [writing]
 
 + [linux-insides](https://0xax.gitbooks.io/linux-insides/content/)
 
++ [xv6-public](https://github.com/mit-pdos/xv6-public)
+
 ### db and Distributed Systems
 
 + [rocksdb official blog](https://rocksdb.org/blog/)
