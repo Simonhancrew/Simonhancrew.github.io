@@ -78,6 +78,10 @@ tags: [writing]
 
 + [xv6-public](https://github.com/mit-pdos/xv6-public)
 
++ [linux-source-code-analyze](https://github.com/liexusong/linux-source-code-analyze/tree/master)
+
++ [flash-linux0.11-talk](https://github.com/dibingfa/flash-linux0.11-talk?tab=readme-ov-file)
+
 ### db and Distributed Systems
 
 + [rocksdb official blog](https://rocksdb.org/blog/)
@@ -261,6 +265,8 @@ tags: [writing]
 
 + [cppinsights](https://cppinsights.io/)
   > 能看到c++代码的编译器展开
+
++ [LinuxChanges](https://kernelnewbies.org/LinuxChanges)
 
 ### Ref
 
