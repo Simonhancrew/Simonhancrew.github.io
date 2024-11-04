@@ -88,6 +88,72 @@ public :
 };
 ```
 
+### c++自动注册工厂
+
+```cpp
+#pragma once
+#include "Message.hpp"
+#include <functional>
+#include <map>
+#include <memory>
+#include <string>
+
+struct factory {
+  template <typename T> struct register_t {
+    register_t(const std::string &key) {
+      std::cout << "reigister key: " << key << '\n';
+      factory::get().map_.emplace(key, &register_t<T>::create);
+    }
+
+    template <typename... Args>
+    register_t(const std::string &key, Args... args) {
+      std::cout << "reigister key: " << key << '\n';
+      factory::get().map_.emplace(key, [=] { return new T(args...); });
+    }
+    inline static Message *create() { return new T; }
+  };
+
+  inline Message *produce(const std::string &key) {
+    if (map_.find(key) == map_.end()) {
+      return nullptr;
+    }
+
+    return map_[key]();
+  }
+
+  std::unique_ptr<Message> produce_unique(const std::string &key) {
+    return std::unique_ptr<Message>(produce(key));
+  }
+
+  std::shared_ptr<Message> produce_shared(const std::string &key) {
+    return std::shared_ptr<Message>(produce(key));
+  }
+  typedef Message *(*FunPtr)();
+
+  inline static factory &get() {
+    static factory instance;
+    std::cout << "map size: " << instance.map_.size() << '\n';
+    return instance;
+  }
+
+private:
+  factory(){};
+  factory(const factory &) = delete;
+  factory(factory &&) = delete;
+
+  std::map<std::string, FunPtr> map_;
+};
+
+// std::map<std::string, factory::FunPtr> factory::map_;
+
+#define REGISTER_MESSAGE_VNAME(T) reg_msg_##T##_
+#define REGISTER_MESSAGE(T, key, ...)                                          \
+  static factory::register_t<T> REGISTER_MESSAGE_VNAME(T)(key, ##__VA_ARGS__);
+```
+
+这个就是一个自动注册工厂， 通过宏定义来注册， 通过工厂来生产对象，算是单例比较高级的运用了，可以在cpp里写注册，头文件里写注册被多次include之后会重复注册到最后的map_里，有点浪费
+
+
 ## REF
 
 1. [The Singleton](https://www.modernescpp.com/index.php/creational-patterns-singleton/)
