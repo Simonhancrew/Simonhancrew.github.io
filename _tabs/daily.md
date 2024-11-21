@@ -14,3 +14,4 @@ order: 5
 + [resources](https://simonhancrew.github.io/posts/2023-09-03-resources/)
 + [科技爱好者周刊](https://github.com/ruanyf/weekly)
 + [hello github monthly](https://hellogithub.com/periodical)
++ [See what the GitHub community is most excited about today.](https://github.com/trending)
