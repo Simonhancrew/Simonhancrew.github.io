@@ -1,5 +1,5 @@
 ---
-title: vector和内部item内部指针泄露
+title: vector扩容时候的move问题
 date: 2024-11-26 22:25:10 +0800
 categories: [Blogging, move, vector, lambda, c++]
 tags: [writing]
