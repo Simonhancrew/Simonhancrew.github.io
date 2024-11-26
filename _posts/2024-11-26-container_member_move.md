@@ -66,7 +66,11 @@ int main() {
 }
 ```
 
-单独考虑扩容时候的情况，此时遇到cap的limit，会先开辟一片新的空间，这里指之前的老item也会挪移，最后挪移完之后的item，内部的this指针有了新的指向，外部manager内function所捕获的this指针没有更新，因此会指向错误的item对象
+单独考虑扩容时候的情况，此时遇到cap的limit，会先开辟一片新的空间.
+
+之前的老vec中的item会挪移到新开辟的vec中去，此时在新vec空间内的item，内部的this指针有了新的指向，外部manager内function所捕获的this指针没有更新，因此会指向错误的item对象。
+
+下面的代码是vector扩容时候的emplace操作
 
 ```cpp
 template <class... _Valty>
