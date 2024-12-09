@@ -15,3 +15,4 @@ order: 5
 + [科技爱好者周刊](https://github.com/ruanyf/weekly)
 + [hello github monthly](https://hellogithub.com/periodical)
 + [See what the GitHub community is most excited about today.](https://github.com/trending)
++ [hacker news](https://news.ycombinator.com/)
