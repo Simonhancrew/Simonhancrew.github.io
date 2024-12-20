@@ -41,7 +41,19 @@ Linux中有一些标准的接口名称，这里列出了这些名称。大多数
 
 通常指的是一种虚拟网络接口（network interface），它可以将多个网络接口（如以太网接口、Wi-Fi接口等）连接到一起，形成一个单一的网络段。桥接接口允许这些不同的网络接口在逻辑上作为一个单一网络的一部分进行通信，就像它们物理性地连接在同一个交换机上一样。
 
+## systemd.net-naming-scheme
+
+实际的前缀有规则可循
+
+ | prefix | Description           |
+ | :----- | :-------------------- |
+ | en     | Ethernet              |
+ | ib     | Infiniband            |
+ | sl     | Serial Line IP (SLIP) |
+ | wl     | Wireless LAN          |
+ | ww     | Wireless WAN          |
 
 ## References
 
 1. [A Tour of Linux Network Devices](https://tldp.org/LDP/nag2/x-087-2-hwconfig.tour.html)
+2. [systemd.net-naming-scheme — Network device naming schemes](https://www.freedesktop.org/software/systemd/man/latest/systemd.net-naming-scheme.html)
