@@ -5,7 +5,7 @@ categories: [Blogging, compile]
 tags: [writing]
 ---
 
-这里跟原来的文章[动态库符号导出](/2023-12-14-sharedlib-export)一脉相承，只是补充了一些导出c++的类的最佳实践
+这里跟原来的文章[动态库符号导出](/posts/2023-12-14-sharedlib-export)一脉相承，只是补充了一些导出c++的类的最佳实践
 
 c++里可以借助虚函数，导出的时候只要导出一个c的create当前类的实例的函数(避免name mangling), 然后通过这个函数创建实例，然后调用虚函数就可以了，外部需要知道这个抽象类的结构
 
