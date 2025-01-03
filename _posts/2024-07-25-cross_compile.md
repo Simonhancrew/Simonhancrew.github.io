@@ -189,6 +189,12 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 ```
 
+然后用cmake指定这个
+
+```bash
+cmake -B build -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake 
+```
+
 ### 总结
 
 一般来讲，clang的跨平台编译不用太过操心，你只需要设置好target。
