@@ -14,3 +14,5 @@ tags: [writing]
 ### 2 [🦀Small exercises to get you used to reading and writing Rust code!](https://github.com/rust-lang/rustlings)
 
 ### 3 [rust by example](https://doc.rust-lang.org/rust-by-example/)
+
+### 4 [100-exercises-to-learn-rust](https://github.com/mainmatter/100-exercises-to-learn-rust)
