@@ -89,6 +89,8 @@ tags: [writing]
 
 + [leveldb](https://dirtysalt.github.io/html/leveldb.html)
 
++ [leveldb handbook](https://leveldb-handbook.readthedocs.io/zh/latest)
+
 + [分布式系统的资料](https://github.com/ty4z2008/Qix/blob/master/ds.md)
 
 + [分布式论文的翻译](https://iswade.github.io/02_distributed_system_papers/)
