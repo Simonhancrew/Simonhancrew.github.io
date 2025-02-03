@@ -24,7 +24,7 @@ git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy https://127.0.0.1:7890
 ```
 
-或者在bashrc里写一个函数，方便切换, 但是这个只能使用http协议，不能使用socks5协议。如果是在WSL里的话，需要多加几句
+或者在bashrc里写一个函数，方便切换, 但是这个只能使用http协议，不能使用socks5协议。如果是在WSL里的话，需要多加几句, 参考[使用 WSL 访问网络应用程序](https://learn.microsoft.com/zh-cn/windows/wsl/networking)
 
 ```bash
 # wsl里面需要用HOST_IP替换localhost
