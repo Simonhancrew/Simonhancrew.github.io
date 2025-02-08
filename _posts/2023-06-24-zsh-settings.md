@@ -16,6 +16,12 @@ sudo zypper install zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+国内也可以用ohmyzsh提供的[其余方法](sh -c "$(curl -fsSL https://install.ohmyz.sh/)")
+
+```shll
+sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+```
+
 然后安装插件，我这边在wsl里，就需要一个自动补全就够了
 
 ```bash
