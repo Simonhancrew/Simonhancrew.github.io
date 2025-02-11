@@ -5,7 +5,7 @@ categories: [Blogging, timepoint, c++]
 tags: [writing]
 ---
 
-代码里出现了用了不同的获取时间戳的函数，导致在time的计算时出现了问题
+mac下的代码里出现了用了不同的获取时间戳的函数，导致在time的计算时出现了问题
 
 部分用的是c++的代码
 
