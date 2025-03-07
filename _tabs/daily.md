@@ -1,6 +1,6 @@
 ---
 icon: fas fa-paper-plane
-order: 5
+order: 4
 ---
 
 # Daily
