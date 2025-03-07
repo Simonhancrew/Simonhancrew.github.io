@@ -251,6 +251,10 @@ tags: [writing]
 
 + [John Lee's blog](https://bot-man-jl.github.io/articles/)
 
++ [skywind](https://skywind.me/blog/)
+
++ [腾讯技术工程](https://www.zhihu.com/org/teng-xun-ji-zhu-gong-cheng/posts)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
