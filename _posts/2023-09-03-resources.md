@@ -249,6 +249,8 @@ tags: [writing]
 
 + [卡瓦邦噶！](https://www.kawabangga.com/all-posts)
 
++ [John Lee's blog](https://bot-man-jl.github.io/articles/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
