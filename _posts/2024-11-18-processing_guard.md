@@ -114,3 +114,9 @@ void Channel::handleEvent(Timestamp receiveTime)
 }
 ```
 
+如果这种需要从上方注册observer回调的
+
+一定要时刻注意回调之后是否需要继续执行成员调用，如果要的话，一律要考虑guard来保证声明周期。
+
+不要推敲observer会不会析构当前类，直接一把加guard
+
