@@ -81,7 +81,43 @@ int main()
 }
 ```
 
-这个是c++20以前的，`=`还是会默认捕获this，20开始这个就编译不过了，会默认不捕获this
+这个是c++20以前的，`=`还是会默认捕获this，20开始这个就编译不过了，会默认不捕获this。如果有同名变量在局部的话，实测会优先捕获局部的。
+
+比如，局部放一个id_ = 1, 生成的代码类似
+
+```cpp
+struct test
+{
+  int id_ = 0;
+  inline __lambda_10_16 get()
+  {
+    int id_ = 1;
+        
+    class __lambda_10_16
+    {
+      public: 
+      inline /*constexpr */ void operator()() const
+      {
+        std::operator<<(std::cout.operator<<(id_), '\n');
+      }
+      
+      private: 
+      int id_;
+      public: 
+      // inline /*constexpr */ __lambda_10_16(__lambda_10_16 &&) noexcept = default;
+      __lambda_10_16(int & _id_)
+      : id_{_id_}
+      {}
+      
+    };
+    
+    __lambda_10_16 func = __lambda_10_16{id_} /* NRVO variable */;
+    return func;
+  }
+  
+  // inline constexpr test() noexcept = default;
+};
+```
 
 另外msvc有一个bug
 
