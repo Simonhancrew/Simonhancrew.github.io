@@ -355,3 +355,8 @@ if (ep_op_has_event(op) && (epds->events & EPOLLEXCLUSIVE)) {
 ```
 
 总体没看懂，下次主要看下`ep_poll_callback`相关的代码
+
+
+### REF
+
++ [腾讯二面追问epoll，它凭啥性能一骑绝尘？](https://zhuanlan.zhihu.com/p/1895572395969987968)

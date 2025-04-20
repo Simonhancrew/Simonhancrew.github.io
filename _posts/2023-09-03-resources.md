@@ -255,6 +255,10 @@ tags: [writing]
 
 + [腾讯技术工程](https://www.zhihu.com/org/teng-xun-ji-zhu-gong-cheng/posts)
 
++ [鹅厂架构师](https://www.zhihu.com/org/e-han-jia-gou-shi/posts)
+
++ [mraleph](https://mrale.ph/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
