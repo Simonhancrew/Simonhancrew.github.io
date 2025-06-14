@@ -82,6 +82,9 @@ tags: [writing]
 
 + [flash-linux0.11-talk](https://github.com/dibingfa/flash-linux0.11-talk?tab=readme-ov-file)
 
++ [High Performance Browser Networking](https://hpbn.co/) 
+  > 这本书的作者是Ilya Grigorik, 他是Google的工程师，写的很棒
+
 ### db and Distributed Systems
 
 + [rocksdb official blog](https://rocksdb.org/blog/)
