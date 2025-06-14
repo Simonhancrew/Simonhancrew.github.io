@@ -264,6 +264,8 @@ tags: [writing]
 
 + [xiaodongq](https://xiaodongq.github.io/)
 
++ [Ilya Grigorik's blog](https://ilya.grigorik.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
