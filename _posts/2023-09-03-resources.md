@@ -266,6 +266,8 @@ tags: [writing]
 
 + [Ilya Grigorik's blog](https://ilya.grigorik.com/)
 
++ [x-jeff blog](https://shichaoxin.com/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
