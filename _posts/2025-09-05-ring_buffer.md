@@ -132,3 +132,4 @@ class RingBuffer {
 ### REF
 
 1. [Ring Buffer (Circular Buffer) in C++](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/base/containers/ring_buffer.h)
+2. [BPF ring buffer：使用场景、核心设计及程序示例](https://arthurchiao.art/blog/bpf-ringbuf-zh/)
