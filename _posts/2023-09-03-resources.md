@@ -126,7 +126,7 @@ tags: [writing]
 
 + [christophermeiklejohn](https://christophermeiklejohn.com/)
 
-+ [cppstoriess](https://www.cppstories.com/p/archive/)
++ [cppstories, 这个还可以，一直在更新](https://www.cppstories.com/p/archive/)
 
 + [foonathan](https://www.foonathan.net/)
 
