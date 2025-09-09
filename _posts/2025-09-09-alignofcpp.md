@@ -316,3 +316,66 @@ inline void* align(size_t __align, size_t __size, void *&__ptr, size_t &__space)
 ```
 
 __aligned等价于上取证之后，把最高__align位之前的1值全部变成0，等价在找__align倍数
+
+### 6 #pragma pack
+
+默认情况下，编译器会根据平台、类型自动对齐（比如 int 对齐到 4 字节，double 到 8 字节），但有时为了节省空间或兼容硬件/协议（如网络包、文件格式），我们需要强制调整对齐方式
+
+具体用的方法
+
+```cpp
+#pragma pack(push, N)      // 保存当前对齐状态，设置新对齐为 N 字节
+// 结构体定义
+#pragma pack(pop)  
+
+// 默认12， align = 4
+struct A {
+    char a;    // 1 byte
+    int b;     // 4 bytes → 要求 4-byte 对齐，补 3 字节空隙
+    short c;   // 2 bytes
+};
+[ a ][___][___][___][b][b][b][b][c][c]
+ 0    1    2    3    4    5    6    7    8    9
+
+#pragma pack(1)
+struct B {
+    char a;
+    int b;
+    short c;
+};
+#pragma pack()
+
+[a][b][b][b][b][c][c]
+ 0  1  2  3  4  5  6
+```
+
+配合c++的algnof看看
+
+```cpp
+#include <cstdint>
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+// #define offsetof(OBJECT_TYPE, MEMBER) __builtin_offsetof(OBJECT_TYPE, MEMBER)
+#pragma pack(1)
+struct A {
+  char a;
+  int b;
+  short c;
+};
+#pragma pack()
+
+int main() {
+  cout << "alignof A: " << alignof(A) << endl;
+  return 0;
+}
+```
+
+输出是1
+
+这样用主要可能出现的问题
+
+1. cacheline操作性能下降
+2. arm的严格不容忍非对齐，会抛一个sig啥的，之前写过.
