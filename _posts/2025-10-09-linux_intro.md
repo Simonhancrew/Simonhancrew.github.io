@@ -15,6 +15,7 @@ tags: [writing]
 
 + [Linux 内核开发](https://xinqiu.gitbooks.io/linux-inside-zh/content/Misc/linux-misc-1.html)
 + [linux-inside原文](https://0xax.gitbooks.io/linux-insides/content/index.html)
++ [Learning assembly for Linux x86_64](https://github.com/0xAX/asm)
 
 ### A Beginner’s Guide to Linux Kernel Development (LFD103)
 
