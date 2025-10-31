@@ -9,7 +9,7 @@ tags: [writing]
 
 具体的[文档](https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/sanitizers/error-container-overflow.md)参考
 
-主要原因是vs2022下，开启了annotations，此时为了不违反odr原则，编译器会加点检查的东西在代码里，比如在vs2022下编译就会遇到如下的报错
+主要原因是vs2022下，开启了annotations，此时为了不违反odr原则，代码里有检察项，比如在vs2022下编译就会遇到如下的报错
 
 ```
 my_static.lib(my_code.obj) : error LNK2038: mismatch detected for 'annotate_vector': value '0' doesn't match value '1' in main.obj
