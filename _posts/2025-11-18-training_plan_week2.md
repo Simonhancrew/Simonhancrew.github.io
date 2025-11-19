@@ -5,7 +5,7 @@ categories: [Blogging, fitness, training]
 tags: [writing]
 ---
 
-### 1. 计划安排第一周
+### 1. 计划安排第2周
 
 能够加重的话，加2.5-5kg，不能加重的话，保持不变
 
