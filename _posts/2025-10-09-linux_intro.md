@@ -28,3 +28,16 @@ tags: [writing]
 ### book_linuxkernel_blockdrv
 
 + [book_linuxkernel_blockdrv](https://github.com/gurugio/book_linuxkernel_blockdrv)
+
+### kernel official how to
+
++ [HOWTO do Linux kernel development](https://www.kernel.org/doc/html/v4.16/process/howto.html)
+
+### OSDev.org
+
++ [OSDev.org](https://wiki.osdev.org/Expanded_Main_Page)
+
+### kernel官方文档
+
++ [kernel官方文档](https://docs.kernel.org/index.html)
++ [Building Linux with Clang/LLVM](https://docs.kernel.org/kbuild/llvm.html)
