@@ -48,35 +48,53 @@ tags: [writing]
 
 **果糖的吸收**
 
-- 果糖主要通过易化扩散在小肠上皮细胞中被吸收，进入血液循环。这一过程依赖于特定的转运蛋白，如GLUT5。
-- 与葡萄糖不同，果糖的吸收效率较低，过量摄入可能导致未被吸收的果糖在大肠道内发酵，产生气体和腹胀等不适症状。
-- 另外，果糖在肠腔内停留时间过久，可能因为渗透压导致肠腔细胞内水分流失，引起渗透压型腹泻。
+- 果糖主要通过易化扩散在小肠上皮细胞中被吸收，进入血液循环。这一过程依赖于特定的转运蛋白，如GLUT5。[^1]
+- 与葡萄糖不同，果糖的吸收效率较低，过量摄入可能导致未被吸收的果糖在大肠道内发酵，产生气体和腹胀等不适症状。[^1]
+- 另外，果糖在肠腔内停留时间过久，可能因为渗透压导致肠腔细胞内水分流失，引起渗透压型腹泻。[^1]
 
 **果糖的特别处--不刺激胰岛素**
 
-- 代谢途径：果糖主要在肝脏中代谢，进入肝细胞后通过果糖激酶（fructokinase）磷酸化为果糖-1-磷酸，随后被分解为甘油醛和二羟基丙酮磷酸，这两个中间产物可以进入糖酵解途径或脂肪合成途径。
-- 饱腹感信号：与葡萄糖不同，果糖摄入后不会显著刺激胰岛素分泌，因为它不直接作用于胰岛β细胞。可能影响瘦素水平，间接导致饱腹感弱。这也容易造成摄入的热量过多。 
-- 适量摄入可能不会影响胰岛素敏感性，尤其是在替代高GI碳水化合物的情况下。
+- 代谢途径：果糖主要在肝脏中代谢，进入肝细胞后通过果糖激酶（fructokinase）磷酸化为果糖-1-磷酸，随后被分解为甘油醛和二羟基丙酮磷酸，这两个中间产物可以进入糖酵解途径或脂肪合成途径。[^2]
+- 饱腹感信号：与葡萄糖不同，果糖摄入后不会显著刺激胰岛素分泌，因为它不直接作用于胰岛β细胞。可能影响瘦素水平，间接导致饱腹感弱。这也容易造成摄入的热量过多。[^3] 
+- 适量摄入可能不会影响胰岛素敏感性，尤其是在替代高GI碳水化合物的情况下。[^3]
 
 **果糖的特殊--内脏脂肪堆积**
 
 果糖主要在肝脏代谢
 
-- 过量摄入果糖和非酒精性脂肪肝密切相关：果糖在肝脏中代谢时，过量的果糖会促进脂肪形成，并抑制脂肪酸氧化，导致肝脏脂肪堆积。果糖的摄入还与肝脏炎症和纤维化风险增加有关。
+- 过量摄入果糖和非酒精性脂肪肝密切相关：果糖在肝脏中代谢时，过量的果糖会促进脂肪形成，并抑制脂肪酸氧化，导致肝脏脂肪堆积。果糖的摄入还与肝脏炎症和纤维化风险增加有关。[^4]
 
 **果糖的特殊--尿酸与通风**
 
-- 果糖代谢可能导致尿酸升高：果糖在肝脏代谢过程中会消耗ATP，产生大量的AMP，进而通过嘌呤代谢途径生成尿酸。果糖摄入可能抑制尿酸的肾脏排泄，进一步导致血尿酸水平升高。
-- 饮料内的高果糖玉米糖浆（HFCS）摄入与痛风风险增加有关，尤其是在高摄入量的情况下（痛风风险增加35%-75%）。
+- 果糖代谢可能导致尿酸升高：果糖在肝脏代谢过程中会消耗ATP，产生大量的AMP，进而通过嘌呤代谢途径生成尿酸。果糖摄入可能抑制尿酸的肾脏排泄，进一步导致血尿酸水平升高。[^5]
+- 饮料内的高果糖玉米糖浆（HFCS）摄入与痛风风险增加有关，尤其是在高摄入量的情况下（痛风风险增加35%-75%）。[^6]
 
 **果糖的特殊--提升肝功能**
 
 果糖能在肝脏形成肝糖原，对肝脏功能有一定的帮助
 
-- 适量的果糖摄入可能有助于肝脏功能：一些研究表明，果糖在肝脏代谢产生葡萄糖和乳酸，在某些情况下（低血糖或者运动）对肝脏有保护作用，帮助维持血糖稳定。
-- 适量摄入果糖可能通过增加肝脏中的谷胱甘肽水平，提升抗氧化能力，减轻氧化应激对肝脏的损伤。（谷胱甘肽是肝脏中重要的抗氧化剂，有助于减轻氧化应激造成的肝损伤）
+- 适量的果糖摄入可能有助于肝脏功能：一些研究表明，果糖在肝脏代谢产生葡萄糖和乳酸，在某些情况下（低血糖或者运动）对肝脏有保护作用，帮助维持血糖稳定。[^7]
+- 适量摄入果糖可能通过增加肝脏中的谷胱甘肽水平，提升抗氧化能力，减轻氧化应激对肝脏的损伤。（谷胱甘肽是肝脏中重要的抗氧化剂，有助于减轻氧化应激造成的肝损伤）[^8]
 
 **合理的果糖摄入**
 
 - 天然水果中摄入果糖，几乎不会对健康产生负面影响，因为水果还含有丰富的纤维、维生素和矿物质，有助于减缓果糖的吸收速度，降低其对代谢的冲击。
 - 但是建议水果摄入不要超过400g(可以食用的部分)
+
+参考文献：
+
+[^1]: Douard V, Ferraris RP. Regulation of the fructose transporter GLUT5 in health and disease. Am J Physiol Endocrinol Metab. 2008.
+
+[^2]: Mayes PA. Intermediary metabolism of fructose. Am J Clin Nutr. 1993.
+
+[^3]: Teff KL, Elliott SS, Tschöp M, et al. Dietary fructose reduces circulating insulin and leptin and increases postprandial triglycerides in women. J Clin Endocrinol Metab. 2004.
+
+[^4]: Lim JS, Mietus-Snyder M, Valente A, Schwarz JM, Lustig RH. The role of fructose in the pathogenesis of NAFLD and metabolic syndrome. Nat Rev Gastroenterol Hepatol. 2010.
+
+[^5]: Nakagawa T, Hu H, Zharikov S, et al. A causal role for uric acid in fructose-induced metabolic syndrome. Am J Physiol Renal Physiol. 2006.
+
+[^6]: Choi HK, Curhan G. Soft drinks, fructose consumption, and the risk of gout in men: prospective cohort study. BMJ. 2008.
+
+[^7]: Sun SZ, Empie MW. Fructose metabolism in humans – what isotopic tracer studies tell us about hepatic glycogen and lactate. Nutr Metab. 2012.
+
+[^8]: Basciano H, Federico L, Adeli K. Fructose, insulin resistance, and metabolic dyslipidemia. Nutr Metab. 2005.
