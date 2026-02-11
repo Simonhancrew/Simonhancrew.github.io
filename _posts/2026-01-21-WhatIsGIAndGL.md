@@ -1,7 +1,7 @@
 ---
 title: GI和GL
 date: 2026-01-21 22:30:00 +0800
-categories: [Blogging, touchfish, touch-fish]
+categories: [Blogging, fitness, nutrition]
 tags: [writing]
 ---
 
