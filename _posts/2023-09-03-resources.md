@@ -120,13 +120,23 @@ tags: [writing]
 
 ### blogs
 
++ [lemire,高性能](https://lemire.me/blog/)
+
++ [cppstories, 这个还可以，一直在更新](https://www.cppstories.com/p/archive/)
+
++ [sandordargo也挺高产](https://www.sandordargo.com/archives/)
+
++ [Caturra's blog](https://www.bluepuni.com/)
+
++ [ArthurChiao's Blog](https://arthurchiao.art/)
+
++ [卡瓦邦噶！](https://www.kawabangga.com/all-posts)
+
 + [sf-zhou, 23年没更新](https://sf-zhou.github.io/)
 
 + [prog21](https://prog21.dadgum.com/)
 
 + [christophermeiklejohn](https://christophermeiklejohn.com/)
-
-+ [cppstories, 这个还可以，一直在更新](https://www.cppstories.com/p/archive/)
 
 + [foonathan](https://www.foonathan.net/)
 
@@ -135,8 +145,6 @@ tags: [writing]
 + [baptiste-wicht](https://baptiste-wicht.com/)
 
 + [tromey编译安全](https://tromey.com/blog/)
-
-+ [lemire,高性能](https://lemire.me/blog/)
 
 + [cor3ntin还不错](https://cor3ntin.github.io/)
 
@@ -201,8 +209,6 @@ tags: [writing]
 + [cpptruths](http://cpptruths.blogspot.com/)
   > 看不懂
 
-+ [sandordargo也挺高产](https://www.sandordargo.com/archives/)
-
 + [twistoy](https://twistoy.cn/)
   
   > twistoy.github.io, 退役老年选手王大
@@ -237,8 +243,6 @@ tags: [writing]
 + [cbloom rants](https://cbloomrants.blogspot.com/)
     > 质量贼高，虽然我不知道他是谁
 
-+ [Caturra's blog](https://www.bluepuni.com/)
-
 + [selfboot](https://selfboot.cn/archives/)
   > <https://github.com/selfboot>
 
@@ -247,10 +251,6 @@ tags: [writing]
 + [bajamircea](https://bajamircea.github.io/)
 
 + [Julia Evans's blog](https://jvns.ca/)
-
-+ [ArthurChiao's Blog](https://arthurchiao.art/)
-
-+ [卡瓦邦噶！](https://www.kawabangga.com/all-posts)
 
 + [John Lee's blog](https://bot-man-jl.github.io/articles/)
 
