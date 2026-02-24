@@ -268,6 +268,10 @@ tags: [writing]
 
 + [x-jeff blog](https://shichaoxin.com/)
 
++ [PVS-Studio Blog](https://pvs-studio.com/en/blog/posts/)
+
++ [andreasfertig's blog](https://andreasfertig.com/blog/)
+
 ### 在线工具
 
 + [c++转汇编](https://godbolt.org/)
