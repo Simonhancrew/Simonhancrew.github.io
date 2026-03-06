@@ -1,6 +1,6 @@
 ---
 title: 蛋白质的消化吸收
-date: 2026-03-07 22:40:00 +0800
+date: 2026-03-06 22:40:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
 ---
