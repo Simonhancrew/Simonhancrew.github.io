@@ -3,6 +3,7 @@ title: 性腺轴
 date: 2026-04-11 14:37:19 +0800
 categories: [Blogging, fitness, physiology]
 tags: [writing, hormones, muscle-growth, testosterone]
+mermaid: true
 ---
 
 ### 性腺轴

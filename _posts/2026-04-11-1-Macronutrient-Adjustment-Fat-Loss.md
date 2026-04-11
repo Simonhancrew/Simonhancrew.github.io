@@ -3,6 +3,7 @@ title: 宏量营养素调整与减脂
 date: 2026-04-11 12:25:05 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing, nutrition, fat-loss, macronutrients]
+mermaid: true
 ---
 
 ### 肥胖成因金字塔和卡路里摄入深层原因

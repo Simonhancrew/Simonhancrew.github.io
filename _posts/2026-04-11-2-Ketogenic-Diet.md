@@ -3,6 +3,7 @@ title: 生酮饮食减脂的证据与实践
 date: 2026-04-11 12:42:01 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing, nutrition, fat-loss, ketogenic-diet]
+mermaid: true
 ---
 
 ### 生酮饮食的定义
