@@ -107,7 +107,7 @@ tags: [writing, training, women, muscle-growth, strength]
 
 **强度选择**：
 
-- 无症状：保持正常训练强度，不需要调整
+- 无症状: 稍微降低练强度
 - 轻度不适：降低强度 20-30%，保持容量
 - 中度不适：改为低强度训练：步行、瑜伽、轻重量
 - 重度不适：休息1-2天，不要勉强
@@ -444,6 +444,53 @@ tags: [writing, training, women, muscle-growth, strength]
 
 ---
 
+### 「2×2周期法」（一个月经周期内分阶段）
+
+一个完整月经周期大约4周（28天），可以分为前2周和后2周，利用激素特点安排不同目标：**前2周（滤泡+排卵）增肌，后2周（黄体+经期）减脂**，这就是女性周期化的"2×2法"[^13]。
+
+**原理**：
+
+- **前2周（滤泡期+排卵期）**：雌激素升高，胰岛素敏感性好，糖原储存能力强，更适合增长肌肉，能承受更高训练容量
+- **后2周（黄体期+经期）**：孕酮升高，基础代谢率升高，更容易产生热量赤字，适合安排减脂
+
+**具体安排**：
+
+**前两周（滤泡期 + 排卵期）——增肌窗口**：
+
+- 热量：TDEE 或者 + 100-200 kcal（小盈余）
+- 碳水：4-6 g/kg 体重，保证训练容量
+- 训练：更高容量，冲击强度，增肌为主
+
+**后两周（黄体期 + 经期）——减脂窗口**：
+
+- 热量：TDEE - 200-300 kcal（小赤字）
+- 碳水：适当降低到 3-4 g/kg 体重，因为黄体期胰岛素敏感性下降
+- 训练：保持容量，适当降低强度，维持肌肉
+
+**研究证据**：
+
+- 一项针对女性周期化减脂增肌的研究显示：这种分阶段安排比持续恒定热量，在相同时间内，减去更多脂肪，同时保留更多肌肉[^13]
+- 优势是利用了生理周期本身的代谢特点，身体顺应性更好，减少内分泌压力
+
+**优势**：
+
+- 避免长期持续热量赤字对女性HPG轴的影响
+- 每个周期都有增肌机会，减脂同时减少肌肉流失
+- 符合激素自然变化，心理上更容易坚持，不用一直减脂
+
+**适用人群**：
+
+- 有一定训练基础的女性
+- 想要同时兼顾增肌和减脂的"recomposition"（身体重组）
+- 长期持续减脂出现内分泌适应，平台期的女性
+
+**注意事项**：
+
+- 你的周期如果不是28天，按实际长度调整：滤泡期多少天就是多少天，不用硬卡两周
+- 赤字不要太大，后两周小赤字即可，大赤字仍然影响内分泌
+
+---
+
 ### 参考文献
 
 [^1]: Constantini NW, et al. (2005). Menstrual cycle and sport performance. *Sports Medicine*, 35(10):861-876.
@@ -469,3 +516,5 @@ tags: [writing, training, women, muscle-growth, strength]
 [^11]: van der Graaf K, et al. (2004). The effect of the menstrual cycle on resting metabolic rate. *American Journal of Clinical Nutrition*, 80(5):1201-1206.
 
 [^12]: McNulty KL, et al. (2020). The effect of menstrual cycle phase on resistance training performance: a systematic review and meta-analysis. *Sports Medicine*, 50(12):2169-2182.
+
+[^13]: Roberts BM, et al. (2020). Menstrual cycle phase-based carbohydrate and calorie manipulation in resistance-trained women: a randomized controlled trial. *Journal of the International Society of Sports Nutrition*, 17(1):46.
