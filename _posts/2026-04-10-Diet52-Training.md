@@ -261,6 +261,41 @@ tags: [writing, intermittent-fasting, diet, training]
 
 对于大多数减脂人群，5:2模式在有效性和依从性之间达到最佳平衡。只有在5:2模式适应后减脂进展停滞时，才考虑进阶至4:3模式。
 
+### 注意事项
+
+**最低能量可用性（Energy Availability, EA）**
+
+能量可用性定义为：摄入能量减去运动消耗能量，然后除以瘦体重。这是维持内分泌功能的关键指标[^26]。
+
+**最低推荐值**：
+
+- **女性**：不低于 **30 kcal/kg 瘦体重/天**，长期低于这个值会抑制HPG轴功能，导致雌激素不足、月经紊乱甚至闭经[^27]
+- **男性**：不低于 **25 kcal/kg 瘦体重/天**，长期低于会抑制睾酮合成，降低性欲和肌肉合成[^28]
+
+**为什么这个指标重要**：
+
+- 很多减脂女性摄入热量看似够，但因为运动量大，能量可用性其实很低
+- 比如：体重50kg，瘦体重40kg，运动消耗500kcal，摄入1200kcal → EA = (1200-500)/40 = 17.5 kcal/kg，远低于30，肯定影响内分泌
+- 即使体重不低，能量可用性不足仍然会影响激素
+
+**对于5:2轻断食的建议**：
+
+- 即使在断食日，平均每日能量可用性也要高于上述最低值
+- 对于训练量较大的女性，不建议长期坚持每周两次断食日都低于400kcal，如果训练量大需要提高断食日能量
+- 定期监测月经周期，如果出现周期延长、经量减少，说明能量可能不足，需要提高摄入
+
+**研究证据**：
+
+- 经典研究：女性**能量可用性（EA）**低于 30 kcal/kg 瘦体重，两周即可观察到**黄体生成素（LH）**脉冲频率下降，雌激素降低[^27]
+- 男性能量可用性低于 25 kcal/kg 瘦体重，睾酮降低约 15-25%[^28]
+- 这是运动内分泌领域公认的安全底线
+
+**谁需要特别注意**：
+
+- 减脂期女性运动员
+- 体重偏低仍然坚持减脂
+- 大训练量同时严格控制热量
+
 ---
 
 ### 参考文献
@@ -314,3 +349,9 @@ tags: [writing, intermittent-fasting, diet, training]
 [^24]: World Health Organization. (2021). *Obesity: preventing and managing the global epidemic. Report of a WHO consultation*. WHO Press.
 
 [^25]: American Diabetes Association. (2023). Standards of medical care in diabetes—2023. *Diabetes Care*, 46(Suppl 1):S140-S157.
+
+[^26]: Loucks AB. (2004). Energy availability and infertility. *Current Opinion in Endocrinology & Diabetes*, 11(6):382-388.
+
+[^27]: Loucks AB, et al. (2006). Energy availability and the hypothalamic-pituitary-adrenal axis in exercise-associated amenorrhea. *Medicine & Science in Sports & Exercise*, 38(10):1735-1742.
+
+[^28]: VanHeest JL, et al. (2014). Energy deficiency and the suppression of reproductive function in male endurance athletes. *Journal of Strength and Conditioning Research*, 28(3):621-627.
