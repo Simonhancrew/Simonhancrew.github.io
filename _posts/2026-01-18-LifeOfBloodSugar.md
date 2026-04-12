@@ -3,9 +3,33 @@ title: 血糖的命运
 date: 2026-01-18 00:09:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 葡萄糖是人体能量的"通用货币"。就像汽车需要汽油，我们的细胞（特别是大脑）时刻需要葡萄糖来运转。血液中的葡萄糖被称为血糖，它的浓度维持在一个狭窄的范围内，这对生存至关重要。
+
+血糖的完整来源与去路总结：
+
+```mermaid
+flowchart TD
+    subgraph "血糖来源"
+    A1[1. 食物碳水<br/>消化吸收] --> A[血糖<br/>~5g 空腹]
+    A2[2. 肝糖原分解] --> A
+    A3[3. 糖异生<br/>乳酸/甘油/氨基酸] --> A
+    end
+    
+    subgraph "血糖去路"
+    A --> B1[1. 氧化供能<br/>大脑/红细胞/肌肉]
+    A --> B2[2. 合成糖原<br/>肝糖原~100g<br/>肌糖原~400g]
+    A --> B3[3. 合成脂肪<br/>储存于脂肪组织]
+    A --> B4[4. 合成糖蛋白/糖脂<br/>结构成分]
+    A --> B5[5. 尿糖排出<br/>仅血糖>肾糖阈]
+    end
+    
+    style A fill:#ffdead,stroke:#333,stroke-width:2px
+    style 血糖来源 fill:#f0f8ff,stroke:#666,stroke-width:1px
+    style 血糖去路 fill:#f0fff0,stroke:#666,stroke-width:1px
+```
 
 ## 完整状态下，身体血糖能支撑运动的时长
 
@@ -77,6 +101,35 @@ tags: [writing]
 原因是：肌肉细胞内缺少一种叫“葡萄糖-6-磷酸酶”的酶，导致肌糖原分解产生的“6-磷酸葡萄糖”被“锁”在细胞内，只能自己消耗掉。
 
 那么它是怎么变成糖的呢？通过 **乳酸循环（Cori cycle）**：
+
+```mermaid
+flowchart TD
+    subgraph "肌肉组织"
+    A[肌糖原] --> B[糖酵解]
+    B --> C[乳酸]
+    end
+    
+    subgraph "血液循环"
+    C --> D[乳酸运往肝脏]
+    end
+    
+    subgraph "肝脏"
+    D --> E[乳酸 → 丙酮酸]
+    E --> F[糖异生<br/>三个关键酶绕道]
+    F --> G[葡萄糖]
+    end
+    
+    subgraph "血液循环"
+    G --> H[葡萄糖运回肌肉]
+    end
+    
+    H --> A
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style G fill:#90ee90,stroke:#333,stroke-width:2px
+    style 肌肉组织 fill:#fff5f5,stroke:#666,stroke-width:1px
+    style 肝脏 fill:#f5fff5,stroke:#666,stroke-width:1px
+```
 
 1.  **肌肉内分解：** 剧烈运动时，肌糖原通过糖酵解产生 **乳酸（Lactate）**。
 2.  **入血：** 乳酸通过血液循环从肌肉运输到 **肝脏**。

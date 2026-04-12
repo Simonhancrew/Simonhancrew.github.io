@@ -3,6 +3,7 @@ title: 蛋白质的消化吸收
 date: 2026-03-06 22:40:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 ### 蛋白质的结构复杂性
@@ -73,6 +74,41 @@ tags: [writing]
 **消化过程中的断裂**：在蛋白质消化过程中，首先通过胃酸和加热使弱键断裂（变性），然后通过蛋白酶将肽键断裂，最终分解为小分子肽和氨基酸被吸收。
 
 ### 蛋白质的消化吸收
+
+蛋白质的消化吸收是一个多阶段协同过程，从口腔到小肠逐步完成：
+
+```mermaid
+flowchart TD
+    subgraph "口腔"
+    A[食物蛋白质] --> B[机械磨碎\n无化学消化]
+    end
+    
+    subgraph "胃"
+    B --> C[胃酸 HCl\n蛋白质变性\n弱键断裂]
+    C --> D[胃蛋白酶\n水解肽键]
+    D --> E[多肽 +\n少量氨基酸]
+    end
+    
+    subgraph "小肠（主要消化场所）"
+    E --> F[胰蛋白酶\n糜蛋白酶\n水解为寡肽]
+    F --> G[羧肽酶\n氨基肽酶\n进一步水解]
+    G --> H[氨基酸\n二肽\n三肽]
+    end
+    
+    subgraph "吸收"
+    H --> I[主动转运\n进入肠黏膜细胞]
+    I --> J[二肽/三肽\n在细胞内\n分解为氨基酸]
+    J --> K[氨基酸\n进入门静脉\n运往肝脏]
+    end
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style H fill:#90ee90,stroke:#333,stroke-width:2px
+    style K fill:#ffdead,stroke:#333,stroke-width:2px
+    style 口腔 fill:#f8f8ff,stroke:#666,stroke-width:1px
+    style 胃 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 小肠主要消化场所 fill:#fff5f5,stroke:#666,stroke-width:1px
+    style 吸收 fill:#f5f5ff,stroke:#666,stroke-width:1px
+```
 
 蛋白质的消化吸收是一个复杂的过程，从口腔开始，主要在胃和小肠中完成：
 
@@ -271,24 +307,29 @@ tags: [writing]
 - **基因表达**：通过调节蛋白质合成相关基因的表达来控制代谢
 
 **代谢图总结**
-```
-蛋白质摄入（饮食）
-    ↓
-消化吸收（氨基酸、肽）
-    ↓
-氨基酸池（肝脏、血液、组织）
-    ↓
-┌─────────────────┬─────────────────┐
-│   合成代谢      │   分解代谢      │
-├─────────────────┼─────────────────┤
-│ 组织生长修复    │  能量产生（4kcal/g）│
-│ 酶与激素合成    │  尿素生成（排泄）│
-│ 免疫球蛋白合成  │  尿酸生成（排泄）│
-│ 血红蛋白合成    │  其他代谢产物   │
-│ 神经递质合成    │                 │
-└─────────────────┴─────────────────┘
-    ↓
-氮平衡（动态平衡）
+
+```mermaid
+flowchart TD
+    A[饮食摄入<br/>蛋白质] --> B[消化吸收<br/>氨基酸 + 小肽]
+    B --> C[氨基酸池<br/>血液 + 组织]
+    C --> D[合成代谢]
+    C --> E[分解代谢]
+    D --> D1[组织生长修复]
+    D --> D2[酶 + 激素合成]
+    D --> D3[免疫球蛋白]
+    D --> D4[血红蛋白]
+    D --> D5[神经递质]
+    E --> E1[氧化供能<br/>4 kcal/g]
+    E --> E2[尿素生成排泄]
+    E --> E3[尿酸生成排泄]
+    E --> E4[其他代谢产物]
+    D1 & D2 & D3 & D4 & D5 & E1 & E2 & E3 & E4 --> F[氮平衡<br/>动态平衡]
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style C fill:#ffdead,stroke:#333,stroke-width:2px
+    style F fill:#90ee90,stroke:#333,stroke-width:2px
+    style D fill:#f5fff5,stroke:#666,stroke-width:1px
+    style E fill:#fff5f5,stroke:#666,stroke-width:1px
 ```
 
 ### 嘌呤与痛风

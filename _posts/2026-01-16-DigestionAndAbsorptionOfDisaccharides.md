@@ -3,6 +3,7 @@ title: 双糖的消化和吸收
 date: 2026-01-16 01:46:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 太长了不想看的总结：
@@ -24,6 +25,37 @@ tags: [writing]
 小肠绒毛表面的上皮细胞顶端有大量微绒毛，形成"刷状缘"（Brush Border），极大增加了消化吸收的表面积。双糖水解酶就镶嵌在这些微绒毛的膜上。
 
 ### 三种主要双糖的消化机制
+
+三种常见双糖的消化路径总结：
+
+```mermaid
+flowchart TD
+    subgraph "蔗糖"
+    A[蔗糖<br/>G-F] --> B[蔗糖酶<br/>刷状缘]
+    B --> C[葡萄糖 + 果糖]
+    end
+    
+    subgraph "乳糖"
+    D[乳糖<br/>G-Gal] --> E[乳糖酶<br/>刷状缘]
+    E --> F[葡萄糖 + 半乳糖]
+    end
+    
+    subgraph "麦芽糖"
+    G[麦芽糖<br/>G-G] --> H[麦芽糖酶<br/>刷状缘]
+    H --> I[葡萄糖 + 葡萄糖]
+    end
+    
+    C & F & I --> J[吸收<br/>葡萄糖/半乳糖 via SGLT1<br/>果糖 via GLUT5]
+    J --> K[GLUT2<br/>进入门静脉 → 肝脏]
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style D fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style G fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style K fill:#90ee90,stroke:#333,stroke-width:2px
+    style 蔗糖 fill:#f8f8ff,stroke:#666,stroke-width:1px
+    style 乳糖 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 麦芽糖 fill:#fff5f5,stroke:#666,stroke-width:1px
+```
 
 **1. 蔗糖（Sucrose）的消化**
 

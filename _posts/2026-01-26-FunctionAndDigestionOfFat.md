@@ -3,6 +3,7 @@ title: 脂肪的功能和消化吸收
 date: 2026-01-26 22:12:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 ### **一、脂肪的主要功能**
@@ -31,6 +32,45 @@ tags: [writing]
 ---
 
 ### **二、脂肪的消化与吸收全链路过程**
+
+脂肪的消化吸收是一个复杂的物理和化学过程，主要发生在小肠。完整流程如下图：
+
+```mermaid
+flowchart TD
+    subgraph "口腔+胃"
+    A[食物脂肪<br/>甘油三酯] --> B[物理粉碎乳化]
+    B --> C[少量分解<br/>舌脂肪酶/胃脂肪酶]
+    end
+    
+    subgraph "小肠"
+    C --> D[胆汁<br/>胆汁酸盐乳化]
+    D --> E[大油滴 → 脂肪微滴<br/>表面积增加]
+    E --> F[胰脂肪酶 + 辅脂酶<br/>水解甘油三酯]
+    F --> G[单酰甘油 + 游离脂肪酸 + 胆固醇]
+    G --> H[混合微胶粒<br/>水溶性]
+    end
+    
+    subgraph "肠上皮细胞"
+    H --> I[扩散进入细胞]
+    I --> J[重新合成<br/>甘油三酯 + 胆固醇酯]
+    J --> K[包装为乳糜微粒<br/>载脂蛋白 ApoB-48]
+    end
+    
+    subgraph "循环"
+    K --> L[进入中央乳糜管<br/>淋巴系统]
+    L --> M[胸导管 → 血液循环]
+    N[中短链脂肪酸] --> O[直接进入门静脉 → 肝脏]
+    end
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style G fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style K fill:#90ee90,stroke:#333,stroke-width:2px
+    style M fill:#ffdead,stroke:#333,stroke-width:2px
+    style 口腔加胃 fill:#f8f8ff,stroke:#666,stroke-width:1px
+    style 小肠 fill:#fff5f5,stroke:#666,stroke-width:1px
+    style 肠上皮细胞 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 循环 fill:#f5f5ff,stroke:#666,stroke-width:1px
+```
 
 脂肪的消化吸收是一个复杂的物理和化学过程，主要发生在小肠。甘油三酯由一分子甘油和三分子脂肪酸组成，属于大分子，其消化吸收需要经过以下几个步骤：
 

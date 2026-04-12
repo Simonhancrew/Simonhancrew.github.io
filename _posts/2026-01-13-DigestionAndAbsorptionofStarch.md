@@ -3,13 +3,58 @@ title: 淀粉的消化与吸收
 date: 2026-01-13 22:23:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 ### 淀粉的消化过程
 
-淀粉是人类摄入碳水的最主要来源，其核心目标是**将复杂的淀粉大分子分解为可被肠道吸收的单糖（主要是葡萄糖）**。
+淀粉是人类摄入碳水的最主要来源，其核心目标是**将复杂的淀粉大分子分解为可被肠道吸收的单糖（主要是葡萄糖）**。完整消化吸收路径如下图：
 
-人类能吸收的糖永远是单糖形式，淀粉的消化过程主要分为下面的几个阶段
+```mermaid
+flowchart TD
+    subgraph "口腔"
+    A[淀粉大分子] --> B[唾液淀粉酶<br/>水解α-1,4糖苷键]
+    B --> C[糊精 + 麦芽糖]
+    end
+    
+    subgraph "胃"
+    C --> D[胃酸使淀粉酶失活<br/>消化基本停止]
+    end
+    
+    subgraph "小肠腔"
+    D --> E[胰淀粉酶<br/>继续水解]
+    E --> F[麦芽糖 + 异麦芽糖 + 糊精]
+    end
+    
+    subgraph "小肠刷状缘"
+    F --> G[麦芽糖酶 + 异麦芽糖酶<br/>彻底水解]
+    G --> H[葡萄糖]
+    end
+    
+    subgraph "吸收"
+    H --> I[SGLT1主动转运<br/>进入肠上皮细胞]
+    I --> J[GLUT2转运<br/>进入门静脉]
+    J --> K[肝脏]
+    end
+    
+    subgraph "未消化部分"
+    L[抗性淀粉等] --> M[大肠]
+    M --> N[肠道菌群发酵]
+    N --> O[短链脂肪酸 + 气体]
+    end
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style H fill:#90ee90,stroke:#333,stroke-width:2px
+    style K fill:#ffdead,stroke:#333,stroke-width:2px
+    style 口腔 fill:#f8f8ff,stroke:#666,stroke-width:1px
+    style 胃 fill:#fff5f5,stroke:#666,stroke-width:1px
+    style 小肠腔 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 小肠刷状缘 fill:#f5f5ff,stroke:#666,stroke-width:1px
+    style 吸收 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 未消化部分 fill:#fff5f5,stroke:#666,stroke-width:1px
+```
+
+人类能吸收的糖永远是单糖形式，淀粉的消化过程主要分为下面的几个阶段：
 
 - 口腔：唾液淀粉酶开始分解淀粉，水解α-1,4糖苷键，生成麦芽糖和少量的糊精。
 - 胃：胃酸环境抑制唾液淀粉酶的活性，淀粉的消化在胃中基本停止。
@@ -17,7 +62,7 @@ tags: [writing]
   - 胰淀粉酶：胰腺分泌的胰淀粉酶在小肠中继续分解淀粉，水解α-1,4糖苷键，生成麦芽糖、异麦芽糖和糊精。
   - 小肠刷状缘酶：小肠上皮细胞表面的刷状缘酶（如麦芽糖酶、异麦芽糖酶）进一步水解麦芽糖和异麦芽糖，生成葡萄糖。
 - 吸收：葡萄糖通过小肠上皮细胞被吸收进入血液，主要通过钠-葡萄糖共转运蛋白（SGLT1）和葡萄糖转运蛋白（GLUT2）实现。
-- 大肠：未被消化的淀粉进入大肠，部分被肠道菌群发酵，产生短链脂肪酸和气体.
+- 大肠：未被消化的淀粉进入大肠，部分被肠道菌群发酵，产生短链脂肪酸和气体。
 
 以下是详细的步骤和关键点：
 
