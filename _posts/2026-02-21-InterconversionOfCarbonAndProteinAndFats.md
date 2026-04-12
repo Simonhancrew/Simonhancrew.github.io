@@ -3,6 +3,7 @@ title: 碳蛋脂的相互转化
 date: 2026-02-21 15:14:00 +0800
 categories: [Blogging, fitness, nutrition]
 tags: [writing]
+mermaid: true
 ---
 
 
@@ -12,29 +13,39 @@ tags: [writing]
 
 ### 1. 整体转化
 
-这是人体内最常见、最高效的转化途径。
+三大营养物质（碳水化合物、蛋白质、脂肪）通过共同的代谢枢纽三羧酸循环实现互相转化，整体路径如下图：
 
-```text
-      【蛋白质】                      【糖类 (多糖/葡萄糖)】                 【脂质 (脂肪)】
-          ↓                                    ↓                                ↓
-       氨基酸  ◄─────────────┐          葡萄糖-6-磷酸          ┌──────────► 甘油 + 脂肪酸
-          │                  │                 │             │                │
-    (脱氨基作用)              │              (糖酵解)           │                │
-          ↓                  │                 ↓             │                │
-     【酮酸】  ──────────────┼──────────► 【丙酮酸】 ◄──────────┘                │
-          │                  │                 │                              │
-          │                  │           (氧化脱羧)                            │
-          │                  │                 ↓                              │
-          └──────────────────┼─────────► 【乙酰辅酶A】 ◄────────────────────────┘
-                             │           (Acetyl-CoA)
-                             │                 │
-                             │           (进入线粒体)
-                             │                 ↓
-                             │          【三羧酸循环 (TCA)】
-                             │         (草酰乙酸、α-酮戊二酸等)
-                             │                 │
-                             └─────────────────┘
-                                (通过转氨基作用逆向合成)
+```mermaid
+flowchart TD
+    subgraph "蛋白质分解"
+    A[蛋白质] --> B[氨基酸]
+    B --> C[脱氨基作用] --> D[α-酮酸]
+    end
+    
+    subgraph "碳水化合物分解"
+    E[糖类] --> F[葡萄糖-6-磷酸]
+    F --> G[糖酵解] --> H[丙酮酸]
+    end
+    
+    subgraph "脂肪分解"
+    I[脂肪] --> J[甘油 + 脂肪酸]
+    J --> K[β-氧化] --> L[乙酰-CoA]
+    end
+    
+    D --> M[乙酰-CoA]
+    H -->|氧化脱羧| M[乙酰-CoA]
+    J -->|甘油部分| H
+    M --> N[三羧酸循环<br/>TCA]
+    
+    N --> O[合成氨基酸<br/>转氨基作用] --> B
+    N --> P[糖异生] --> F
+    M --> Q[合成脂肪酸] --> I
+    
+    style A fill:#f0f8ff,stroke:#333,stroke-width:1px
+    style E fill:#f0fff0,stroke:#333,stroke-width:1px
+    style I fill:#fff0f0,stroke:#333,stroke-width:1px
+    style M fill:#ffdead,stroke:#333,stroke-width:2px
+    style N fill:#90ee90,stroke:#333,stroke-width:2px
 ```
 
 *   **糖转脂（容易）：**
@@ -62,8 +73,10 @@ tags: [writing]
 #### A. 核心枢纽：乙酰辅酶A (Acetyl-CoA)
 这是“碳、蛋、脂”三条路的汇合点：
 *   **糖入：** 葡萄糖分解成丙酮酸，再变成乙酰辅酶A。
-*   **脂入：** 脂肪酸经过 β-氧化，直接剪切成大量的乙酰辅酶A。
+*   **脂入：** 脂肪酸经过 β-氧化，直接剪切成大量的乙酰辅酶A（β-氧化详细介绍参见脂肪分解代谢专文）。
 *   **蛋入：** 生酮氨基酸脱氨后也可以变成乙酰辅酶A。
+
+---
 
 #### B. 糖与脂的“单向桥梁”
 
@@ -87,4 +100,14 @@ tags: [writing]
 | **蛋 → 糖** | **是**       | 丙酮酸、草酰乙酸        | 长期饥饿时，身体会“拆东墙补西墙”   |
 | **脂 → 蛋** | **极微弱**   | 三羧酸循环中间产物      | 极少通过此路径                     |
 | **蛋 → 脂** | **是**       | 乙酰辅酶A               | 蛋白质吃多了也会变成脂肪存储       |
+
+---
+
+### 参考文献
+
+[^1]: Nelson DL, Cox MM. (2021). Lehninger Principles of Biochemistry. 8th edition. W.H. Freeman and Company.
+
+[^2]: Ferrannini E, et al. (2019). Interrelationships between carbohydrate, lipid, and protein metabolism in the regulation of energy balance. *Cell Metabolism*, 29(3):538-551.
+
+[^3]: Chechenov AA, et al. (2021). Metabolic cross-talk between macronutrients: a systems biology perspective. *Nature Metabolism*, 3(10):1291-1303.
 
