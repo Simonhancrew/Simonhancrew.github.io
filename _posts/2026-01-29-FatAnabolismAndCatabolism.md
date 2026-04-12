@@ -12,42 +12,42 @@ mermaid: true
 
 ```mermaid
 flowchart LR
-    subgraph "膳食脂肪"
+    subgraph 膳食脂肪
     A[膳食甘油三酯] --> B[小肠水解]
     B --> C[脂肪酸 + 甘油]
     C --> D[小肠上皮细胞]
     D --> E[重新合成甘油三酯]
-    E --> F["包装为乳糜微粒 CM\n(Chylomicron)\nApo B-48 + Apo C-II"]
+    E --> F[包装为乳糜微粒 CM]
     end
     
-    subgraph "运输路径"
+    subgraph 运输路径
     F --> G{脂肪酸链长度?}
     G -->|长链 C>12| H[进入淋巴系统]
     H --> I[胸导管 → 血液]
     G -->|中短链 C<12| J[门静脉直接进肝脏]
     end
     
-    subgraph "血液中处理"
+    subgraph 血液中处理
     I --> K[CM 在血液流动]
-    K --> L["毛细血管内皮\nLPL 脂蛋白脂酶\n(Lipoprotein Lipase)"]
+    K --> L[毛细血管内皮\nLPL 脂蛋白脂酶]
     L -->|Apo C-II 激活 LPL| M[CM 甘油三酯水解]
-    M --> N[游离脂肪酸 FFA\n(Free Fatty Acid) + 甘油]
+    M --> N[游离脂肪酸 FFA + 甘油]
     N --> O{去哪?}
     O -->|肌肉细胞| P[氧化供能]
-    O -->|脂肪细胞| Q["重新合成甘油三酯\n储存"]
+    O -->|脂肪细胞| Q[重新合成甘油三酯储存]
     M --> R[CM 残粒]
     R --> S[肝脏摄取回收]
     end
     
-    subgraph "内源性通路 (肝脏合成)"
-    T[多余能量/碳水化合物] --> U[肝脏 乙酰辅酶A (Acetyl-CoA)]
-    U --> V[合成脂肪酸\n(从头脂肪生成 DNL)]
-    V --> W["包装为VLDL\n(极低密度脂蛋白\nVery Low-Density Lipoprotein)\nApo B-100 + Apo C-II"]
+    subgraph 内源性通路_肝脏合成
+    T[多余能量/碳水化合物] --> U[肝脏 乙酰辅酶A]
+    U --> V[合成脂肪酸\n从头脂肪生成 DNL]
+    V --> W[包装为VLDL]
     W --> X[释放入血]
     X --> Y[毛细血管内皮 LPL]
     Y -->|Apo C-II 激活| Z[VLDL 甘油三酯水解]
     Z --> AA[游离脂肪酸]
-    AA --> AB["脂肪细胞\n储存"]
+    AA --> AB[脂肪细胞储存]
     end
     
     style F fill:#9f9,stroke:#333,stroke-width:2px
@@ -56,6 +56,10 @@ flowchart LR
     style AB fill:#f96,stroke:#333,stroke-width:2px
     style L fill:#69f,stroke:#333,stroke-width:2px
     style Y fill:#69f,stroke:#333,stroke-width:2px
+    style 膳食脂肪 fill:#f8f8ff,stroke:#666,stroke-width:1px
+    style 运输路径 fill:#f0f8ff,stroke:#666,stroke-width:1px
+    style 血液中处理 fill:#f5fff5,stroke:#666,stroke-width:1px
+    style 内源性通路_肝脏合成 fill:#fff5f5,stroke:#666,stroke-width:1px
 ```
 
 ---
