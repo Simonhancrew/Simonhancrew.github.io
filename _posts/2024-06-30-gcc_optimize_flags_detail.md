@@ -263,6 +263,124 @@ Optimize even more. GCC performs nearly all supported optimizations that do not 
 
 剩下的哪些优化选项就自己后面再看了
 
+### clang的优化
+
+Clang 的底层是 LLVM，它的优化机制是基于”Pass 管道（Pass Pipeline）”的。-O2并不是简单地打开一堆布尔开关，而是构建了一条特定的LLVM IR优化Pass处理流。
+
+获取各优化级别的 passes:
+
+```bash
+# 获取 passes (需要有一个 .cpp 文件)
+clang -O0 -mllvm -print-pipeline-passes -c main.cpp
+clang -O1 -mllvm -print-pipeline-passes -c main.cpp
+clang -O2 -mllvm -print-pipeline-passes -c main.cpp
+clang -O3 -mllvm -print-pipeline-passes -c main.cpp
+clang -Os -mllvm -print-pipeline-passes -c main.cpp
+clang -Oz -mllvm -print-pipeline-passes -c main.cpp
+```
+
+生成 diff 对比:
+
+```bash
+# 解析 passes 到文件
+clang -O0 -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/o0.txt
+clang -O1 -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/o1.txt
+clang -O2 -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/o2.txt
+clang -O3 -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/o3.txt
+clang -Os -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/os.txt
+clang -Oz -mllvm -print-pipeline-passes -c main.cpp 2>&1 | tr ',' '\n' | sort > /tmp/oz.txt
+
+# 对比 (只显示新增/移除)
+diff /tmp/o0.txt /tmp/o1.txt | grep "^[<>]"
+diff /tmp/o1.txt /tmp/o2.txt | grep "^[<>]"
+diff /tmp/o2.txt /tmp/o3.txt | grep "^[<>]"
+diff /tmp/o0.txt /tmp/os.txt | grep "^[<>]"
+diff /tmp/o0.txt /tmp/oz.txt | grep "^[<>]"
+```
+
+### O0 -> O1 Diff
+
+新增 passes (> 表示 O1 独有, < 表示 O0 独有):
+
+```
+> adce
+> alignment-from-assumptions
+> bdce
+> called-value-propagation
+> constmerge
+> coro-elide
+> deadargelim
+> div-rem-pairs
+> early-cse<memssa>
+> function-attrs
+> globalopt
+> indvars
+> infer-alignment
+> instcombine (多次)
+> instsimplify
+> ipsccp
+> libcalls-shrinkwrap
+> licm
+> loop-deletion
+> loop-distribute
+> loop-unroll-full
+> loop-unroll<O1>
+> loop-vectorize
+> memcpyopt
+> reassociate
+> sccp
+> simple-loop-unswitch
+> simplifycfg (多次)
+> sroa (多次)
+> tailcallelim
+> vector-combine
+```
+
+### O1 -> O2 Diff
+
+```
+< libcalls-shrinkwrap
+< openmp-opt-cgscc
+```
+
+### O2 -> O3 Diff
+
+```
+> argpromotion
+> callsite-splitting
+> chr
+> loop-unroll<O3>
+> simple-loop-unswitch<nontrivial;trivial>
+< loop-unroll<O2>
+< simple-loop-unswitch<no-nontrivial;trivial>
+```
+
+### O2 -> Os Diff
+
+基于 O2,优化代码大小:
+
+```
+< libcalls-shrinkwrap
+< openmp-opt-cgscc
+```
+
+- 禁用 `libcalls-shrinkwrap` 和 `openmp-opt-cgscc`
+
+### O2 -> Oz Diff
+
+基于 O2,最小化代码大小:
+
+```
+< libcalls-shrinkwrap
+< loop-vectorize<no-interleave-forced-only;no-vectorize-forced-only;>
+< openmp-opt-cgscc
+> loop-vectorize<no-interleave-forced-only;vectorize-forced-only;>
+```
+
+关键差异:
+- Oz 禁用循环向量化 (`loop-vectorize`),改为 `vectorize-forced-only`
+- Os 保持 `no-vectorize-forced-only` (不强制向量化)
+
 ## REF
 
 1. [Options That Control Optimization](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html)
