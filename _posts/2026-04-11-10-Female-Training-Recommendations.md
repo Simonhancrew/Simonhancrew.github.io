@@ -75,7 +75,7 @@ tags: [writing, training, women, muscle-growth, strength]
 
 **对训练影响**：
 
-- 黄体期高强度训练表现可能轻度下降，大约 2-5%
+- 黄体期高强度训练表现可能轻度下降，但荟萃分析显示效应量很小且个体差异大，多数研究未发现统计学显著差异[^3]
 - 相同速度下主观疲劳感更高
 - 糖原储存能力下降，可能需要调整碳水摄入
 
@@ -170,8 +170,8 @@ tags: [writing, training, women, muscle-growth, strength]
 
 **推荐量**：
 
-- 经期碳水摄入不低于 4-5 g/kg 体重
-- 如果训练量较大，需要 5-6 g/kg
+- 经期碳水摄入不低于 3-4 g/kg 体重
+- 如果训练量较大，需要 4-5 g/kg
 - 优先选择复合碳水（全谷物、薯类、水果）
 
 **注意**：
@@ -185,7 +185,7 @@ tags: [writing, training, women, muscle-growth, strength]
 
 **铁补充**：
 
-- 经期失血导致铁丢失，每次月经大约丢失 20-30 mg 铁
+- 经期失血导致铁丢失，每次月经大约丢失 12-15 mg 铁（经量偏多者可达20-30mg）
 - 长期铁丢失可能导致缺铁性贫血，影响运动表现和体能[^8]
 - 推荐：素食女性特别注意，建议定期检测血清铁蛋白
 - 饮食：红肉、动物肝脏、血豆腐是最佳来源
@@ -245,8 +245,8 @@ tags: [writing, training, women, muscle-growth, strength]
 
 **推荐量**：
 
-- 训练日碳水：4-6 g/kg 体重，根据训练量调整
-- 休息日：3-4 g/kg 体重
+- 训练日碳水：3-5 g/kg 体重，根据训练量调整
+- 休息日：2.5-3.5 g/kg 体重
 - 因为雌激素增加脂肪氧化，不需要极端低碳水
 
 **优势**：
@@ -316,7 +316,7 @@ tags: [writing, training, women, muscle-growth, strength]
 **碳水**：
 
 - 训练日保证充足碳水，因为训练强度高
-- 5-7 g/kg 体重，根据训练量调整
+- 4-5 g/kg 体重，根据训练量调整
 
 **蛋白质**：
 
@@ -398,7 +398,7 @@ tags: [writing, training, women, muscle-growth, strength]
 
 - 胰岛素敏感性下降，碳水可以适当降低 10-15%
 - 仍然保持足够碳水，不要极端低碳水
-- 推荐 3-5 g/kg 体重，根据训练量调整
+- 推荐 2.5-4 g/kg 体重，根据训练量调整
 - 增加膳食纤维摄入，改善血糖稳定性
 
 **蛋白质**：
@@ -427,14 +427,14 @@ tags: [writing, training, women, muscle-growth, strength]
 3. **不要停练**：绝大多数情况下保持训练比停练更好，只有严重不适才休息
 4. **倾听身体**：症状重就降低强度，不要硬撑
 
-**周期化安排建议**：
+**周期化安排建议**[^14][^15]：
 
 | 阶段 | 雌激素 | 孕酮 | 训练容量 | 碳水摄入 |
 |------|--------|------|----------|----------|
-| 经期 | ↓ 低 | ↓ 低 | 依症状调整 | 充足 4-5g/kg |
-| 滤泡期 | ↑ 升高 | ↓ 低 | + 10-15% | 4-6g/kg |
-| 排卵期 | ↑↑ 峰值 | ↓ 低 | 可以冲PR | 5-7g/kg |
-| 黄体期 | ↑ 次高 | ↑↑ 峰值 | - 10-20% | 3-5g/kg |
+| 经期 | ↓ 低 | ↓ 低 | 依症状调整 | 充足 3-4g/kg |
+| 滤泡期 | ↑ 升高 | ↓ 低 | + 10-15% | 3-5g/kg |
+| 排卵期 | ↑↑ 峰值 | ↓ 低 | 可以冲PR | 4-5g/kg |
+| 黄体期 | ↑ 次高 | ↑↑ 峰值 | - 10-20% | 2.5-4g/kg |
 
 **总结**：
 
@@ -458,13 +458,13 @@ tags: [writing, training, women, muscle-growth, strength]
 **前两周（滤泡期 + 排卵期）——增肌窗口**：
 
 - 热量：TDEE 或者 + 100-200 kcal（小盈余）
-- 碳水：4-6 g/kg 体重，保证训练容量
+- 碳水：3-5 g/kg 体重，保证训练容量
 - 训练：更高容量，冲击强度，增肌为主
 
 **后两周（黄体期 + 经期）——减脂窗口**：
 
 - 热量：TDEE - 200-300 kcal（小赤字）
-- 碳水：适当降低到 3-4 g/kg 体重，因为黄体期胰岛素敏感性下降
+- 碳水：适当降低到 2.5-3.5 g/kg 体重，因为黄体期胰岛素敏感性下降
 - 训练：保持容量，适当降低强度，维持肌肉
 
 **研究证据**：
@@ -501,7 +501,7 @@ tags: [writing, training, women, muscle-growth, strength]
 
 [^4]: Brown WJ, et al. (2009). Exercise and premenstrual symptoms: a systematic review. *Journal of Women's Health*, 18(10):1593-1604.
 
-[^i5]: Wurtman JJ, et al. (1989). Carbohydrate craving, mood, and the serotonin hypothesis. *Neurology*, 39(9):1187-1192.
+[^5]: Wurtman JJ, et al. (1989). Carbohydrate craving, mood, and the serotonin hypothesis. *Neurology*, 39(9):1187-1192.
 
 [^6]: Walker AF, et al. (1998). Magnesium supplementation alleviates premenstrual symptoms of water retention. *Journal of Women's Health*, 7(9):1157-1165.
 
@@ -518,3 +518,7 @@ tags: [writing, training, women, muscle-growth, strength]
 [^12]: McNulty KL, et al. (2020). The effect of menstrual cycle phase on resistance training performance: a systematic review and meta-analysis. *Sports Medicine*, 50(12):2169-2182.
 
 [^13]: Roberts BM, et al. (2020). Menstrual cycle phase-based carbohydrate and calorie manipulation in resistance-trained women: a randomized controlled trial. *Journal of the International Society of Sports Nutrition*, 17(1):46.
+
+[^14]: Burke LM, et al. (2011). Carbohydrates for training and competition. *Journal of Sports Sciences*, 29(Suppl 1):S17-S27.
+
+[^15]: Kerksick CM, et al. (2017). International society of sports nutrition position stand: nutrient timing. *Journal of the International Society of Sports Nutrition*, 14:33.

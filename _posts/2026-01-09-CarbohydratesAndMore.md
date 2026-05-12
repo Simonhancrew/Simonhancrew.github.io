@@ -89,7 +89,7 @@ tags: [writing]
 **糖原与肥胖**
 
 - 糖原在肌肉和肝脏储存时，会与水结合。每克糖原大约结合3-4g水。这种结合是由于糖原分子的极性和亲水性所致。[^6]
-- 普通人，肌肉糖原储备约为80-120mmol/kg肌肉湿重，肝糖原储备约为400-600mmol，总计约100-500克糖原（取决于个体体重和肌肉质量）。这相当于约1600-2000千卡的能量储备
+- 普通人，肌肉糖原储备约为80-120mmol/kg肌肉湿重，肝糖原储备约为400-600mmol，总计约300-500克糖原（取决于个体体重和肌肉质量）。这相当于约1200-2000千卡的能量储备
 - 健美运动员，肌肉糖原储备可能更高，达到150-200mmol/kg肌肉湿重，肝糖原储备也可能增加，总计可达600-800克糖原。这相当于约2400-3200千卡的能量储备。
 
 **淀粉**
@@ -191,7 +191,7 @@ tags: [writing]
 [^3]: Food and Agriculture Organization. Carbohydrates in Human Nutrition. FAO Food and Nutrition Paper 66, 1998.
 [^4]: van Loon LJ, Greenhaff PL, Constantin-Teodosiu D, et al. The effects of increasing exercise intensity on muscle fuel utilisation in humans. The Journal of Physiology. 2001;536(Pt 1):295-304.
 [^5]: Churchward-Venne, TA, Burd NA, Phillips SM. Nutritional regulation of muscle protein synthesis with resistance exercise: strategies to enhance anabolism. Nutrition & Metabolism. 2012;9(1):40.
-[^6]: Olsson K, Saltin B. Muscle glycogen content and physical performance. Annual Review of Nutrition. 1970;10(1):273-293.
+[^6]: Olsson K, Saltin B. Muscle glycogen content and physical performance. Acta Physiologica Scandinavica. 1971;Suppl 367:1-75.
 [^7]: Higgins JA, Brown IL, Frost GS. Resistant starch: its role in health and disease. Critical Reviews in Food Science and Nutrition. 2004;44(6):409-421.
 [^8]: Higgins, J.A., Brown, I. L., & Frost, G. S. (2004). Resistant starch consumption increases lipid oxidation in healthy adults. The Journal of Nutrition.
 [^9]: Robertson MD, Bickerton AS, Dennis AL, et al. Insulin-sensitizing effects of dietary resistant starch and effects on skeletal muscle and adipose tissue metabolism. The American Journal of Clinical Nutrition. 2005;82(3):559-567.
@@ -200,5 +200,5 @@ tags: [writing]
 [^12]: Weickert MO, Pfeiffer AF. Metabolic effects of dietary fiber consumption and prevention of diabetes. The Journal of Nutrition. 2008;138(3):439-442.
 [^13]: Brown L, Rosner B, Willett WW, Sacks FM. Cholesterol-lowering effects of dietary fiber: a meta-analysis. The American Journal of Clinical Nutrition. 1999;69(1):30-42.
 [^14]: Du.H, van der A DL, van Bakel MM, et al. Dietary fiber and subsequent changes in body weight and waist circumference in European men and women. The American Journal of Clinical Nutrition. 2010;91(2):329-336.
-[^15]: eickert MO, Pfeiffer AF. Metabolic effects of dietary fiber consumption and prevention of diabetes. The Journal of Nutrition. 2008;138(3):439-442.
+[^15]: Weickert MO, Pfeiffer AF. Metabolic effects of dietary fiber consumption and prevention of diabetes. The Journal of Nutrition. 2008;138(3):439-442.
 [^16]: Howarth NC, Saltzman E, Roberts SB. Dietary fiber and weight regulation. Nutrition Reviews. 2001;59(5):129-139.
