@@ -326,6 +326,36 @@ tags: [writing]
 2. 适当的训练刺激
 3. 戒烟戒酒
 
+### 蛋白质质量评分体系
+
+选择蛋白质来源时，除了看含量，还需要关注**蛋白质质量**——即氨基酸组成和消化吸收率。目前主流的评分体系有三种：
+
+**1. 生物价（BV）**：传统方法，测量氮保留率，鸡蛋为参考标准（BV=100）。局限是不考虑消化率差异。
+
+**2. PDCAAS（蛋白质消化率校正氨基酸评分）**：WHO 1991年推荐，考虑了限制性氨基酸和粪便消化率。满分为1.0。
+
+**3. DIAAS（可消化必需氨基酸评分）**：FAO 2013年推荐替代PDCAAS，基于回肠末端消化率（更准确），不截断到1.0（可以>100%），能区分高质量蛋白质之间的差异[^12]。
+
+**常见蛋白质来源的质量评分对比**：
+
+| 蛋白质来源 | BV | PDCAAS | DIAAS | 限制性氨基酸 |
+|-----------|-----|--------|-------|-------------|
+| 乳清蛋白 | 104 | 1.00 | 1.09 | 无 |
+| 全蛋 | 100 | 1.00 | 1.13 | 无 |
+| 牛奶（酪蛋白） | 77 | 1.00 | 1.00 | 无 |
+| 牛肉 | 80 | 0.92 | 0.92 | 无 |
+| 鸡胸肉 | 79 | 0.92 | 0.91 | 无 |
+| 大豆分离蛋白 | 74 | 1.00 | 0.90 | 蛋氨酸 |
+| 豌豆蛋白 | 65 | 0.89 | 0.82 | 蛋氨酸 |
+| 小麦蛋白 | 64 | 0.42 | 0.40 | 赖氨酸 |
+| 大米蛋白 | 59 | 0.50 | 0.60 | 赖氨酸 |
+
+**实践意义**：
+- 动物蛋白普遍 DIAAS > 0.9，植物蛋白多数 < 0.9
+- 植物蛋白可以通过**互补搭配**提高整体质量（如大米+豆类，赖氨酸和蛋氨酸互补）
+- 对于增肌目标，如果主要依赖植物蛋白，总摄入量需要增加约 20-30% 来补偿质量差异[^12]
+- DIAAS > 0.75 为"良好质量"，> 1.0 为"优秀质量"
+
 ### 蛋白质的来源
 
 选择优质的蛋白质来源对于肌肉增长和整体健康至关重要。
@@ -455,3 +485,5 @@ tags: [writing]
 [^10]: Fenton T R, Lyon A W, Eliasziw M, et al. Meta-analysis of the effect of high-protein diets on calcium excretion and bone density[J]. Journal of the American Dietetic Association, 2011, 111(7): 967-977.
 
 [^11]: Dong J Y, Zhang L, He K, et al. Dairy consumption and risk of breast cancer: a meta-analysis of prospective cohort studies[J]. Breast cancer research and treatment, 2011, 127(1): 23-31.
+
+[^12]: Rutherfurd SM, Fanning AC, Miller BJ, Moughan PJ. Protein digestibility-corrected amino acid scores and digestible indispensable amino acid scores differentially describe protein quality in growing male rats[J]. The Journal of Nutrition, 2015, 145(2): 372-379.
