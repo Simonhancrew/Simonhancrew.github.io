@@ -369,7 +369,7 @@ flowchart TD
 
 [^7]: Westerterp-Plantenga MS, et al. (2012). Protein, weight management, and satiety. *American Journal of Clinical Nutrition*, 96(3):584S-591S.
 
-[^8]: Cribb PJ, et al. (2021). Effects of dietary carbohydrate intake on exercise performance: a systematic review. *Sports Medicine*, 51(3):491-504.
+[^8]: Mata F, et al. (2019). Carbohydrate availability and physical performance: physiological overview and practical recommendations. *Nutrients*, 11(5):1084.
 
 [^9]: Burke LM, et al. (2017). Carbohydrate for training and competition. *Journal of Sports Sciences*, 35(7):610-620.
 
@@ -383,7 +383,7 @@ flowchart TD
 
 [^14]: Tompkins CL, et al. (2021). Effects of dietary protein intake during calorie restriction on muscle mass and strength: a systematic review and meta-analysis. *American Journal of Clinical Nutrition*, 113(3):623-634.
 
-[^15]: Ludwig DS. (2019). The glycemic index: physiological mechanisms relating to obesity, diabetes, and cardiovascular disease. *JAMA*, 305(14):1466-1476.
+[^15]: Ludwig DS. (2002). The glycemic index: physiological mechanisms relating to obesity, diabetes, and cardiovascular disease. *JAMA*, 287(18):2414-2423.
 
 [^16]: Leidy HJ, et al. (2015). Beneficial effects of a higher-protein breakfast on the appetitive, hormonal, and neural signals controlling energy intake regulation in overweight/obese, late-adolescent girls. *American Journal of Clinical Nutrition*, 101(4):764-773.
 
@@ -391,7 +391,7 @@ flowchart TD
 
 [^18]: Hu FB, et al. (2019). Dietary carbohydrates and cardiovascular disease. *Journal of the American College of Cardiology*, 74(1):105-114.
 
-[^19]: Cribb PJ, et al. (2021). op. cit.
+[^19]: Mata F, et al. (2019). op. cit.
 
 [^20]: Dombrowski SU, et al. (2021). Long-term adherence to different weight loss diets: a systematic review and meta-analysis. *Obesity Reviews*, 22(5):e13204.
 
@@ -423,7 +423,7 @@ flowchart TD
 
 [^34]: Johnston BC, et al. (2019). Effect of popular named diet programs on weight loss and cardiovascular risk reduction: a systematic review and network meta-analysis. *JAMA Internal Medicine*, 179(11):1623-1631.
 
-[^35): Maughan RJ, et al. (2018). Protein ingestion and hydration status. *Sports Medicine*, 48(Suppl 1):93-102.
+[^35]: Maughan RJ, et al. (2018). Protein ingestion and hydration status. *Sports Medicine*, 48(Suppl 1):93-102.
 
 [^36]: Li X, et al. (2022). op. cit.
 
