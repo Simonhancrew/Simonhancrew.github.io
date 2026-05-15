@@ -89,6 +89,28 @@ tags: [writing, sports-nutrition, evidence-based, journals]
 
 ---
 
+### 六、综合医学/临床医学期刊
+
+如果只盯着“营养学期刊”本身，视野其实会偏窄。很多真正改变实践的营养学研究，尤其是**肥胖、糖尿病、心血管、肠道、公共卫生营养、减重药物、长期临床结局**相关内容，经常发表在综合医学或专科医学顶刊上。
+
+| 期刊名称 | 领域 | 为什么营养学人要看 |
+|----------|------|--------------------|
+| **New England Journal of Medicine** | 综合医学 | 大型RCT、肥胖药物、糖尿病、心血管终点研究，经常直接影响临床实践 |
+| **The Lancet** / **Lancet Diabetes & Endocrinology** | 综合医学 / 代谢内分泌 | 肥胖、糖尿病、公共卫生、代谢疾病高质量研究和委员会报告很多 |
+| **JAMA** / **JAMA Internal Medicine** | 综合医学 / 内科 | 饮食模式、减重、时间限制性进食、真实世界干预研究常见 |
+| **BMJ** | 综合医学 | 方法学、系统综述、临床争议、循证实践文章质量高 |
+| **Annals of Internal Medicine** | 内科 | 饮食模式比较、减重、心代谢风险研究经常发表在这里 |
+| **Circulation** / **European Heart Journal** | 心血管 | 饱和脂肪、钠钾、地中海饮食、代谢综合征、心血管终点证据很关键 |
+| **Diabetes Care** | 糖尿病 | 饮食干预、CGM、胰岛素抵抗、糖尿病前期和2型糖尿病营养管理高频出现 |
+| **Gastroenterology** / **Gut** | 消化 / 肠道 | 肠道菌群、FODMAP、消化系统、炎症性肠病与营养的文章很重要 |
+
+**一句话理解**：
+
+- 如果你关心的是“蛋白粉、肌酸、运动补给”这类问题，`JISSN`、`Sports Medicine`、`IJSNEM` 会更集中
+- 如果你关心的是“肥胖、胰岛素抵抗、减脂、长期健康结局”，就必须把 `JAMA`、`Lancet`、`NEJM`、`BMJ`、`Diabetes Care`、`Circulation` 这些一起纳入视野
+
+---
+
 ## 如何获取文献
 
 ### 1. 开放获取期刊（免费直接下载）
@@ -142,6 +164,137 @@ tags: [writing, sports-nutrition, evidence-based, journals]
 
 ---
 
+## 营养学人每天追新知识的 daily 流程
+
+真正高效的做法不是“每天随机刷论文”，而是建立一个**固定的追踪节奏**。对营养学科普作者、教练、咨询师或研究生来说，一个实用的 daily workflow 可以是这样：
+
+### 1. 先设 3 组固定入口
+
+**入口A：PubMed Saved Search / RSS**
+
+建议至少建 3 组搜索：
+
+1. **系统综述/荟萃分析**
+2. **RCT / 临床试验**
+3. **指南 / 共识 / position stand**
+
+主题词可以围绕你最常写的方向，比如：
+
+- sports nutrition
+- protein / creatine / caffeine / carbohydrate
+- fat loss / obesity / insulin resistance
+- gut health / digestive disorders
+
+**入口B：重点期刊 TOC alert**
+
+不要订太多，先盯 `5-8` 本就够：
+
+- Sports Medicine
+- JISSN
+- American Journal of Clinical Nutrition
+- Clinical Nutrition
+- Diabetes Care
+- BMJ / JAMA Internal Medicine
+- Obesity Reviews
+- Cell Metabolism 或 Lancet Diabetes & Endocrinology
+
+**入口C：指南/学会更新**
+
+建议固定关注：
+
+- ISSN
+- ACSM
+- American Society for Nutrition
+- ADA
+- AHA
+- ESPEN
+- WHO / 中国居民膳食指南更新
+
+### 2. 每天 20-30 分钟的最小流程
+
+**第 1 步：5 分钟扫标题**
+
+- 看 PubMed alert
+- 看期刊目录邮件
+- 看是否有新的 guideline / consensus / systematic review
+
+目标不是读完，而是先筛选：
+
+- 这是不是人体研究？
+- 这是不是你关心的人群？
+- 这是不是比旧证据更高一级？
+
+**第 2 步：5-10 分钟做文献分级**
+
+把当天看到的内容快速分成 3 类：
+
+- **A类**：指南、立场文件、系统综述、荟萃分析、重要RCT
+- **B类**：机制研究、观察性研究、专题综述
+- **C类**：样本很小、外推性差、和你当前主题关系弱
+
+日常优先级永远是：
+
+1. A类
+2. B类
+3. C类只做收藏，不急着读
+
+**第 3 步：10-15 分钟精读 1 篇**
+
+每天只深读一篇最重要的就够了。读的时候顺序建议固定：
+
+1. 看题目和摘要
+2. 看研究对象是谁
+3. 看设计：RCT、队列、综述、meta 还是机制研究
+4. 看主要结论和效应大小
+5. 看局限：样本、周期、依从性、是否可外推
+
+### 3. 每天必须留下的 3 条记录
+
+不要只“看过”，要留下最小笔记。每篇只记 3 行：
+
+1. **这篇回答了什么问题**
+2. **结论能不能外推到普通人 / 训练者 / 减脂人群**
+3. **我会不会因为这篇改变原来的说法**
+
+如果第三条答案是“不会”，那它大概率只是补充信息，不是改观点级别的信息。
+
+### 4. 每周做一次真正的整合
+
+daily 只是追踪，不是总结。每周最好单独留一次 `60-90` 分钟做：
+
+- 回看本周收藏的 A 类文献
+- 删掉低价值噪音
+- 更新你的“当前共识库”
+- 记录哪些结论已经足够稳，哪些仍在争议
+
+### 5. 一个实用的 daily 优先级
+
+如果时间很少，每天就按这个顺序：
+
+1. **指南 / 共识**
+2. **系统综述 / 荟萃分析**
+3. **高质量RCT**
+4. **大样本前瞻性队列**
+5. **机制研究 / 小样本试验**
+
+### 6. 一个很重要的原则
+
+营养学人最容易犯的错，不是“看得不够多”，而是：
+
+- 被单篇小研究带节奏
+- 把机制研究写成实践结论
+- 只看营养学期刊，不看医学顶刊
+- 只看 abstracts，不看方法和限制
+
+所以 daily 的核心不是“多”，而是：
+
+- **固定入口**
+- **固定分级**
+- **固定笔记**
+- **每周整合**
+
+---
+
 ## 总结
 
 对于循证健身营养科普：
@@ -171,3 +324,5 @@ tags: [writing, sports-nutrition, evidence-based, journals]
 - Journals Citation Reports, 2023. Clarivate Analytics.
 - International Society of Sports Nutrition. https://issn.net/
 - American Society for Nutrition. https://nutrition.org/
+- PubMed User Guide. https://pubmed.ncbi.nlm.nih.gov/help/
+- PubMed Advanced Search / My NCBI Alerts. https://pubmed.ncbi.nlm.nih.gov/advanced/
