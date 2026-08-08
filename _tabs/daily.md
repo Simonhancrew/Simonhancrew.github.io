@@ -20,3 +20,11 @@ order: 4
 + [juejin](https://juejin.cn/)
 + [infoq](https://www.infoq.cn/)
 + [linuxdo](https://linux.do/)
+
+
+# Mind Game
+
+1. 你最想改变什么
+2. 最近在逃避什么
+3. 每天占你时间最多的事，对你真的有提升吗
+4. 如果一直维持当下的状态过一年，你会变得更好吗
